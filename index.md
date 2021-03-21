@@ -6,6 +6,12 @@ At the moment, I am investigating how recruiters and job seekers find (or don't 
 
 Generally, my research interest lie in labour economics, public economics and applied econometrics. I hold a Master's Degree from the Universiy College London. 
 
+### Contact & CV
+<jeremias.klaeui@unil.ch> 
+
+[Download CV](cv_klaeui.pdf)
+
+
 ### Policy reports
 
 Together with Marius Brülhart, Rafael Lalive, Tobias Lehmann and Michael Siegenthaler, I also did some research on how the self-employed in Switzerland are affected by the Covid-19 crisis. 
@@ -16,10 +22,8 @@ Together with Marius Brülhart, Rafael Lalive, Tobias Lehmann and Michael Siegen
 
 And there is even a short quote by me about our results in the Swiss newspaper NZZ am Sonntag: [Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295).
 
-### Contact & CV
-<jeremias.klaeui@unil.ch> 
+### Teaching
 
-[Download CV](cv_klaeui.pdf)
-
+[Econometrics at the master's level (Course by Prof. M. Huber)](https://hecnet.unil.ch/hec/syllabus/descriptif/2551?dyn_lang=en)
 
 
