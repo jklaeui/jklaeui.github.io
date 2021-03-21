@@ -7,10 +7,7 @@ At the moment, I am investigating how recruiters and job seekers find (or don't 
 Generally, my research interest lie in labour economics, public economics and applied econometrics. I hold a Master's Degree from the Universiy College London. 
 
 ### Contact & CV
-<jeremias.klaeui@unil.ch> 
-
-[Download CV](cv_klaeui.pdf)
-
+<jeremias.klaeui@unil.ch> | [Download CV](cv_klaeui.pdf)
 
 ### Policy reports
 
