@@ -11,7 +11,7 @@ Generally, my research interests lie in labour economics, public economics and a
 
 ### Policy reports
 
-Together with Marius Brülhart, Rafael Lalive, Tobias Lehmann and Michael Siegenthaler, I also did some research on how the self-employed in Switzerland are affected by the Covid-19 crisis. 
+Together with Marius Brülhart, Rafael Lalive, Tobias Lehmann and Michael Siegenthaler, I did some research on how the self-employed in Switzerland are affected by the Covid-19 crisis. 
 
 [Die Schweizer Selbständigerwerbenden im Covid19-Lockdown. Resultate der zweiten Befragungswelle im Oktober](https://e4s.center/document/second-wave-swiss-self-employed-dealing-with-the-covid-19-confinement/) (2020, German)
 
