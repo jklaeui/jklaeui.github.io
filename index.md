@@ -18,5 +18,6 @@ And there is even a short quote by me about our results in the Swiss newspaper N
 
 ### Contact & CV
 [CV](cv_klaeui.pdf)
+
 <jeremias.klaeui@unil.ch> 
 
