@@ -16,5 +16,7 @@ Together with Marius Brülhart, Rafael Lalive, Tobias Lehmannand Michael Siegent
 
 And there is even a short quote by me about our results in the Swiss newspaper NZZ am Sonntag: [Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295).
 
-### Contact
+### Contact & CV
+[CV](cv_klaeui.pdf)
 <jeremias.klaeui@unil.ch> 
+
