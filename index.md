@@ -9,7 +9,7 @@ Generally, my research interests lie in labour economics, public economics and a
 ### Contact & CV
 <jeremias.klaeui@unil.ch> | [Download CV](cv_klaeui.pdf)
 
-### Policy reports
+### Policy reports & Media
 
 Together with Marius Brülhart, Rafael Lalive, Tobias Lehmann and Michael Siegenthaler, I did some research on how the self-employed in Switzerland are affected by the Covid-19 crisis:
 [Report on the second wave (Autumn 2020, German)](https://e4s.center/document/second-wave-swiss-self-employed-dealing-with-the-covid-19-confinement/) | 
