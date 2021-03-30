@@ -21,4 +21,6 @@ And there is even a short quote by me about our results in the Swiss newspaper N
 
 [Econometrics at the master's level (Course by Prof. M. Huber)](https://hecnet.unil.ch/hec/syllabus/descriptif/2551?dyn_lang=en)
 
+### Other
 
+Together with Pascal Josephy, I founded the web design and web development agency [JKweb](https://jkweb.ch/) which still exists and by now employs over 30 programmers, designers and other specialists in Zurich and Basel.
