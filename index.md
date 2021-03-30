@@ -6,9 +6,6 @@ At the moment, **I am using big data from online job portals and vacancy posting
 
 Generally, my research interests lie in labour economics, public economics and applied econometrics. I hold a Master's Degree from the Universiy College London. 
 
-### Contact & CV
-<jeremias.klaeui@unil.ch> | [Download CV](cv_klaeui.pdf)
-
 ### Policy reports & Media
 
 Together with Marius Brülhart, Rafael Lalive, Tobias Lehmann and Michael Siegenthaler, I did some research on how the self-employed in Switzerland are affected by the Covid-19 crisis:
@@ -24,3 +21,6 @@ And there is even a short quote by me about our results in the Swiss newspaper N
 ### Other
 
 Together with Pascal Josephy, I founded the web design and web development agency [JKweb](https://jkweb.ch/) which still exists and by now employs over 30 programmers, designers and other specialists in Zurich and Basel.
+
+### Contact & CV
+<jeremias.klaeui@unil.ch> | [Download CV](cv_klaeui.pdf)
