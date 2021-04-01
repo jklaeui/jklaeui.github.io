@@ -1,6 +1,6 @@
-title: Minimal theme
-logo: /assets/img/logo.png
-description: Minimal is a theme for GitHub Pages.
-show_downloads: true
-google_analytics:
+title: "Jeremias Klaeui"
+logo: "photo.png"
+description: "PhD student in Economics at the University of Lausanne. I use big data from online job portals and vacancy postings to investigate how recruiters and job seekers find (or don’t find) each other in the Swiss labour market."
+show_downloads: false
+google_analytics: "UA-192711882-1"
 theme: jekyll-theme-minimal
