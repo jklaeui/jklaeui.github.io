@@ -16,7 +16,7 @@ There is a short quote by me in the Swiss newspaper NZZ am Sonntag: [Studie zur 
 
 ### Other
 
-In 2011, I - together with Pascal Josephy - founded the web design and web development agency [JKweb](https://jkweb.ch/). It still exists and by now employs over 30 programmers, designers and other specialists in Zurich and Basel.
+Together with Pascal Josephy, I founded the web design and web development agency [JKweb](https://jkweb.ch/) in 2011. It still exists and by now employs over 30 programmers, designers and other specialists in Zurich and Basel.
 
 ### Contact & CV
 <jeremias.klaeui@unil.ch> | [Download CV](cv_klaeui.pdf)
