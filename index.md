@@ -8,7 +8,6 @@ Generally, my research interests lie in labour economics, public economics and a
 
 ### Policy reports & Media
 
-There is a short quote by me in the Swiss newspaper NZZ am Sonntag: [Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295). The article discusses two reports I did together with M. Brülhart, R. Lalive, T. Lehmann and M. Siegenthaler on how the self-employed in Switzerland are affected by the Covid-19 crisis ([Report 1](https://e4s.center/document/second-wave-swiss-self-employed-dealing-with-the-covid-19-confinement/) | [Report 2](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxzaWVnZW50aGFsZXJtaWNoYWVsfGd4OjNkOTIxNDdmODBkZGVhMmI) )
 
 ### Teaching
 
