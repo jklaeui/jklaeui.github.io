@@ -8,7 +8,9 @@ Generally, my research interests lie in labour economics, public economics and a
 
 ### Policy reports & Media
 
-There is a short quote by me in the Swiss newspaper NZZ am Sonntag: [Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295). The article discusses two reports I did together with M. Brülhart, R. Lalive, T. Lehmann and M. Siegenthaler on how the self-employed in Switzerland are affected by the Covid-19 crisis. ([Report first wave](https://e4s.center/document/second-wave-swiss-self-employed-dealing-with-the-covid-19-confinement/),  [Report second wave](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxzaWVnZW50aGFsZXJtaWNoYWVsfGd4OjNkOTIxNDdmODBkZGVhMmI))
+There is a short quote by me in the Swiss newspaper NZZ am Sonntag: [Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295). 
+
+The article discusses two reports I did together with M. Brülhart, R. Lalive, T. Lehmann and M. Siegenthaler on how the self-employed in Switzerland are affected by the Covid-19 crisis. ([Report first wave](https://e4s.center/document/second-wave-swiss-self-employed-dealing-with-the-covid-19-confinement/),  [Report second wave](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxzaWVnZW50aGFsZXJtaWNoYWVsfGd4OjNkOTIxNDdmODBkZGVhMmI))
 
 ### Teaching
 
@@ -19,4 +21,6 @@ There is a short quote by me in the Swiss newspaper NZZ am Sonntag: [Studie zur 
 Together with Pascal Josephy, I founded the web design and web development agency [JKweb](https://jkweb.ch/) in 2011. It still exists and by now employs over 30 programmers, designers and other specialists in Zurich and Basel.
 
 ### Contact & CV
-<jeremias.klaeui@unil.ch> | [Download CV](cv_klaeui.pdf)
+* <jeremias.klaeui@unil.ch>
+
+* [Download CV](cv_klaeui.pdf)
