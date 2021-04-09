@@ -19,8 +19,3 @@ The article discusses two reports I did together with M. Brülhart, R. Lalive, T
 ### Other
 
 Together with Pascal Josephy, I founded the web design and web development agency [JKweb](https://jkweb.ch/) in 2011. It still exists and by now employs over 30 programmers, designers and other specialists in Zurich and Basel.
-
-### Contact & CV
-<jeremias.klaeui@unil.ch>
-
-[Download CV](cv_klaeui.pdf)
