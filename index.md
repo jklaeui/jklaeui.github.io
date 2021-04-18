@@ -4,7 +4,7 @@ I am a PhD student at the Department of Economics at the University of Lausanne.
 
 At the moment, **I am using big data from online job portals and vacancy postings to investigate how recruiters and job seekers find (or don't find) each other** in the Swiss labour market.
 
-Generally, my research interests lie in labour economics, public economics and applied econometrics. I hold a Master's Degree from the Universiy College London. 
+Generally, my research interests lie in labour economics, public economics and applied econometrics. I hold a Master's Degree from the University College London. 
 
 ### Policy reports & Media
 
