@@ -1,8 +1,8 @@
 # Welcome to my webpage!
 
-I am a PhD student at the Department of Economics at the University of Lausanne. 
+I am a PhD student at the Department of Economics at the University of Lausanne and from September 2022 - March 2023 I will be a visiting research student at the Centre for Economic Performance at the LSE.
 
-At the moment, **I am using big data from online job portals and vacancy postings to investigate how recruiters and job seekers find (or don't find) each other** in the labour market.
+**I am using big data from online job portals and vacancy postings to investigate how recruiters and job seekers find (or don't find) each other** in the labour market.
 
 Generally, my research interests lie in labour economics, public economics and applied econometrics. I hold a Master's Degree from the University College London. 
 
@@ -10,7 +10,7 @@ Generally, my research interests lie in labour economics, public economics and a
 
 There is a short quote by me in the Swiss newspaper NZZ am Sonntag: [Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295). 
 
-The article discusses two reports I did together with M. Brülhart, R. Lalive, T. Lehmann and M. Siegenthaler on how the self-employed in Switzerland are affected by the Covid-19 crisis. ([Report first wave](https://e4s.center/document/second-wave-swiss-self-employed-dealing-with-the-covid-19-confinement/),  [Report second wave](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxzaWVnZW50aGFsZXJtaWNoYWVsfGd4OjNkOTIxNDdmODBkZGVhMmI))
+The article discusses work I did together with M. Brülhart, R. Lalive, T. Lehmann and M. Siegenthaler on how the self-employed in Switzerland are affected by the Covid-19 crisis. 
 
 ### Teaching
 
