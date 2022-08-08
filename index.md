@@ -1,10 +1,11 @@
 # Welcome to my webpage!
 
-I am a PhD student at the Department of Economics at the University of Lausanne and from September 2022 - March 2023 I will be a visiting research student at the Centre for Economic Performance at the LSE.
+I am a PhD student in Economics at the University of Lausanne.
+From September 2022 - March 2023 I will be a visiting research student at the Centre for Economic Performance at the LSE.
 
 **I am using big data from online job portals and vacancy postings to investigate how recruiters and job seekers find (or don't find) each other** in the labour market.
 
-Generally, my research interests lie in labour economics, public economics and applied econometrics. I hold a Master's Degree from the University College London. 
+General research interests: labour economics, public economics and applied econometrics. 
 
 ### Policy reports & Media
 
