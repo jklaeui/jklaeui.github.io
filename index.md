@@ -2,9 +2,7 @@
 
 I am a PhD student in Economics at the University of Lausanne, currently visiting at the Centre for Economic Performance at LSE.
 
-**I am using big data from online job portals and vacancy postings to investigate how recruiters and job seekers find (or don't find) each other** in the labour market.
-
-General research interests: labour economics, public economics and applied econometrics. 
+**I am using big data from online job portals and vacancy postings to investigate how recruiters and job seekers find (or don't find) each other** in the labour market. General research interests: labour economics, public economics and applied econometrics. 
 
 ### Research 
 
