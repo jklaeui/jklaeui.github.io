@@ -16,7 +16,7 @@ I am a PhD student in Economics at the University of Lausanne, currently visitin
 
 ### Teaching
 
-[Econometrics at the master's level (Course by Prof. M. Huber)](https://hecnet.unil.ch/hec/syllabus/descriptif/2551?dyn_lang=en)
+- [Econometrics at the master's level (Course by Prof. M. Huber)](https://hecnet.unil.ch/hec/syllabus/descriptif/2551?dyn_lang=en)
 
 ### Other
 
