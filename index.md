@@ -6,7 +6,7 @@ I am a PhD student in Economics at the University of Lausanne, currently visitin
 
 ### Research 
 
-- Occupational transitions from the perspective of jobseekers and recruiters *(in Progress; with D. Kopp, R. Lalive, M. Siegenthaler)*.
+- Occupational transitions from the perspective of jobseekers and recruiters *(in progress; with D. Kopp, R. Lalive, M. Siegenthaler)*.
 
 
 ### Policy reports & Media
