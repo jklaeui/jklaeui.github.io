@@ -8,7 +8,7 @@ General research interests: labour economics, public economics and applied econo
 
 ### Research 
 
-- Occupational transitions from the perspective of jobseekers and recruiters. *(In Progress; with D. Kopp, R. Lalive, M. Siegenthaler)*
+- Occupational transitions from the perspective of jobseekers and recruiters *(in Progress; with D. Kopp, R. Lalive, M. Siegenthaler)*.
 
 
 ### Policy reports & Media
