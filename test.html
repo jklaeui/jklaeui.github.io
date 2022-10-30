@@ -2,11 +2,25 @@
     <!doctype html>
     <html>
     <head>
-    <title>Our Funky HTML Page</title>
-    <meta name="description" content="Our first page">
-    <meta name="keywords" content="html tutorial template">
+    <title>Spendenformular ProCey</title>
+    <meta name="description" content="Mit Kreditkarte oder Postcard  (Spesenbelastung 5%)">
+    <meta name="keywords" content="Spendenformular ProCey">
     </head>
     <body>
-    Content goes here.
+
+<script src="https://tamaro.raisenow.com/proce-aaac/latest/widget.js" type="text/javascript"></script>
+<h1 id="überschrift">Mit Kreditkarte oder Postcard  (Spesenbelastung 5%):</h1>
+    <div class="rnw-widget-container"></div>
+        <script>
+            window.rnw.tamaro.runWidget('.rnw-widget-container', {
+                language: 'de',
+				testMode: false,
+				translations: {
+					de: {
+						payment_form: {
+							stored_customer_donation_receipt: "Ja, ich m"+ String.fromCharCode(246) +"chte eine Spendenbescheinigung f"+ String.fromCharCode(252) +"r die Steuererkl"+ String.fromCharCode(228) +"rung",}
+            }}})
+        </script>
+
     </body>
     </html>
