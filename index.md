@@ -3,11 +3,13 @@
 - PhD student in Economics at the University of Lausanne
 - Currently, I'm visiting at the Centre for Economic Performance at LSE
 
-I am using big data from online job portals and vacancy postings to investigate how recruiters and job seekers find (or don't find) each other in the labour market. 
+*I am using big data from online job search and recruitment to investigate how labour market frictions shape job finding probabilities and wages.*
+
+***
 
 ### Research 
 
-- Occupational transitions from the perspective of jobseekers and recruiters *(in progress; with D. Kopp, R. Lalive, M. Siegenthaler)*.
+- Occupational transitions from the perspective of jobseekers and recruiters *(in progress; with D. Kopp, R. Lalive, M. Siegenthaler)*
 
 ### Swiss Job Tracker
 
