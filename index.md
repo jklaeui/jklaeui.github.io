@@ -3,7 +3,8 @@
 - PhD student in Economics at the University of Lausanne
 - Currently, I'm visiting at the Centre for Economic Performance at LSE
 
-*I am using big data from online job search and recruitment to investigate how labour market frictions shape job finding probabilities and wages.*
+
+- *I am using big data from online job search and recruitment to investigate how labour market frictions shape job finding probabilities and wages.*
 
 ***
 
