@@ -13,7 +13,7 @@
 ### Swiss Job Tracker
 
 - [A real-time index of open vacancy postings in Switzerland](http://swissjobtracker.ch/)
-- [Github](https://github.com/swissjobtracker/chjobtracker): Open-Source code aggregating the scraped data from 70 job portals and 50K company webpages. I implemented an algorithm that deals with scraper issues and unstable job portals in real-time to obtain a clean index
+- [Github](https://github.com/swissjobtracker/chjobtracker): R-code aggregating the scraped data from 70 job portals and 50K company webpages. I implemented an algorithm that deals with scraper issues and unstable job portals in real-time to obtain a clean index
 
 
 ### Policy reports & Media
