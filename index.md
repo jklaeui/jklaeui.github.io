@@ -1,7 +1,7 @@
 # Welcome to my webpage!
 
 - PhD student in Economics at the University of Lausanne
-- Currently I'm visiting at the Centre for Economic Performance at LSE
+- Currently, I'm visiting at the Centre for Economic Performance at LSE
 
 I am using big data from online job portals and vacancy postings to investigate how recruiters and job seekers find (or don't find) each other in the labour market. 
 
