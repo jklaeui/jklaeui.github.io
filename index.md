@@ -8,10 +8,15 @@ I am a PhD student in Economics at the University of Lausanne, currently visitin
 
 - Occupational transitions from the perspective of jobseekers and recruiters *(in progress; with D. Kopp, R. Lalive, M. Siegenthaler)*.
 
+### Swiss Job Tracker
+
+- [swissjobtracker.ch](http://swissjobtracker.ch/): a real-time index of open vacancy postings in Switzerland
+- [Github](https://github.com/swissjobtracker/chjobtracker): Open-Source code aggregating the scraped data from 70 job portals and 50K company webpages. I implemented an algorithm that deals with scraper issues and unstable job portals in real-time to obtain a clean index
+
 
 ### Policy reports & Media
 
-- [Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295). 
+- [NZZaS: Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295). 
 
 
 ### Teaching
