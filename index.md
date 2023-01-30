@@ -8,7 +8,7 @@
 
 ### Research 
 
-- Occupational transitions from the perspective of jobseekers and recruiters *(in progress; with D. Kopp, R. Lalive, M. Siegenthaler)*
+- Labor Demand and Supply Across Occupational Boundaries *(in progress; with D. Kopp, R. Lalive, M. Siegenthaler)*
 
 ### Swiss Job Tracker
 
