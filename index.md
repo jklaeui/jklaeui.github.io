@@ -9,6 +9,8 @@
 ### Research 
 
 - Labor Demand and Supply Across Occupational Boundaries *(in progress; with D. Kopp, R. Lalive, M. Siegenthaler)*
+- Consideration sets in job search *(in progress; solo-authored)*
+- Job Search and Employer Market Power *(in progress; with I. Bassier, A. Manning)*
 
 ### Swiss Job Tracker
 
