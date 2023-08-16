@@ -1,15 +1,16 @@
 # Welcome to my webpage!
 
 - PhD student in Economics at the University of Lausanne
-- Currently, I'm visiting at the Centre for Economic Performance at LSE
-- *I am using big data from online job search and recruitment to investigate how labour market frictions shape job finding probabilities and wages.*
+- From Summer 2023 onwards: Visiting at ETH Zurich (KOF Swiss Economic Institute); Host: Michael Siegenthaler
+- Summer 2022- Spring 2023: Visiting at the LSE (CEP); Host: Alan Manning
+- *I am using big data from online job search and recruitment to investigate how labour market frictions shape job finding and wages.*
 
 ***
 
 ### Research 
 
-- Labor Demand and Supply Across Occupational Boundaries *(in progress; with D. Kopp, R. Lalive, M. Siegenthaler)*
-- Consideration sets in job search *(in progress; solo-authored)*
+- Adapting to Scarcity: Job Search and Recruiting Across Occupational Boundaries *(in progress; with D. Kopp, R. Lalive, M. Siegenthaler)*
+- Consideration scopes in job search *(in progress; solo-authored)*
 - Job Search and Employer Market Power *(in progress; with I. Bassier, A. Manning)*
 
 ### Swiss Job Tracker
