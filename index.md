@@ -30,4 +30,4 @@
 
 ### Other
 
-Together with Pascal Josephy, I founded the web design and web development agency [JKweb](https://jkweb.ch/) in 2011 (at the age of 17). The company by now employs over 30 programmers, designers and other specialists in Zurich and Basel.
+Together with Pascal Josephy, I founded the web design and web development agency jkweb in 2011 (at the age of 17). The company by now employs over 30 programmers, designers and other specialists in Zurich and Basel. jkweb has recently acquired novu and is now called [novu](https://novu.ch/). 
