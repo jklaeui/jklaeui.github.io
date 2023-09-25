@@ -1,8 +1,8 @@
 # Welcome to my webpage!
 
 - PhD student in Economics at the University of Lausanne
-- From Summer 2023 onwards: Visiting at ETH Zurich (KOF Swiss Economic Institute); Host: Michael Siegenthaler
-- Summer 2022- Spring 2023: Visiting at the LSE (CEP); Host: Alan Manning
+- From Summer 2023 onwards: Visiting researcher at ETH Zurich (KOF Swiss Economic Institute), on the invitation of by Dr. Michael Siegenthaler
+- Summer 2022- Spring 2023: Visiting researcher at the LSE (CEP), on the invitation of Prof. Alan Manning
 - *I am using big data from online job search and recruitment to investigate how labour market frictions shape job finding and wages.*
 
 ***
