@@ -1,6 +1,6 @@
 # Welcome to my webpage!
 
-- I'm a PhD student in Economics at the University of Lausanne
+- I'm a PhD student in Economics at the University of Lausanne. My supervisor is [Prof. Rafael Lalive](https://sites.google.com/site/rafaellalive/)
 - I am using data from online job search and recruitment to investigate how labour market imperfections shape job finding and wages
 - Summer 2022 - Spring 2023: Visiting researcher at the LSE (CEP), on the invitation of [Prof. Alan Manning](https://en.wikipedia.org/wiki/Alan_Manning)
 - From Summer 2023 onwards: Visiting researcher at ETH Zurich (KOF Swiss Economic Institute), on the invitation of [Dr. Michael Siegenthaler](https://kof.ethz.ch/en/the-institute/kof-divisions/research-division-labour-market-economics.html)
