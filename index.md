@@ -1,6 +1,6 @@
 # Welcome to my webpage!
 
-- I'm a post doc in Economics at CREST Paris student in Economics at the 
+- I'm a post doc in Economics at CREST in Paris (ENSAE / IP) 
 - In my research, I use data from online job search and recruitment to investigate how labour market imperfections shape job finding and wages
 - I obtained my PhD from the University of Lausanne under supervision of [Rafael Lalive](https://sites.google.com/site/rafaellalive/) and [Michael Siegenthaler](https://kof.ethz.ch/en/the-institute/kof-divisions/research-division-labour-market-economics.html)
 - Summer 2022 - Spring 2023: Visiting researcher at the LSE (CEP), on the invitation of [Alan Manning](https://en.wikipedia.org/wiki/Alan_Manning)
