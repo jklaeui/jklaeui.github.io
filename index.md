@@ -7,23 +7,26 @@
 
 ## Research 
 
-### Adapting to Scarcity: Job Search and Recruiting Across Occupational Boundaries *(in progress; with D. Kopp, R. Lalive, M. Siegenthaler)*
+#### Adapting to Scarcity: Job Search and Recruiting Across Occupational Boundaries 
+In progress; with D. Kopp, R. Lalive, M. Siegenthaler
 
-<button class="show-button" onclick="toggleAbstract('abstract1')">Click here to see abstract</button>
+<button class="show-button" onclick="toggleAbstract('abstract1')">Show abstract</button>
 <div id="abstract1" class="abstract">
     This paper investigates how job seekers adapt their search strategies when confronted with occupational scarcity, focusing on transitions across occupational boundaries. We use unique data combining job search activity and recruitment outcomes to identify the role of adaptability in shaping labor market outcomes.
 </div>
 
-### Consideration scopes in job search *(in progress; solo-authored)*
+####Consideration scopes in job search 
+In progress; solo-authored
 
-<button class="show-button" onclick="toggleAbstract('abstract2')">Click here to see abstract</button>
+<button class="show-button" onclick="toggleAbstract('abstract2')">Show abstract</button>
 <div id="abstract2" class="abstract">
     This paper explores how job seekers form their consideration sets when searching for jobs and examines the implications of consideration scope on labor market outcomes. The study uses a novel dataset on online job search behavior.
 </div>
 
-### Job Search and Employer Market Power *(in progress; with I. Bassier, A. Manning)*
+#### Job Search and Employer Market Power
+In progress; with I. Bassier, A. Manning
 
-<button class="show-button" onclick="toggleAbstract('abstract3')">Click here to see abstract</button>
+<button class="show-button" onclick="toggleAbstract('abstract3')">Show abstract</button>
 <div id="abstract3" class="abstract">
     This paper examines how employer market power influences job search behavior and outcomes. Using unique data and structural modeling, we quantify the extent of employer power and its implications for job seekers.
 </div>
@@ -44,7 +47,7 @@
 
 ### Teaching
 
-- [Econometrics at the master's level (Course by Prof. M. Huber)](https://hecnet.unil.ch/hec/syllabus/descriptif/2551?dyn_lang=en)
+- During PhD: [Econometrics at the master's level (Course by Prof. M. Huber)](https://hecnet.unil.ch/hec/syllabus/descriptif/2551?dyn_lang=en)
 
 ### Other
 
@@ -75,13 +78,15 @@
     }
     .show-button {
         cursor: pointer;
-        background-color: #007bff;
+        background-color: #2776b8;
         color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-    }
-    .show-button:hover {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+      }
+      
+   .show-button:hover {
         background-color: #0056b3;
     }
 </style>
