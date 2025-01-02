@@ -11,7 +11,7 @@
 ####  Labor market imbalances, job search scopes and job finding
 In progress; solo-authored
 
-<button class="show-button" onclick="toggleAbstract('abstract2')">Show abstract</button>
+<button class="show-button" onclick="toggleAbstract('abstract2'); gtag('event', 'abstract_click_search_scopes')">Show abstract</button>
 <div id="abstract2" class="abstract">
  This paper investigates how jobseekers adjust the breadth of their search across different segments of the labour market and how such adjustments affect employment outcomes. Imbalances often exist between jobseekers and vacancies in certain occupations or regions, potentially creating opportunities for jobseekers to adjust their search strategies and target segments where demand for them is high.
  I use a unique dataset that combines administrative unemployment records with detailed click data on job postings to measure search scope. I focus on two dimensions of breadth: the distance between a jobseeker’s residence and the posted job, and the local labour market tightness in the commuting zone–occupation segments. A key challenge is that jobseekers self-select into their search strategies. To address this, I exploit exogenous variation in the assignment of jobseekers to caseworkers, whose distinct tendencies influence jobseekers’ subsequent search patterns. I then link these caseworker-induced shifts in search scope to unemployment duration and job quality. My findings suggest that encouraging broader job search or targeting sectors with high labour demand surpluses has measurable effects on reemployment prospects and can alleviate mismatches between labour supply and demand. These results provide policy-relevant insights on how targeted counselling can shape jobseekers’ behaviour and improve labour market efficiency.
@@ -21,7 +21,7 @@ In progress; solo-authored
 #### Job Search and Employer Market Power
 In progress; with I. Bassier, A. Manning
 
-<button class="show-button" onclick="toggleAbstract('abstract3')">Show abstract</button>
+<button class="show-button" onclick="toggleAbstract('abstract3'); gtag('event', 'abstract_click_monopsony');">Show abstract</button>
 <div id="abstract3" class="abstract">
 This paper provides a framework for thinking about how the job search of workers affects the market power of employers. We present a way of thinking about this which encapsulates popular existing models in which employer market power is based on either frictions in labor markets or imperfect substitutability among jobs. We show how this model can be used to compute measures of the extent of employer market power and relates them to popularly used measures of concentration ratios. We use data on the search behaviour of Swiss unemployed to investigate the number of employers being considered by job-seekers using 'clicks' on vacancies to define consideration sets. 
 </div>
@@ -29,7 +29,7 @@ This paper provides a framework for thinking about how the job search of workers
 #### Adapting to Scarcity: The Role of Firms in Occupational Transitions
 In progress; with D. Kopp, R. Lalive, M. Siegenthaler
 
-<button class="show-button" onclick="toggleAbstract('abstract1')">Show abstract</button>
+<button class="show-button" onclick="toggleAbstract('abstract1'); gtag('event', 'abstract_click_occ_mob');">Show abstract</button>
 <div id="abstract1" class="abstract">
 We analyze how overlap in job requirements and labor market conditions affect recruiters' and job seekers' search across occupational boundaries. We leverage unique click data from a job and recruitment platform linked to Swiss unemployment register records. We develop a novel measure of occupational similarity that quantifies the overlap in  job requirements in vacancy postings between and within occupations. Overlap strongly determines job seekers' clicks on jobs in other occupations and recruiters' contacts of candidates from other occupations. 
 However, job seekers' last occupation is also important. Job seekers and recruiters are substantially more likely to focus on jobs or candidates in the same occupation than in other occupations with the same overlap. Finally, the importance of the last occupation varies with scarcity. If tightness in an occupation increases, job seekers are less likely to consider switching occupation while recruiters are more inclined to contact candidates from other occupations, particularly those from similar, lower-paying occupations. A key novelty of these analyses is to demonstrate recruiters' important role in moderating job seekers' ability to change occupations.</div>
