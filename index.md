@@ -8,7 +8,7 @@
 ## Research 
 
 
-#### Job search scopes and job finding
+####  Labor market imbalances, job search scopes and job finding
 In progress; solo-authored
 
 <button class="show-button" onclick="toggleAbstract('abstract2')">Show abstract</button>
