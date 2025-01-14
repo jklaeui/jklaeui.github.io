@@ -65,7 +65,7 @@ However, job seekers' last occupation is also important. Job seekers and recruit
         const abstract = document.getElementById(id);
         if (abstract.style.display === "none" || abstract.style.display === "") {
             abstract.style.display = "block";
-             gtag('event', id);"
+             gtag('event', id);
         } else {
             abstract.style.display = "none";
         }
