@@ -10,6 +10,7 @@
 
 ####  Labor market imbalances, job search scopes and job finding
 In progress; solo-authored
+
 *Presented at PSE Applied Economics Lunch (Feb 2025), EALE 2024 Bergen (Sep 2024), SKILS Ski and Labor Seminar Lenzerheide (Jan 2024), IZA Workshop: Matching Workers and Jobs Online (Sep 2023), LSE Labour WIP Seminar (Mar 2023)*
 
 <button class="show-button" onclick="toggleAbstract('abstract_click_search_scopes')">Show abstract</button>
@@ -29,6 +30,7 @@ This paper provides a framework for thinking about how the job search of workers
 
 #### Adapting to Scarcity: The Role of Firms in Occupational Transitions
 In progress; with D. Kopp, R. Lalive, M. Siegenthaler
+
 *Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in Labor Economics (June 2023)*
 
 <button class="show-button" onclick="toggleAbstract('abstract_click_occ_mob')">Show abstract</button>
