@@ -11,7 +11,7 @@
 ####  Labor market imbalances, job search scopes and job finding
 In progress; solo-authored
 
-*Presented at Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025), EALE 2024 Bergen (Sep 2024), SKILS Ski and Labor Seminar Lenzerheide (Jan 2024), IZA Workshop: Matching Workers and Jobs Online (Sep 2023), LSE Labour WIP Seminar (Mar 2023)*
+*Presented at UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025), EALE 2024 Bergen (Sep 2024), SKILS Ski and Labor Seminar Lenzerheide (Jan 2024), IZA Workshop: Matching Workers and Jobs Online (Sep 2023), LSE Labour WIP Seminar (Mar 2023)*
 
 <button class="show-button" onclick="toggleAbstract('abstract_click_search_scopes')">Show abstract</button>
 <div id="abstract_click_search_scopes" class="abstract">
