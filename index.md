@@ -57,6 +57,8 @@ In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
 
 #### Policy reports & Media
 
+
+- Polciy report: The effect of unemployment benefit sanctions on search effort and re-employment outcomes (w./ P. Arni,  R. Lalive, B. Kaiser, M. Wolf) [Summary article in Die Volkswritschaft](https://dievolkswirtschaft.ch/de/2025/06/was-bewirken-sanktionen-in-der-arbeitslosenversicherung/)
 - [NZZaS: Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295). 
 - [Launch Swissjobtracker on Swissinfo (SRG SSR)](https://www.swissinfo.ch/fre/toute-l-actu-en-bref/repli-du-nombre-d-offres-d-emplois-en-d%C3%A9cembre--%C3%A9tude-/48136458)
 
