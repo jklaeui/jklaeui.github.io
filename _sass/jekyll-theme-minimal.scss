@@ -43,6 +43,7 @@ h1 a {
 
 h4{
   margin:0;
+  color: #010101;
 }
 
 a {
@@ -54,6 +55,29 @@ a:hover, a:focus {
   color: #2776b8;
   text-decoration:underline;
 }
+
+
+ .abstract {
+        display: none; /* Abstracts are hidden by default */
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #0056b3;
+}
+.show-button {
+        cursor: pointer;
+        background-color: #00cc99;
+        color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+}
+      
+.show-button:hover {
+        background-color: #0056b3;
+  }
+
 
 a small {
   font-size:11px;

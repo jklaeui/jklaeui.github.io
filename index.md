@@ -84,27 +84,3 @@ In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
         }
     }
 </script>
-
-<style>
-    /* CSS for styling */
-    .abstract {
-        display: none; /* Abstracts are hidden by default */
-        margin: 10px 0;
-        padding: 10px;
-        background-color: #f9f9f9;
-        border: 1px solid #ddd;
-    }
-    .show-button {
-        cursor: pointer;
-        background-color: #2776b8;
-        color: white;
-  padding: 5px;
-  border: none;
-  border-radius: 3px;
-  font-size: 13px;
-      }
-      
-   .show-button:hover {
-        background-color: #0056b3;
-    }
-</style>
