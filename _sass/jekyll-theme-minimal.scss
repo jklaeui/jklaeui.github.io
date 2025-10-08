@@ -11,7 +11,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color:#731DD8;;
+  color:#117ebd;;
   margin:0 0 20px;
 }
 
@@ -28,16 +28,16 @@ h1 {
 }
 
 h2 {
-  color:#731DD8;;
+  color:#117ebd;;
 }
 
 h3, h4, h5, h6 {
-  color:#731DD8;;
+  color:#117ebd;;
 }
 
 h1 a {
   color: #90b8ba;
-  color: #731DD8;;
+  color: #117ebd;;
   text-decoration:none;
 }
 
@@ -61,8 +61,8 @@ a:hover, a:focus {
         display: none; /* Abstracts are hidden by default */
         margin: 10px 0;
         padding: 10px;
-        background-color: #E2D4BF;
-        border: 1px solid #636363;
+        background-color: #f9f9f9;
+        border: 1px solid #507DBC;
 }
 .show-button {
         cursor: pointer;
@@ -75,7 +75,7 @@ a:hover, a:focus {
 }
       
 .show-button:hover {
-        background-color: #731DD8;
+        background-color: #117ebd;
   }
 
 
