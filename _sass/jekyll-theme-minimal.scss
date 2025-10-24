@@ -13,7 +13,7 @@ body {
 
 // Fixed Navigation Bar
 .navbar {
-  position: fixed;
+  position: fixed;940px
   top: 0;
   left: 0;
   right: 0;
@@ -24,7 +24,7 @@ body {
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 940px;
   margin: 0 auto;
   padding: 0 40px;
   height: 100%;
@@ -69,7 +69,7 @@ body {
 // Main Layout
 .main-wrapper {
   margin-top: 63px; // Account for fixed navbar height + border
-  max-width: 1200px;
+  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
   padding: 40px;
@@ -87,7 +87,7 @@ body {
 
   .profile-photo {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 2px;
     margin-bottom: 20px;
   }
 
