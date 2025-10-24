@@ -4,52 +4,41 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a personal academic website built with Jekyll and hosted on GitHub Pages. The site uses the jekyll-theme-minimal theme and showcases research papers, publications, and professional information for Jeremias Klaeui, a post-doc in Economics at CREST in Paris.
+Personal academic website for Jeremias Klaeui (post-doc in Economics at CREST/ENSAE and ETH Zurich) built with Jekyll and hosted on GitHub Pages. Uses jekyll-theme-minimal.
 
 ## Commands
 
-### Local Development
+Since Jekyll is a Ruby-based static site generator, the site requires Ruby and bundler. However, no Gemfile exists in the repository currently, suggesting deployment is handled via GitHub Pages directly.
 
-Since Jekyll is a Ruby-based static site generator, use bundle to manage dependencies and serve the site:
-
+For local development with Jekyll:
 ```bash
-# Install dependencies (first time setup)
-bundle install
-
-# Serve the site locally with auto-reload
+# Serve the site locally (if Gemfile exists)
 bundle exec jekyll serve
 
-# Build the site for production
+# Build the site
 bundle exec jekyll build
 ```
 
-The site will be available at `http://localhost:4000` when running locally.
+## High-level Architecture
 
-## Site Architecture
+### Content Structure
+- `index.md`: Homepage with research papers featuring JavaScript-powered abstract toggles
+  - toggleAbstract() function shows/hides research paper abstracts
+  - Google Analytics tracking for abstract views (gtag events)
+- `download/`: Research papers as PDFs
+- Static assets: CV (cv_klaeui.pdf), photos, logos
 
-### Key Files and Directories
+### Theme and Styling
+- Base theme: jekyll-theme-minimal (configured in _config.yml)
+- Custom styles cascade through:
+  1. `_sass/jekyll-theme-minimal.scss`: Modified theme base (Noto Sans font, uppercase headers)
+  2. `assets/css/style.scss`: Imports theme and adds custom rules
+- Color scheme: #111111 (dark text), #90b8ba accents
+- Typography: Gordita for headers, Noto Sans for body
 
-- `_config.yml`: Main Jekyll configuration (theme, title, logo, Google Analytics)
-- `index.md`: Homepage content with research papers and bio (uses Markdown with embedded HTML/JavaScript for interactive abstract toggles)
-- `_layouts/`: HTML templates
-  - `default.html`: Main layout with header, navigation, and Google Analytics
-- `_sass/`: SCSS stylesheets 
-  - `jekyll-theme-minimal.scss`: Main theme styles with custom colors (#00cc99 for headings, #507DBC for hover)
-- `assets/css/style.scss`: Entry point for custom styles (imports theme and adds custom rules)
-- `download/`: PDF papers and research documents
-
-### Interactive Features
-
-The site includes JavaScript-powered abstract toggles for research papers:
-- Abstracts are hidden by default with `display: none`
-- `toggleAbstract()` function in index.md toggles visibility
-- Custom button styling with green (#00cc99) background
-- Google Analytics events track abstract views
-
-### Styling Conventions
-
-- Primary color: #00cc99 (teal green) for headings and buttons
-- Hover color: #507DBC (blue)
-- Font: Noto Sans
-- Layout: 960px wrapper with 270px sidebar and 600px content area
-- Responsive breakpoints at 960px, 720px, and 480px
+### Template System
+- `_layouts/default.html`: Main template with:
+  - Font Awesome icons for email/CV links
+  - Google Analytics (G-BJ035WTGEJ)
+  - Responsive wrapper (960px max width)
+  - Sidebar with photo, contact info, CV download

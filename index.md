@@ -1,12 +1,10 @@
-# Welcome to my webpage!
-
-I'm a post doc in Economics at CREST in Paris (ENSAE / IP) and at ETH Zurich (KOF Institute). 
+I'm a post doc in Economics at CREST in Paris (ENSAE / IP) and at ETH Zurich (KOF Institute).
 My research makes use of data from online job search and recruitment to investigate how labour market imperfections shape job finding and wages.
 I obtained my PhD from the University of Lausanne,  supervised by [Rafael Lalive](https://sites.google.com/site/rafaellalive/) and [Michael Siegenthaler](https://sites.google.com/site/siegenthalermichael/home). During my PhD, I visited the LSE on the invitation of [Alan Manning](https://en.wikipedia.org/wiki/Alan_Manning).
 
 ***
 
-## Research 
+## Research {#research} 
 
 
 ####  Labor market imbalances, job search scopes and job finding
@@ -48,7 +46,7 @@ In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
 
 ***
 
-## Policy and tools
+## Policy and tools {#policy-and-tools}
 
 #### Swiss Job Tracker
 
