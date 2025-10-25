@@ -166,7 +166,7 @@
       }
 
       .nav-left .nav-title {
-        font-size: 20px;
+        font-size: 12px;
         font-weight: bold;
         color: #111111;
         text-decoration: none;
@@ -177,6 +177,17 @@
       .nav-left .nav-title:hover {
         color: #507DBC;
         text-decoration: none;
+      }
+
+      .nav-left .nav-home-icon {
+        display: none;
+        font-size: 24px;
+        color: #111111;
+        text-decoration: none;
+      }
+
+      .nav-left .nav-home-icon:hover {
+        color: #507DBC;
       }
 
       .nav-right {
@@ -218,6 +229,20 @@
         margin-right: 8px;
       }
 
+      /* Responsive Design - Hide navbar links and show home icon on small screens */
+      @media print, screen and (max-width: 480px) {
+        .nav-right {
+          display: none;
+        }
+
+        .nav-left .nav-title {
+          display: none;
+        }
+
+        .nav-left .nav-home-icon {
+          display: block;
+        }
+      }
     </style>
 
     <!--[if lt IE 9]>
@@ -3621,6 +3646,7 @@ textarea.readcube__PopupArticles__popupArticlesNotes___QqV80 {
       <div class="nav-container">
         <div class="nav-left">
           <a href="https://jklaeui.github.io/" class="nav-title">Jeremias Klaeui</a>
+          <a href="https://jklaeui.github.io/" class="nav-home-icon"><i class="fa-solid fa-house"></i></a>
         </div>
         <div class="nav-right">
           <a href="https://jklaeui.github.io/#home">Home</a>
@@ -3640,6 +3666,10 @@ textarea.readcube__PopupArticles__popupArticlesNotes___QqV80 {
       <sup>1</sup>KOF Institut, ETH Zürich<br>
       <sup>2</sup>CREST, Paris
     </span>
+  </p>
+
+  <p style="text-align:center;color:#111;font-size:0.85em;font-style:italic;margin-bottom:30px;">
+    Diese Studie ist Teil des Projekts «Labor Market Inequality in Modern Labor Markets», das vom Schweizerischen Nationalfonds unterstützt wird (Projektnummer 100018-232103)
   </p>
 
   <p style="text-align:center;margin-bottom:40px;">
