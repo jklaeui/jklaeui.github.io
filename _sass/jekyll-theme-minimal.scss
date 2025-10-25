@@ -358,8 +358,13 @@ header, section, footer {
   }
 
   .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     .nav-title {
-      display: none; // Hide title text on small screens
+      display: block; // Show title text on small screens
+      font-size: 13px; // Slightly smaller for mobile
     }
 
     .nav-home-icon {

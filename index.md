@@ -4,12 +4,21 @@ I obtained my PhD from the University of Lausanne,  supervised by [Rafael Lalive
 
 ***
 
+## News {#news}
+
+**Oct 2025: New report on AI and the Swiss labor market**
+
+Together with Michael Siegenthaler, we analyse early impacts of large language models (LLMs) on unemployment and job postings across occupations in Switzerland. [→ News Article NZZ](/report_ki.html) [→ Full report](/report_ki.html) 
+
+***
+
 ## Research {#research} 
 
 
 ####  Labor market imbalances, job search scopes and job finding
 In progress; solo-authored
-*Presented at French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025), EALE 2024 Bergen (Sep 2024), SKILS Ski and Labor Seminar Lenzerheide (Jan 2024), IZA Workshop: Matching Workers and Jobs Online (Sep 2023), LSE Labour WIP Seminar (Mar 2023)*
+
+<span class="presentation-info">*Presented at French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025), EALE 2024 Bergen (Sep 2024), SKILS Ski and Labor Seminar Lenzerheide (Jan 2024), IZA Workshop: Matching Workers and Jobs Online (Sep 2023), LSE Labour WIP Seminar (Mar 2023)*</span>
 
 <button class="show-button" onclick="toggleAbstract('abstract_click_search_scopes')">Show abstract</button>
 <div id="abstract_click_search_scopes" class="abstract">
@@ -20,7 +29,7 @@ In progress; solo-authored
 
 #### Job Search and Employer Market Power
 In progress; with I. Bassier, A. Manning
-*Presented at IZA Workshop: Matching Workers and Jobs Online (Sep 2025)*
+<span class="presentation-info">*Presented at IZA Workshop: Matching Workers and Jobs Online (Sep 2025)*</span>
 
 <button class="show-button" onclick="toggleAbstract('abstract_click_monopsony')">Show abstract</button>
 <div id="abstract_click_monopsony" class="abstract">
@@ -29,7 +38,7 @@ This paper provides a framework for thinking about how the job search of workers
 
 #### Adapting to Scarcity: The Role of Firms in Occupational Transitions
 In progress; with D. Kopp, R. Lalive, M. Siegenthaler
-*Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in Labor Economics (June 2023)*
+<span class="presentation-info">*Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in Labor Economics (June 2023)*</span>
 
 <button class="show-button" onclick="toggleAbstract('abstract_click_occ_mob')">Show abstract</button>
 <div id="abstract_click_occ_mob" class="abstract">
