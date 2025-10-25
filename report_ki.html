@@ -250,7 +250,7 @@
     <![endif]-->
 
     <!-- Google tag (gtag.js) -->
-    <script async="" src="download/report_ki_files/js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ035WTGEJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -4601,12 +4601,15 @@ Occupations“. <em>Anthropic Research Paper Series</em>, Nr.&nbsp;5.</p>
   </p>
     </section>
  <script>
-      // Optional helper for toggling abstracts (if used in post)
+      // JavaScript function to toggle visibility
       function toggleAbstract(id) {
-        const el = document.getElementById(id);
-        const isHidden = el.style.display === "none" || el.style.display === "";
-        el.style.display = isHidden ? "block" : "none";
-        if (isHidden && typeof gtag === "function") gtag('event', 'toggle_abstract', {'abstract_id': id});
+        const abstract = document.getElementById(id);
+        if (abstract.style.display === "none" || abstract.style.display === "") {
+          abstract.style.display = "block";
+          gtag('event', id);
+        } else {
+          abstract.style.display = "none";
+        }
       }
     </script>
 
