@@ -8,7 +8,7 @@ I obtained my PhD from the University of Lausanne,  supervised by [Rafael Lalive
 
 **Oct 2025: New report on AI and the Swiss labor market**
 
-Together with Michael Siegenthaler, we analyse early impacts of large language models (LLMs) on unemployment and job postings across occupations in Switzerland. [→ News Article NZZ](/report_ki.html) [→ Full report](/report_ki.html) 
+Together with Michael Siegenthaler, we analyse early impacts of large language models (LLMs) on unemployment and job postings across occupations in Switzerland. <!-- [→ News Article NZZ](/report_ki.html) --> [→ Full report](/report_ki.html) 
 
 ***
 
