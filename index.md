@@ -1,6 +1,6 @@
 I'm a post doc in Economics at CREST in Paris (ENSAE / IP) and at ETH Zurich (KOF Institute).
 My research makes use of data from online job search and recruitment to investigate how labour market imperfections shape job finding and wages.
-I obtained my PhD from the University of Lausanne,  supervised by [Rafael Lalive](https://sites.google.com/site/rafaellalive/) and [Michael Siegenthaler](https://sites.google.com/site/siegenthalermichael/home). During my PhD, I visited the LSE on the invitation of [Alan Manning](https://en.wikipedia.org/wiki/Alan_Manning).
+I obtained my PhD from the University of Lausanne,  supervised by [Rafael Lalive](https://sites.google.com/site/rafaellalive/) and [Michael Siegenthaler](https://sites.google.com/site/siegenthalermichael/home). During my PhD, I visited the LSE at the invitation of [Alan Manning](https://en.wikipedia.org/wiki/Alan_Manning).
 
 ***
 
