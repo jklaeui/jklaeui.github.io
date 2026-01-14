@@ -12,7 +12,16 @@ Together with Michael Siegenthaler, we analyse early impacts of large language m
 
 ***
 
-## Research {#research} 
+## Research {#research}
+
+
+#### Adapting to Scarcity: The Role of Firms in Occupational Transitions
+In progress; with D. Kopp, R. Lalive, M. Siegenthaler
+<span class="presentation-info">*Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in Labor Economics (June 2023)*</span>
+
+<button class="show-button" onclick="toggleAbstract('abstract_click_occ_mob')">Show abstract</button> <a href="https://cepr.org/publications/dp21027" target="_blank"><button class="show-button">CEPR Discussion Paper</button></a>
+<div id="abstract_click_occ_mob" class="abstract">
+This paper examines the circumstances under which firms facilitate occupational transitions, complementing prior work that focuses on workers' decisions. We link unemployment insurance records with application diaries and clickstream data from a recruitment platform to causally assess how candidates' occupational histories shape recruiters' hiring decisions. We find that the average candidate from a different occupation faces a 7&percnt; lower contact rate than equally qualified candidates who last worked in a recruiter's searched occupation. Using a new measure of skill overlap, we show that 60&percnt; of this penalty reflects that movers meet fewer skill requirements than incumbents. Occupational experience and qualifications further reduce the mover penalty, such that certain candidates returning to a prior occupation face no penalty at all. Finally, recruiters adapt to scarcity and contact more movers in tight occupations. Changes in firm behavior account for one-third of the increase in movers' application success in tight versus slack labor markets. </div>
 
 
 ####  Labor market imbalances, job search scopes and job finding
@@ -23,7 +32,7 @@ In progress; solo-authored
 <button class="show-button" onclick="toggleAbstract('abstract_click_search_scopes')">Show abstract</button>
 <div id="abstract_click_search_scopes" class="abstract">
  This paper investigates how jobseekers adjust the breadth of their search across different segments of the labour market and how such adjustments affect employment outcomes. Imbalances often exist between jobseekers and vacancies in certain occupations or regions, potentially creating opportunities for jobseekers to adjust their search strategies and target segments where demand for them is high.
- I use a unique dataset that combines administrative unemployment records with detailed click data on job postings to measure search scope. I focus on two dimensions of breadth: the distance between a jobseeker’s residence and the posted job, and the local labour market tightness in the commuting zone–occupation segments. A key challenge is that jobseekers self-select into their search strategies. To address this, I exploit exogenous variation in the assignment of jobseekers to caseworkers, whose distinct tendencies influence jobseekers’ subsequent search patterns. I then link these caseworker-induced shifts in search scope to unemployment duration and job quality. My findings suggest that encouraging broader job search or targeting sectors with high labour demand surpluses has measurable effects on reemployment prospects and can alleviate mismatches between labour supply and demand. These results provide policy-relevant insights on how targeted counselling can shape jobseekers’ behaviour and improve labour market efficiency.
+ I use a unique dataset that combines administrative unemployment records with detailed click data on job postings to measure search scope. I focus on two dimensions of breadth: the distance between a jobseeker's residence and the posted job, and the local labour market tightness in the commuting zone–occupation segments. A key challenge is that jobseekers self-select into their search strategies. To address this, I exploit exogenous variation in the assignment of jobseekers to caseworkers, whose distinct tendencies influence jobseekers' subsequent search patterns. I then link these caseworker-induced shifts in search scope to unemployment duration and job quality. My findings suggest that encouraging broader job search or targeting sectors with high labour demand surpluses has measurable effects on reemployment prospects and can alleviate mismatches between labour supply and demand. These results provide policy-relevant insights on how targeted counselling can shape jobseekers' behaviour and improve labour market efficiency.
  </div>
 
 
@@ -33,16 +42,7 @@ In progress; with I. Bassier, A. Manning
 
 <button class="show-button" onclick="toggleAbstract('abstract_click_monopsony')">Show abstract</button>
 <div id="abstract_click_monopsony" class="abstract">
-This paper provides a framework for thinking about how the job search of workers affects the market power of employers. We present a way of thinking about this which encapsulates popular existing models in which employer market power is based on either frictions in labor markets or imperfect substitutability among jobs. We show how this model can be used to compute measures of the extent of employer market power and relates them to popularly used measures of concentration ratios. We use data on the search behaviour of Swiss unemployed to investigate the number of employers being considered by job-seekers using 'clicks' on vacancies to define consideration sets. 
-</div>
-
-#### Adapting to Scarcity: The Role of Firms in Occupational Transitions
-In progress; with D. Kopp, R. Lalive, M. Siegenthaler
-<span class="presentation-info">*Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in Labor Economics (June 2023)*</span>
-
-<button class="show-button" onclick="toggleAbstract('abstract_click_occ_mob')">Show abstract</button>
-<div id="abstract_click_occ_mob" class="abstract">
-This paper investigates how recruiters shape occupational mobility in the labor market. Prior research has emphasized workers’ decisions, largely overlooking the role of firms. We leverage unique click data from a recruitment platform. Our identification strategy exploits the fact that we can see the same applicant information that recruiters observe, making selection on observables plausible. We find that recruiters strongly favor candidates whose current occupation matches the advertised job. Nevertheless, non-matching candidates also have substantial hiring probabilities. Finally, we show that recruiters adjust their hiring patterns to occupational labor market tightness partially offseting occupational scarcity. Our estimates suggest that recruiter decisions account for roughly one third of occupational transitions. 
+This paper provides a framework for thinking about how the job search of workers affects the market power of employers. We present a way of thinking about this which encapsulates popular existing models in which employer market power is based on either frictions in labor markets or imperfect substitutability among jobs. We show how this model can be used to compute measures of the extent of employer market power and relates them to popularly used measures of concentration ratios. We use data on the search behaviour of Swiss unemployed to investigate the number of employers being considered by job-seekers using 'clicks' on vacancies to define consideration sets.
 </div>
 
 
