@@ -46,7 +46,7 @@ This paper provides a framework for thinking about how the job search of workers
 </div>
 
 
-#### Can technology reduce hiring costs? Experimental evidence from hiring assistance to employers
+#### Can technology free time? Experimental evidence from an AI chatbot helping caseworkers solve employers' hiring difficulties
 In progress; with J. Barreau, M. Bouju, R. Rathelot
 
 <button class="show-button" onclick="toggleAbstract('abstract_caseworker_ai')">Show abstract</button>
