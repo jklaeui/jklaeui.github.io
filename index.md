@@ -72,14 +72,15 @@ In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
 
 
 - Policy report: The effect of unemployment benefit sanctions on search effort and re-employment outcomes (w./ P. Arni,  R. Lalive, B. Kaiser, M. Wolf) [Summary article in Die Volkswirtschaft (DE/FR)](https://dievolkswirtschaft.ch/de/2025/06/was-bewirken-sanktionen-in-der-arbeitslosenversicherung/); [Report](https://www.seco.admin.ch/seco/en/home/Publikationen_Dienstleistungen/Publikationen_und_Formulare/Arbeit/Arbeitsmarkt/Informationen_Arbeitsmarktforschung/wirkung_unterschiedlicher_sanktionen_arbeitslosenversicherung.html)
-- Media coverage in all major Swiss news outlets on the KOF study on AI and the Swiss labor market. Quoted expert commentaries in two articles in NZZ, [here](https://www.nzz.ch/wirtschaft/kof-studie-ki-veraendert-den-schweizer-arbeitsmarkt-dramatisch-ld.1905520)  and [here](https://www.nzz.ch/zuerich/hochgebildet-kadermann-und-ploetzlich-arbeitslos-ein-gefallener-ki-manager-erzaehlt-ld.1910405).
+- Media coverage in all major Swiss news outlets on the [KOF study on AI and the Swiss labor market](https://ethz.ch/content/dam/ethz/special-interest/dual/kof-dam/documents/newsletter/KOF_Studie_KI_Schweizer_Arbeitsmarkt.pdf). Quoted expert commentaries in two articles in NZZ, [here](https://www.nzz.ch/wirtschaft/kof-studie-ki-veraendert-den-schweizer-arbeitsmarkt-dramatisch-ld.1905520)  and [here](https://www.nzz.ch/zuerich/hochgebildet-kadermann-und-ploetzlich-arbeitslos-ein-gefallener-ki-manager-erzaehlt-ld.1910405).
 - [KOF Magazine Interview: Generative AI and unemployment in exposed occupations in Switzerland](https://kof.ethz.ch/en/publications/kof-insights/articles/2025/12/i-expect-ai-to-make-us-all-richer.html)
 - [NZZaS: Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295).
 - [Launch Swissjobtracker on Swissinfo (SRG SSR)](https://www.swissinfo.ch/fre/toute-l-actu-en-bref/repli-du-nombre-d-offres-d-emplois-en-d%C3%A9cembre--%C3%A9tude-/48136458)
 
 #### Teaching
 
-- During PhD: [Econometrics at the master's level (Course by Prof. M. Huber)](https://hecnet.unil.ch/hec/syllabus/descriptif/2551?dyn_lang=en)
+-  2019-2020: TA for the Public Finance bachelors course by Pascal St-Amour 
+-  2020-2024: TA for the Econometrics master's course by Prof. M. Huber
 
 ### Other
 
