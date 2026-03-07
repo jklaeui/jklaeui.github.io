@@ -60,7 +60,7 @@ In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
 
 ***
 
-## Tools and Coding {#tools-and-coding}
+## Policy and tools {#policy-and-tools}
 
 #### Coding and contributions
 
