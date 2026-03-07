@@ -60,19 +60,22 @@ In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
 
 ***
 
-## Policy and tools {#policy-and-tools}
+## Tools and Coding {#tools-and-coding}
 
-#### Swiss Job Tracker
+#### Coding and contributions
 
-- [A real-time index of open vacancy postings in Switzerland](http://swissjobtracker.ch/)
-- [Github](https://github.com/swissjobtracker/chjobtracker): R-code aggregating the scraped data from 70 job portals and 50K company webpages. I implemented an algorithm that deals with scraper issues and unstable job portals in real-time to obtain a clean index.
+- Swiss job tracker: [A real-time index of open vacancy postings in Switzerland](http://swissjobtracker.ch/)
+- Swiss job tracker open source code: [Github](https://github.com/swissjobtracker/chjobtracker): R-code aggregating the scraped data from 70 job portals and 50K company webpages. I implemented an algorithm that deals with scraper issues and unstable job portals in real-time to obtain a clean index.
 - Contributed a [patch to fix an error in the did_multiplegt_dyn R package](https://github.com/Credible-Answers/did_multiplegt_dyn/issues/167) (de Chaisemartin & D'Haultfoeuille 2024)
 
 #### Policy reports & Media
 
 
 - Policy report: The effect of unemployment benefit sanctions on search effort and re-employment outcomes (w./ P. Arni,  R. Lalive, B. Kaiser, M. Wolf) [Summary article in Die Volkswirtschaft (DE/FR)](https://dievolkswirtschaft.ch/de/2025/06/was-bewirken-sanktionen-in-der-arbeitslosenversicherung/); [Report](https://www.seco.admin.ch/seco/en/home/Publikationen_Dienstleistungen/Publikationen_und_Formulare/Arbeit/Arbeitsmarkt/Informationen_Arbeitsmarktforschung/wirkung_unterschiedlicher_sanktionen_arbeitslosenversicherung.html)
-- [NZZaS: Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295). 
+- Media coverage in all major Swiss news outlets. [NZZ: KOF study on AI and the Swiss labor market](https://www.nzz.ch/wirtschaft/kof-studie-ki-veraendert-den-schweizer-arbeitsmarkt-dramatisch-ld.1905520)
+- Quoted expert commentaries in two articles in NZZ. [Example: Hochgebildet, Kadermann – und plötzlich arbeitslos](https://www.nzz.ch/zuerich/hochgebildet-kadermann-und-ploetzlich-arbeitslos-ein-gefallener-ki-manager-erzaehlt-ld.1910405)
+- [KOF Magazine Interview: Generative AI and unemployment in exposed occupations in Switzerland](https://kof.ethz.ch/en/publications/kof-insights/articles/2025/12/i-expect-ai-to-make-us-all-richer.html)
+- [NZZaS: Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295).
 - [Launch Swissjobtracker on Swissinfo (SRG SSR)](https://www.swissinfo.ch/fre/toute-l-actu-en-bref/repli-du-nombre-d-offres-d-emplois-en-d%C3%A9cembre--%C3%A9tude-/48136458)
 
 #### Teaching
