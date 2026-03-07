@@ -79,7 +79,7 @@ In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
 
 #### Teaching
 
--  2019-2020: TA for the Public Finance bachelors course by Pascal St-Amour 
+-  2019-2020: TA for the Public Finance bachelor's course by Pascal St-Amour 
 -  2020-2024: TA for the Econometrics master's course by Prof. M. Huber
 
 ### Other
