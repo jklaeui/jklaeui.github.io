@@ -66,6 +66,7 @@ In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
 
 - [A real-time index of open vacancy postings in Switzerland](http://swissjobtracker.ch/)
 - [Github](https://github.com/swissjobtracker/chjobtracker): R-code aggregating the scraped data from 70 job portals and 50K company webpages. I implemented an algorithm that deals with scraper issues and unstable job portals in real-time to obtain a clean index.
+- Contributed a [patch to fix an error in the did_multiplegt_dyn R package](https://github.com/Credible-Answers/did_multiplegt_dyn/issues/167) (de Chaisemartin & D'Haultfoeuille 2024)
 
 #### Policy reports & Media
 
