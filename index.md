@@ -26,7 +26,6 @@ This paper examines the circumstances under which firms facilitate occupational 
 
 ####  Guiding Jobseekers to Where They're Wanted Most: Evidence from Caseworker-Driven Job Search Redirection
 In progress; solo-authored
-
 <span class="presentation-info">*Nominated for the CESifo Young Affiliate Award. Presented at University of Geneva, Institute of Economics and Econometrics Seminar (2026), French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025)*</span>
 
 <button class="show-button" onclick="toggleAbstract('abstract_click_search_scopes')">Show abstract</button>
