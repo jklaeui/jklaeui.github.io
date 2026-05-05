@@ -53,8 +53,16 @@ In progress; with J. Barreau, M. Bouju, R. Rathelot
 In late 2024, the French public employment service introduced a new AI tool to support caseworkers dedicated to assisting client recruiters in their hiring decisions. Caseworkers support employers through two channels: screening applications from job seekers who apply on their own, and sourcing candidates who have not applied. The tool was designed to help caseworkers when sourcing candidates, and save them time for other tasks. We leverage the randomised implementation of this intervention to measure its impact on job-filling probabilities. We find that the intervention successfully increased the probability of filling posted jobs by between 10 and 15 per cent. While the intervention was intended solely to facilitate the sourcing of job seekers who had not initially applied for the job, we find that the increase in hires comes from both job seekers who were sourced and job seekers who had applied on their own and were screened by the caseworker. Our interpretation is that the AI tool freed up caseworkers' time, allowing them to devote more time to screening applications (and other tasks).
 </div>
 
+#### Generative AI and unemployment
+In progress; with D. Dorn, G. Etingin-Frati, A. I. Mueller, M. Siegenthaler
+
 #### Incidence of corporate taxation 
 In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
+
+#### Which Job Openings Lead to Employment? The Role of the Consideration Scope in Job Search
+PhD chapter; solo-authored
+
+<a href="https://api.unil.ch/iris/server/api/core/bitstreams/031700df-f881-4e74-bfe3-51930f2ca265/content#page=28" target="_blank"><button class="show-button">PhD chapter</button></a>
 
 
 ***

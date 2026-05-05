@@ -33,7 +33,7 @@ bundle exec jekyll build
 - Custom styles cascade through:
   1. `_sass/jekyll-theme-minimal.scss`: Modified theme base (Noto Sans font, uppercase headers)
   2. `assets/css/style.scss`: Imports theme and adds custom rules
-- Color scheme: #111111 (dark text), #90b8ba accents
+- Color scheme: #111111 (dark text), #2b557d accents
 - Typography: Gordita for headers, Noto Sans for body
 
 ### Template System
