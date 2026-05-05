@@ -27,7 +27,7 @@ This paper examines the circumstances under which firms facilitate occupational 
 ####  Guiding Jobseekers to Where They're Wanted Most: Evidence from Caseworker-Driven Job Search Redirection
 In progress; solo-authored
 
-<span class="presentation-info">*Nominated for the CESifo Young Affiliate Award. Presented at University of Geneva, Institute of Economics and Econometrics Seminar (2026), French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025), EALE 2024 Bergen (Sep 2024), SKILS Ski and Labor Seminar Lenzerheide (Jan 2024), IZA Workshop: Matching Workers and Jobs Online (Sep 2023), LSE Labour WIP Seminar (Mar 2023)*</span>
+<span class="presentation-info">*Nominated for the CESifo Young Affiliate Award. Presented at University of Geneva, Institute of Economics and Econometrics Seminar (2026), French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025)*</span>
 
 <button class="show-button" onclick="toggleAbstract('abstract_click_search_scopes')">Show abstract</button>
 <div id="abstract_click_search_scopes" class="abstract">
@@ -61,6 +61,7 @@ In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
 
 #### Which Job Openings Lead to Employment? The Role of the Consideration Scope in Job Search
 PhD chapter; solo-authored
+<span class="presentation-info">*Presented at EALE 2024 Bergen (Sep 2024), SKILS Ski and Labor Seminar Lenzerheide (Jan 2024), IZA Workshop: Matching Workers and Jobs Online (Sep 2023), LSE Labour WIP Seminar (Mar 2023)*</span>
 
 <a href="https://api.unil.ch/iris/server/api/core/bitstreams/031700df-f881-4e74-bfe3-51930f2ca265/content#page=28" target="_blank"><button class="show-button">PhD chapter</button></a>
 
