@@ -87,7 +87,7 @@ PhD chapter; solo-authored
 #### Teaching
 
 -  2019-2020: TA for the Public Finance bachelor's course by Pascal St-Amour 
--  2020-2024: TA for the Econometrics master's course by Prof. M. Huber
+-  2020-2024: TA for the Econometrics master's course by Martin Huber
 
 ### Other
 
