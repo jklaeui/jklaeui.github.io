@@ -15,15 +15,6 @@ Together with Michael Siegenthaler, we analyse early impacts of large language m
 ## Research {#research}
 
 
-#### Adapting to Scarcity: The Role of Firms in Occupational Transitions
-In progress; with D. Kopp, R. Lalive, M. Siegenthaler
-<span class="presentation-info">*Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in Labor Economics (June 2023)*</span>
-
-<button class="show-button" onclick="toggleAbstract('abstract_click_occ_mob')">Show abstract</button> <a href="https://cepr.org/publications/dp21027" target="_blank"><button class="show-button">CEPR Discussion Paper</button></a>
-<div id="abstract_click_occ_mob" class="abstract">
-This paper examines the circumstances under which firms facilitate occupational transitions, complementing prior work that focuses on workers' decisions. We link unemployment insurance records with application diaries and clickstream data from a recruitment platform to causally assess how candidates' occupational histories shape recruiters' hiring decisions. We find that the average candidate from a different occupation faces a 7&percnt; lower contact rate than equally qualified candidates who last worked in a recruiter's searched occupation. Using a new measure of skill overlap, we show that 60&percnt; of this penalty reflects that movers meet fewer skill requirements than incumbents. Occupational experience and qualifications further reduce the mover penalty, such that certain candidates returning to a prior occupation face no penalty at all. Finally, recruiters adapt to scarcity and contact more movers in tight occupations. Changes in firm behavior account for one-third of the increase in movers' application success in tight versus slack labor markets. </div>
-
-
 #### When to Broaden, When to Focus: Job Search and Market Tightness
 In progress; solo-authored
 <span class="presentation-info">*Nominated for the CESifo Young Affiliate Award. Presented at University of Geneva, Institute of Economics and Econometrics Seminar (2026), French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025)*</span>
@@ -32,6 +23,15 @@ In progress; solo-authored
 <div id="abstract_click_search_scopes" class="abstract">
  This paper investigates whether directing job search toward tight labor markets improves re-employment. Such targeting is theoretically attractive as it reduces aggregate congestion. I link Swiss unemployment records to clickstream search data to measure which markets jobseekers target. To address selection, I exploit quasi-random assignment to caseworkers differing in their tendency to redirect clients toward tight markets. Moving from the 10th to the 90th percentile raises six-month job-finding by 2.7&percnt;. The channels are heterogeneous: jobseekers who become unemployed in slack markets gain from mobility, consistent with prior findings from policies that encourage broader search. The new insight is that jobseekers who become unemployed in tight markets benefit from a narrower focus on this initial market. Effects are orthogonal to other caseworker behaviors and do not come at the expense of job quality. My findings suggest that market tightness offers a simple basis for targeted search advice.
  </div>
+
+
+#### Adapting to Scarcity: The Role of Firms in Occupational Transitions
+In progress; with D. Kopp, R. Lalive, M. Siegenthaler
+<span class="presentation-info">*Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in Labor Economics (June 2023)*</span>
+
+<button class="show-button" onclick="toggleAbstract('abstract_click_occ_mob')">Show abstract</button> <a href="https://cepr.org/publications/dp21027" target="_blank"><button class="show-button">CEPR Discussion Paper</button></a>
+<div id="abstract_click_occ_mob" class="abstract">
+This paper examines the circumstances under which firms facilitate occupational transitions, complementing prior work that focuses on workers' decisions. We link unemployment insurance records with application diaries and clickstream data from a recruitment platform to causally assess how candidates' occupational histories shape recruiters' hiring decisions. We find that the average candidate from a different occupation faces a 7&percnt; lower contact rate than equally qualified candidates who last worked in a recruiter's searched occupation. Using a new measure of skill overlap, we show that 60&percnt; of this penalty reflects that movers meet fewer skill requirements than incumbents. Occupational experience and qualifications further reduce the mover penalty, such that certain candidates returning to a prior occupation face no penalty at all. Finally, recruiters adapt to scarcity and contact more movers in tight occupations. Changes in firm behavior account for one-third of the increase in movers' application success in tight versus slack labor markets. </div>
 
 
 #### Job Search and Employer Market Power
