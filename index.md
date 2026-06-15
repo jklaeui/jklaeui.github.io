@@ -17,7 +17,7 @@ Together with Michael Siegenthaler, we analyse early impacts of large language m
 
 #### When to Broaden, When to Focus: Job Search and Market Tightness
 In progress; solo-authored
-<span class="presentation-info">*Nominated for the CESifo Young Affiliate Award. Presented at University of Geneva, Institute of Economics and Econometrics Seminar (2026), French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025)*</span>
+<span class="presentation-info">*Nominated for the CESifo Young Affiliate Award. Presented at VU Amsterdam Internal Seminar (May 2026), University of Geneva, Institute of Economics and Econometrics Seminar (2026), French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025)*</span>
 
 <button class="show-button" onclick="toggleAbstract('abstract_click_search_scopes')">Show abstract</button> <a href="https://www.ifo.de/DocDL/cesifo1_wp12744.pdf" target="_blank"><button class="show-button">CESifo Working Paper</button></a>
 <div id="abstract_click_search_scopes" class="abstract">
