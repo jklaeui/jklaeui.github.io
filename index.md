@@ -1,99 +1,182 @@
-I'm a post doc in Economics at CREST in Paris (ENSAE / IP) and at ETH Zurich (KOF Institute).
-My research makes use of data from online job search and recruitment to investigate how labour market imperfections shape job finding and wages.
-I obtained my PhD from the University of Lausanne,  supervised by [Rafael Lalive](https://sites.google.com/site/rafaellalive/) and [Michael Siegenthaler](https://sites.google.com/site/siegenthalermichael/home). During my PhD, I visited the LSE at the invitation of [Alan Manning](https://en.wikipedia.org/wiki/Alan_Manning).
+<h2 id="research">Research</h2>
 
-***
+<!-- ============================= -->
+<h3 class="subsection">Working papers and advanced projects</h3>
 
-## News {#news}
+<h4>When to Broaden, When to Focus: Job Search and Market Tightness</h4>
+<p class="paper-meta">Job market paper; solo-authored<br>
+<span class="presentation-info"><em>Nominated for the CESifo Young Affiliate Award. Presented at VU Amsterdam
+Internal Seminar (May 2026), University of Geneva, Institute of Economics and Econometrics Seminar (2026),
+French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch
+(Feb 2025)</em></span></p>
 
-**Oct 2025: New report on AI and the Swiss labor market**
-
-Together with Michael Siegenthaler, we analyse early impacts of large language models (LLMs) on unemployment and job postings across occupations in Switzerland. <!-- [→ News Article NZZ](/report_ki.html) --> [→ Full report](/report_ki.html) 
-
-***
-
-## Research {#research}
-
-
-#### When to Broaden, When to Focus: Job Search and Market Tightness
-In progress; solo-authored
-<span class="presentation-info">*Nominated for the CESifo Young Affiliate Award. Presented at VU Amsterdam Internal Seminar (May 2026), University of Geneva, Institute of Economics and Econometrics Seminar (2026), French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch (Feb 2025)*</span>
-
-<button class="show-button" onclick="toggleAbstract('abstract_click_search_scopes')">Show abstract</button> <a href="https://www.ifo.de/DocDL/cesifo1_wp12744.pdf" target="_blank"><button class="show-button">CESifo Working Paper</button></a>
+<p><button class="show-button" onclick="toggleAbstract('abstract_click_search_scopes')">Show abstract</button>
+<a href="https://www.ifo.de/DocDL/cesifo1_wp12744.pdf" target="_blank"><button class="show-button">CESifo Working Paper</button></a></p>
 <div id="abstract_click_search_scopes" class="abstract">
- This paper investigates whether directing job search toward tight labor markets improves re-employment. Such targeting is theoretically attractive as it reduces aggregate congestion. I link Swiss unemployment records to clickstream search data to measure which markets jobseekers target. To address selection, I exploit quasi-random assignment to caseworkers differing in their tendency to redirect clients toward tight markets. Moving from the 10th to the 90th percentile raises six-month job-finding by 2.7&percnt;. The channels are heterogeneous: jobseekers who become unemployed in slack markets gain from mobility, consistent with prior findings from policies that encourage broader search. The new insight is that jobseekers who become unemployed in tight markets benefit from a narrower focus on this initial market. Effects are orthogonal to other caseworker behaviors and do not come at the expense of job quality. My findings suggest that market tightness offers a simple basis for targeted search advice.
- </div>
+  This paper investigates whether directing job search toward tight labor markets improves re-employment. Such
+  targeting is theoretically attractive as it reduces aggregate congestion. I link Swiss unemployment records to
+  clickstream search data to measure which markets jobseekers target. To address selection, I exploit
+  quasi-random assignment to caseworkers differing in their tendency to redirect clients toward tight markets.
+  Moving from the 10th to the 90th percentile raises six-month job-finding by 2.7&percnt;. The channels are
+  heterogeneous: jobseekers who become unemployed in slack markets gain from mobility, consistent with prior
+  findings from policies that encourage broader search. The new insight is that jobseekers who become unemployed
+  in tight markets benefit from a narrower focus on this initial market. Effects are orthogonal to other
+  caseworker behaviors and do not come at the expense of job quality. My findings suggest that market tightness
+  offers a simple basis for targeted search advice.
+</div>
 
+<h4>Adapting to Scarcity: The Role of Firms in Occupational Transitions</h4>
+<p class="paper-meta">with D. Kopp, R. Lalive, M. Siegenthaler<br>
+<span class="presentation-info"><em>Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in
+Labor Economics (June 2023)</em></span></p>
 
-#### Adapting to Scarcity: The Role of Firms in Occupational Transitions
-In progress; with D. Kopp, R. Lalive, M. Siegenthaler
-<span class="presentation-info">*Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in Labor Economics (June 2023)*</span>
-
-<button class="show-button" onclick="toggleAbstract('abstract_click_occ_mob')">Show abstract</button> <a href="https://cepr.org/publications/dp21027" target="_blank"><button class="show-button">CEPR Discussion Paper</button></a>
+<p><button class="show-button" onclick="toggleAbstract('abstract_click_occ_mob')">Show abstract</button>
+<a href="/download/klaeui_kopp_lalive_siegenthaler_adapting_to_scarcity.pdf" target="_blank"><button class="show-button">Latest draft</button></a>
+<a href="https://cepr.org/publications/dp21027" target="_blank"><button class="show-button">CEPR Discussion Paper</button></a></p>
 <div id="abstract_click_occ_mob" class="abstract">
-This paper examines the circumstances under which firms facilitate occupational transitions, complementing prior work that focuses on workers' decisions. We link unemployment insurance records with application diaries and clickstream data from a recruitment platform to causally assess how candidates' occupational histories shape recruiters' hiring decisions. We find that the average candidate from a different occupation faces a 7&percnt; lower contact rate than equally qualified candidates who last worked in a recruiter's searched occupation. Using a new measure of skill overlap, we show that 60&percnt; of this penalty reflects that movers meet fewer skill requirements than incumbents. Occupational experience and qualifications further reduce the mover penalty, such that certain candidates returning to a prior occupation face no penalty at all. Finally, recruiters adapt to scarcity and contact more movers in tight occupations. Changes in firm behavior account for one-third of the increase in movers' application success in tight versus slack labor markets. </div>
+  This paper examines the circumstances under which firms facilitate occupational transitions, complementing
+  prior work that focuses on workers' decisions. We link unemployment insurance records with application diaries
+  and clickstream data from a recruitment platform to causally assess how candidates' occupational histories
+  shape recruiters' hiring decisions. We find that the average candidate from a different occupation faces a
+  7&percnt; lower contact rate than equally qualified candidates who last worked in a recruiter's searched
+  occupation. Using a new measure of skill overlap, we show that 60&percnt; of this penalty reflects that movers
+  meet fewer skill requirements than incumbents. Occupational experience and qualifications further reduce the
+  mover penalty, such that certain candidates returning to a prior occupation face no penalty at all. Finally,
+  recruiters adapt to scarcity and contact more movers in tight occupations. Changes in firm behavior account
+  for one-third of the increase in movers' application success in tight versus slack labor markets.
+</div>
 
+<h4>Job Search and Employer Market Power</h4>
+<p class="paper-meta">with I. Bassier, A. Manning<br>
+<span class="presentation-info"><em>Presented at IZA Workshop: Matching Workers and Jobs Online (Sep 2025)</em></span></p>
 
-#### Job Search and Employer Market Power
-In progress; with I. Bassier, A. Manning
-<span class="presentation-info">*Presented at IZA Workshop: Matching Workers and Jobs Online (Sep 2025)*</span>
-
-<button class="show-button" onclick="toggleAbstract('abstract_click_monopsony')">Show abstract</button>
+<p><button class="show-button" onclick="toggleAbstract('abstract_click_monopsony')">Show abstract</button></p>
 <div id="abstract_click_monopsony" class="abstract">
-This paper provides a framework for thinking about how the job search of workers affects the market power of employers. We present a way of thinking about this which encapsulates popular existing models in which employer market power is based on either frictions in labor markets or imperfect substitutability among jobs. We show how this model can be used to compute measures of the extent of employer market power and relates them to popularly used measures of concentration ratios. We use data on the search behaviour of Swiss unemployed to investigate the number of employers being considered by job-seekers using 'clicks' on vacancies to define consideration sets.
+  This paper provides a framework for thinking about how the job search of workers affects the market power of
+  employers. We use data from the French public employment service on the search behaviour of the unemployed
+  to follow job-seekers through each step of this process: a search query returns a long list of vacancies
+  presented with very limited information; a `click' on a vacancy in this list reveals more information,
+  notably the wage; and a clicked vacancy may then receive an application. Job-seekers appear to search
+  sequentially, applying straight after a click rather than first assembling a portfolio of possible jobs; few
+  of the job offers they generate are ever refused; and applications rise less than proportionally with the
+  number of vacancies in a market, suggestive of increasing marginal application costs. Guided by these
+  findings, we model the decision to apply for a job as based on whether its expected utility exceeds the
+  marginal cost of an application, and estimate the model working backwards: the decision to apply given a
+  click, then the decision to click given the long list. We show how this model can be used to compute
+  measures of the extent of employer market power. Because the wage is only revealed by a click, a higher wage
+  raises the probability of filling a vacancy primarily by attracting more applications, and the implied
+  markdown formula combines the wage elasticity of applications with a modified version of popularly used
+  measures of concentration ratios based on the `consideration set' of clicked vacancies.
 </div>
 
+<h4>Generative AI and unemployment</h4>
+<p class="paper-meta">with D. Dorn, G. Etingin-Frati, A. I. Mueller, M. Siegenthaler</p>
 
-#### Can technology free time? Experimental evidence from an AI chatbot helping caseworkers solve employers' hiring difficulties
-In progress; with J. Barreau, M. Bouju, R. Rathelot
+<p><button class="show-button" onclick="toggleAbstract('abstract_genai')">Show abstract</button></p>
+<div id="abstract_genai" class="abstract">
+  We study the impact of generative artificial intelligence on unemployment using detailed register data from
+  the Swiss unemployment insurance system including information on occupation, industry, education, and past
+  wages. We combine established occupation-level AI exposure measures from the literature with new measures of
+  firm AI usage from a survey at the industry-time level. We argue conceptually that unemployment, rather than
+  shifts in employment, is the relevant margin for measuring the welfare costs of AI-driven labor market
+  disruptions. In a difference-in-differences design around the release of ChatGPT, unemployment in highly
+  exposed occupations increases by approximately 20 percent relative to less exposed occupations. The results
+  are robust to controlling for industry-specific shocks. We decompose the rise in unemployment into changes
+  in the separation rate and the job-finding rate.
+</div>
 
-<button class="show-button" onclick="toggleAbstract('abstract_caseworker_ai')">Show abstract</button>
+<h4>Can technology free time? Experimental evidence from an AI chatbot helping caseworkers solve employers'
+hiring difficulties</h4>
+<p class="paper-meta">with J. Barreau, M. Bouju, R. Rathelot</p>
+
+<p><button class="show-button" onclick="toggleAbstract('abstract_caseworker_ai')">Show abstract</button></p>
 <div id="abstract_caseworker_ai" class="abstract">
-In late 2024, the French public employment service introduced a new AI tool to support caseworkers dedicated to assisting client recruiters in their hiring decisions. Caseworkers support employers through two channels: screening applications from job seekers who apply on their own, and sourcing candidates who have not applied. The tool was designed to help caseworkers when sourcing candidates, and save them time for other tasks. We leverage the randomised implementation of this intervention to measure its impact on job-filling probabilities. We find that the intervention successfully increased the probability of filling posted jobs by between 10 and 15 per cent. While the intervention was intended solely to facilitate the sourcing of job seekers who had not initially applied for the job, we find that the increase in hires comes from both job seekers who were sourced and job seekers who had applied on their own and were screened by the caseworker. Our interpretation is that the AI tool freed up caseworkers' time, allowing them to devote more time to screening applications (and other tasks).
+  In late 2024, the French public employment service introduced a new AI tool to support caseworkers dedicated to
+  assisting client recruiters in their hiring decisions. Caseworkers support employers through two channels:
+  screening applications from job seekers who apply on their own, and sourcing candidates who have not applied.
+  The tool was designed to help caseworkers when sourcing candidates, and save them time for other tasks. We
+  leverage the randomised implementation of this intervention to measure its impact on job-filling
+  probabilities. We find that the intervention successfully increased the probability of filling posted jobs by
+  between 10 and 15 per cent. While the intervention was intended solely to facilitate the sourcing of job
+  seekers who had not initially applied for the job, we find that the increase in hires comes from both job
+  seekers who were sourced and job seekers who had applied on their own and were screened by the caseworker. Our
+  interpretation is that the AI tool freed up caseworkers' time, allowing them to devote more time to screening
+  applications (and other tasks).
 </div>
 
-#### Generative AI and unemployment
-In progress; with D. Dorn, G. Etingin-Frati, A. I. Mueller, M. Siegenthaler
+<!-- ============================= -->
+<h3 class="subsection">Work in progress</h3>
 
-#### Incidence of corporate taxation 
-In progress; with E. Baselgia, M. Brülhart, G. Rais, M. Siegenthaler
+<h4>Incidence of corporate taxation</h4>
+<p class="paper-meta">with E. Baselgia, M. Br&uuml;lhart, G. Rais, M. Siegenthaler</p>
 
-#### Which Job Openings Lead to Employment? The Role of the Consideration Scope in Job Search
-PhD chapter; solo-authored
-<span class="presentation-info">*Presented at EALE 2024 Bergen (Sep 2024), SKILS Ski and Labor Seminar Lenzerheide (Jan 2024), IZA Workshop: Matching Workers and Jobs Online (Sep 2023), LSE Labour WIP Seminar (Mar 2023)*</span>
+<h4>Which Job Openings Lead to Employment? The Role of the Consideration Scope in Job Search</h4>
+<p class="paper-meta">PhD chapter; solo-authored<br>
+<span class="presentation-info"><em>Presented at EALE 2024 Bergen (Sep 2024), SKILS Ski and Labor Seminar
+Lenzerheide (Jan 2024), IZA Workshop: Matching Workers and Jobs Online (Sep 2023), LSE Labour WIP Seminar
+(Mar 2023)</em></span></p>
 
-<a href="https://api.unil.ch/iris/server/api/core/bitstreams/031700df-f881-4e74-bfe3-51930f2ca265/content#page=28" target="_blank"><button class="show-button">PhD chapter</button></a>
+<p><a href="https://api.unil.ch/iris/server/api/core/bitstreams/031700df-f881-4e74-bfe3-51930f2ca265/content#page=28" target="_blank"><button class="show-button">PhD chapter</button></a></p>
 
+<hr>
 
-***
+<h2 id="policy-reports">Policy reports</h2>
 
-## Policy and tools {#policy-and-tools}
+<h4>Artificial intelligence and the Swiss labor market</h4>
+<p class="paper-meta">KOF study, Oct 2025; with M. Siegenthaler</p>
+<p>We analyse early impacts of large language models (LLMs) on unemployment and job postings across occupations
+in Switzerland.</p>
 
-#### Coding and contributions
+<p>
+<a href="https://ethz.ch/content/dam/ethz/special-interest/dual/kof-dam/documents/newsletter/KOF_Studie_KI_Schweizer_Arbeitsmarkt.pdf" target="_blank"><button class="show-button">KOF study (PDF)</button></a></p>
 
-- Swiss job tracker: [A real-time index of open vacancy postings in Switzerland](http://swissjobtracker.ch/)
-- Swiss job tracker open source code: [Github](https://github.com/swissjobtracker/chjobtracker): R-code aggregating the scraped data from 70 job portals and 50K company webpages. I implemented an algorithm that deals with scraper issues and unstable job portals in real-time to obtain a clean index.
-- Contributed a [patch to fix an error in the did_multiplegt_dyn R package](https://github.com/Credible-Answers/did_multiplegt_dyn/issues/167) (de Chaisemartin & D'Haultfoeuille 2024)
+<p class="media-links"><strong>Media:</strong> covered in all major Swiss news outlets. The following include quoted expert
+commentaries / interviews:
+<a href="https://www.nzz.ch/wirtschaft/kof-studie-ki-veraendert-den-schweizer-arbeitsmarkt-dramatisch-ld.1905520" target="_blank">NZZ; KOF-Studie: KI ver&auml;ndert den Schweizer Arbeitsmarkt dramatisch</a> and
+<a href="https://www.nzz.ch/zuerich/hochgebildet-kadermann-und-ploetzlich-arbeitslos-ein-gefallener-ki-manager-erzaehlt-ld.1910405" target="_blank">NZZ; Hochgebildet, Kadermann &mdash; und pl&ouml;tzlich arbeitslos</a>;
+<a href="https://kof.ethz.ch/en/publications/kof-insights/articles/2025/12/i-expect-ai-to-make-us-all-richer.html" target="_blank">KOF Magazine interview; &ldquo;I expect AI to make us all richer&rdquo;</a></p>
 
-#### Policy reports & Media
+<h4>The effect of unemployment benefit sanctions on search effort and re-employment outcomes</h4>
+<p class="paper-meta">SECO policy report, Jun 2025; with P. Arni, B. Kaiser, R. Lalive, M. Wolf</p>
 
+<p><a href="https://www.seco.admin.ch/seco/en/home/Publikationen_Dienstleistungen/Publikationen_und_Formulare/Arbeit/Arbeitsmarkt/Informationen_Arbeitsmarktforschung/wirkung_unterschiedlicher_sanktionen_arbeitslosenversicherung.html" target="_blank"><button class="show-button">Report</button></a></p>
 
-- Policy report: The effect of unemployment benefit sanctions on search effort and re-employment outcomes (w./ P. Arni,  R. Lalive, B. Kaiser, M. Wolf) [Summary article in Die Volkswirtschaft (DE/FR)](https://dievolkswirtschaft.ch/de/2025/06/was-bewirken-sanktionen-in-der-arbeitslosenversicherung/); [Report](https://www.seco.admin.ch/seco/en/home/Publikationen_Dienstleistungen/Publikationen_und_Formulare/Arbeit/Arbeitsmarkt/Informationen_Arbeitsmarktforschung/wirkung_unterschiedlicher_sanktionen_arbeitslosenversicherung.html)
-- Media coverage in all major Swiss news outlets on the [KOF study on AI and the Swiss labor market](https://ethz.ch/content/dam/ethz/special-interest/dual/kof-dam/documents/newsletter/KOF_Studie_KI_Schweizer_Arbeitsmarkt.pdf). Quoted expert commentaries in two articles in NZZ, [here](https://www.nzz.ch/wirtschaft/kof-studie-ki-veraendert-den-schweizer-arbeitsmarkt-dramatisch-ld.1905520)  and [here](https://www.nzz.ch/zuerich/hochgebildet-kadermann-und-ploetzlich-arbeitslos-ein-gefallener-ki-manager-erzaehlt-ld.1910405).
-- [KOF Magazine Interview: Generative AI and unemployment in exposed occupations in Switzerland](https://kof.ethz.ch/en/publications/kof-insights/articles/2025/12/i-expect-ai-to-make-us-all-richer.html)
-- [NZZaS: Studie zur zweiten Welle: 200 000 Selbständige fürchten um ihre Existenz](https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295).
-- [Launch Swissjobtracker on Swissinfo (SRG SSR)](https://www.swissinfo.ch/fre/toute-l-actu-en-bref/repli-du-nombre-d-offres-d-emplois-en-d%C3%A9cembre--%C3%A9tude-/48136458)
+<p class="media-links"><strong>Media:</strong>
+<a href="https://dievolkswirtschaft.ch/de/2025/06/was-bewirken-sanktionen-in-der-arbeitslosenversicherung/" target="_blank">Summary article in Die Volkswirtschaft (DE/FR)</a>;
+<a href="https://www.laliberte.ch/articles/economie/les-penalites-infligees-par-lassurance-chomage-peuvent-conduire-a-la-pauvrete-1438511?srsltid=AfmBOorUUPRkwyVXBUkVcpKk3cWs00cPa6sHUjGqPpWbVIEbV8j-BAjX" target="_blank">La Libert&eacute;: Les p&eacute;nalit&eacute;s inflig&eacute;es par l'assurance ch&ocirc;mage peuvent conduire &agrave; la pauvret&eacute;</a></p>
 
-#### Teaching
+<hr>
 
--  2019-2020: TA for the Public Finance bachelor's course by Pascal St-Amour 
--  2020-2024: TA for the Econometrics master's course by Martin Huber
+<h2 id="swiss-job-tracker">Swiss job tracker</h2>
 
-### Other
+<p>A real-time index of open vacancy postings in Switzerland. The R code aggregates data scraped from 70 job
+portals and 50K company webpages; I implemented an algorithm that deals with scraper issues and unstable job
+portals in real-time to obtain a clean index.</p>
 
-- Together with Pascal Josephy, I founded the web design and web development agency jkweb in 2011 (at the age of 17). The company by now employs over 30 programmers, designers and other specialists in Zurich and Basel. jkweb has recently acquired novu and is now called [novu](https://novu.ch/). 
+<p><a href="http://swissjobtracker.ch/" target="_blank"><button class="show-button">swissjobtracker.ch</button></a>
+<a href="https://github.com/swissjobtracker/chjobtracker" target="_blank"><button class="show-button">Source code on Github</button></a></p>
 
-***
+<p class="media-links"><strong>Media:</strong>
+<a href="https://www.swissinfo.ch/fre/toute-l-actu-en-bref/repli-du-nombre-d-offres-d-emplois-en-d%C3%A9cembre--%C3%A9tude-/48136458" target="_blank">Launch on Swissinfo (SRG SSR)</a>;
+<a href="https://nzzas.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295" target="_blank">NZZaS: Studie zur zweiten Welle: 200 000 Selbst&auml;ndige f&uuml;rchten um ihre Existenz</a></p>
+
+<hr>
+
+<h2 id="teaching">Teaching</h2>
+<ul>
+  <li>2019-2020: TA for the Public Finance bachelor's course by Pascal St-Amour</li>
+  <li>2020-2024: TA for the Econometrics master's course by Martin Huber</li>
+</ul>
+
+<hr>
+
+<!-- no nav item for this one -->
+<h2 id="other">Other</h2>
+<ul>
+  <li>Contributed a <a href="https://github.com/Credible-Answers/did_multiplegt_dyn/issues/167">patch to fix an error in the did_multiplegt_dyn R package</a> (de Chaisemartin &amp; D'Haultfoeuille 2024)</li>
+  <li>Together with Pascal Josephy, I founded the web design and web development agency jkweb in 2011 (at the age of 17). The company by now employs over 30 programmers, designers and other specialists in Zurich and Basel. jkweb has recently acquired novu and is now called <a href="https://novu.ch/">novu</a>.</li>
+</ul>
+
 
 <script>
     // JavaScript function to toggle visibility

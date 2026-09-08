@@ -23,30 +23,46 @@
         <div class="nav-right">
           <a href="#home">Home</a>
           <a href="#research">Research</a>
-          <a href="#policy-and-tools">Policy & Tools</a>
+          <a href="#policy-reports">Policy reports</a>
+          <a href="#swiss-job-tracker">Swiss job tracker</a>
+          <a href="#teaching">Teaching</a>
         </div>
       </div>
     </nav>
 
-    <!-- Main content wrapper -->
-    <div class="main-wrapper">
-      <!-- Left sidebar -->
-      <aside class="sidebar">
+    <!-- Wide header: photo left, intro + contact right -->
+    <header class="hero hero-ruled" id="home">
+      <div class="hero-inner">
         {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="{{ site.title }}" class="profile-photo" />
+        <figure class="hero-photo">
+          <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
+        </figure>
         {% endif %}
 
-        <div class="contact-info">
-          <p>Dr. Jeremias Klaeui<br>
-          CREST, ENSAE, IP Paris; ETH Zurich</p>
-          <p><a href="mailto:jeremias.klaeui@ensae.fr"><i class="fa-solid fa-paper-plane"></i> jeremias.klaeui@ensae.fr</a></p>
-          <p><a href="/cv/cv_klaeui.pdf"><i class="fa-solid fa-download"></i> Download CV</a></p>
-        </div>
-      </aside>
+        <div class="hero-text">
+          <p>I'm a post doc in Economics at CREST in Paris (ENSAE / IP) and at ETH Zurich (KOF Institute).</p>
+          <p>My research focuses on labour economics, with an interest in public economics.</p>
+          <p>I obtained my PhD from the University of Lausanne, supervised by
+          <a href="https://sites.google.com/site/rafaellalive/">Rafael Lalive</a> and
+          <a href="https://sites.google.com/site/siegenthalermichael/home">Michael Siegenthaler</a>. During my PhD,
+          I visited the LSE at the invitation of
+          <a href="https://en.wikipedia.org/wiki/Alan_Manning">Alan Manning</a>.</p>
 
-      <!-- Main content area -->
+          <p class="job-market">I am on the 2026-2027 job market.</p>
+
+          <div class="hero-contact">
+            <div class="contact-links">
+              <a href="mailto:jeremias.klaeui@ensae.fr"><i class="fa-solid fa-paper-plane"></i> jeremias.klaeui@ensae.fr</a>
+              <a href="/cv/cv_klaeui.pdf"><i class="fa-solid fa-download"></i> Download CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content wrapper -->
+    <div class="main-wrapper">
       <main class="content">
-        <div id="home"></div>
         {{ content }}
 
         <footer>

@@ -1,8 +1,8 @@
-@import "fonts";
-@import "rouge-github";
-
 /* ==========================================================================
-   Layout ported from _mockup/index-syndi3.html (see _mockup/README.md).
+   MOCKUP STYLESHEET — standalone copy of the live site's CSS + new layout.
+   Underscore folder => Jekyll ignores it, nothing here is published.
+   Once we're happy, the relevant bits get ported back into
+   _sass/jekyll-theme-minimal.scss.
    ========================================================================== */
 
 /* --- LAYOUT KNOBS — tweak these first ------------------------------------ */
@@ -20,6 +20,29 @@
   --ink: #111111;
 }
 /* ------------------------------------------------------------------------- */
+
+/* Fonts (same files the live site uses) */
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../assets/fonts/Noto-Sans-regular/Noto-Sans-regular.woff2') format('woff2'),
+       url('../assets/fonts/Noto-Sans-regular/Noto-Sans-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../assets/fonts/Noto-Sans-700/Noto-Sans-700.woff2') format('woff2'),
+       url('../assets/fonts/Noto-Sans-700/Noto-Sans-700.woff') format('woff');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../assets/fonts/Noto-Sans-italic/Noto-Sans-italic.woff2') format('woff2'),
+       url('../assets/fonts/Noto-Sans-italic/Noto-Sans-italic.woff') format('woff');
+}
 
 body {
   background-color: #fff;
@@ -390,29 +413,3 @@ hr {
   .navbar { position: static; border-bottom: 2px solid #eee; }
   .hero { margin-top: 20px; }
 }
-
-// Elements not used by the current content, kept for markdown pages
-blockquote {
-  border-left: 1px solid #e5e5e5;
-  margin: 0;
-  padding: 0 0 0 20px;
-  font-style: italic;
-}
-
-code, pre {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-  color: #333;
-}
-
-pre {
-  padding: 8px 15px;
-  background: #f8f8f8;
-  border-radius: 5px;
-  border: 1px solid #e5e5e5;
-  overflow-x: auto;
-}
-
-table { width: 100%; border-collapse: collapse; }
-th, td { text-align: left; padding: 5px 10px; border-bottom: 1px solid #e5e5e5; }
-th, dt { color: #444; }
-dt { font-weight: 700; }
