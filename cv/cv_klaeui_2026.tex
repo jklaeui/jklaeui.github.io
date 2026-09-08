@@ -1,0 +1,299 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage{geometry}
+\geometry{a4paper, left=25mm, right=25mm, top=22mm, bottom=25mm}
+\usepackage{xcolor}
+\usepackage[colorlinks=true, linkcolor=blue!60!black, urlcolor=blue!60!black, citecolor=black]{hyperref}
+\usepackage{enumitem}
+\setlist{nolistsep}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\newcommand{\lastupdated}{September 8, 2026}
+
+% ---- page style: name in header (from p.2), "Last updated" in footer ----
+\fancypagestyle{cvpage}{%
+  \fancyhf{}%
+  \fancyhead[C]{\small Jeremias Klaeui}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+  \fancyfoot[R]{\small Last updated: \lastupdated}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+\fancypagestyle{firstpage}{%
+  \fancyhf{}%
+  \fancyfoot[R]{\small Last updated: \lastupdated}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+\pagestyle{cvpage}
+
+% ---- section formatting ----
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\titlespacing{\section}{0pt}{14pt}{6pt}
+\titleformat{\subsection}{\normalsize\bfseries\itshape}{}{0em}{}
+\titlespacing{\subsection}{0pt}{8pt}{4pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% year-labelled list for presentations
+\newenvironment{yearlist}%
+  {\begin{itemize}[leftmargin=4.2em, labelsep=1.4em, itemsep=3pt]}%
+  {\end{itemize}}
+
+\begin{document}
+\thispagestyle{firstpage}
+
+% =========================== HEADER ===========================
+{\Huge\bfseries Jeremias Klaeui}
+
+\vspace{2mm}
+\rule{\textwidth}{0.8pt}
+\vspace{1mm}
+
+\begin{minipage}[t]{0.48\textwidth}
+CREST -- ENSAE, Institut Polytechnique de Paris; 
+Palaiseau, France\\[2pt]
+KOF Institute, ETH Zurich\\
+Zurich, Switzerland
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+Phone: +41 76 378 22 15 / +33 6 13 86 32 08\\
+E-mail: \href{mailto:jeremias.klaeui@ensae.fr}{jeremias.klaeui@ensae.fr}\\
+Homepage: \href{https://jklaeui.github.io/}{jklaeui.github.io}\\
+Citizenship: Switzerland (EU work permit)
+\end{minipage}
+
+\vspace{2mm}
+\rule{\textwidth}{0.8pt}
+
+\begin{center}
+\textit{I am on the 2026--2027 academic job market.}
+\end{center}
+
+% =========================== POSITIONS ===========================
+\section{Current Positions}
+\begin{itemize}
+\item Postdoctoral researcher, CREST (ENSAE, IP Paris), France, Sep 2024 -- Aug 2027.
+\item Postdoctoral researcher, ETH Zurich (KOF Institute), Switzerland, Sep 2025 -- Aug 2027.
+\end{itemize}
+
+% =========================== EDUCATION ===========================
+\section{Education}
+\begin{itemize}
+\item Ph.D.\ in Economics, HEC, University of Lausanne, Switzerland, 2024.
+  \begin{itemize}[label=--]
+  \item Visiting researcher, KOF Institute, ETH Zurich (host: M.~Siegenthaler), Aug 2023 -- May 2025.
+  \item Visiting researcher, London School of Economics and Political Science (host: A.~Manning), Sep 2022 -- Apr 2023.
+  \item Completed the Swiss Program for Beginning Doctoral Students in Economics at the Study Center Gerzensee. Final grade: 5.75/6.0.
+  \end{itemize}
+\item M.Sc.\ Economic Policy, University College London, UK, 2017. Final grade: Distinction.
+\item B.A.\ Economics (major) and Business (minor), University of Basel, Switzerland, 2016. Final grade: 5.7/6.0.
+\end{itemize}
+
+% =========================== FIELDS ===========================
+\section{Research Fields}
+Labor Economics, Public Economics, Applied Econometrics
+
+% =========================== WORKING PAPERS ===========================
+\section{Working Papers and Advanced Projects}
+\begin{itemize}
+\item Klaeui, ``When to Broaden, When to Focus: Job Search and Market Tightness,'' 2026.\\ \href{https://www.ifo.de/DocDL/cesifo1_wp12744.pdf}{CESifo Working Paper}, \hyperlink{abs:jmp}{abstract}. \textbf{(Job Market Paper)}
+\item Klaeui, Kopp, Lalive, and Siegenthaler, ``Adapting to Scarcity: The Role of Firms in Occupational Transitions,'' 2026. \href{https://cepr.org/publications/dp21027}{CEPR Discussion Paper}, \href{https://jklaeui.github.io/download/klaeui_kopp_lalive_siegenthaler_adapting_to_scarcity.pdf}{latest draft}, \hyperlink{abs:occmob}{abstract}.
+\item Bassier, Klaeui, and Manning, ``Job Search and Employer Market Power,'' 2025. \hyperlink{abs:power}{Abstract}.
+\item Dorn, Etingin-Frati, Klaeui, Mueller, and Siegenthaler, ``Generative AI and Unemployment,'' 2025. \hyperlink{abs:genai}{Abstract}.
+\item Barreau, Bouju, Klaeui, and Rathelot, ``Can Technology Free Time? Experimental Evidence from an AI Chatbot Helping Caseworkers Solve Employers' Hiring Difficulties,'' 2025. \href{https://jklaeui.github.io/download/MatchFT.pdf}{Draft}, \hyperlink{abs:matchft}{abstract}.
+\end{itemize}
+
+% =========================== WORK IN PROGRESS ===========================
+\section{Work in Progress}
+\begin{itemize}
+\item Baselgia, Br\"ulhart, Klaeui, Rais, and Siegenthaler, ``Incidence of Corporate Taxation.''
+\item Klaeui, ``Which Job Openings Lead to Employment? The Role of the Consideration Scope in Job Search,'' \href{https://api.unil.ch/iris/server/api/core/bitstreams/031700df-f881-4e74-bfe3-51930f2ca265/content#page=28}{PhD chapter, Jun 2024}.
+\end{itemize}
+
+% =========================== POLICY ===========================
+\section{Policy Reports and Projects}
+\begin{itemize}
+\item ``Artificial Intelligence and the Swiss Labor Market,'' with M.~Siegenthaler, Oct 2025. \href{https://kof.ethz.ch/content/dam/ethz/special-interest/dual/kof-dam/documents/newsletter/KOF_Studie_KI_Schweizer_Arbeitsmarkt.pdf}{KOF Study 186}.
+  \begin{itemize}[label=--]
+  \item Media coverage in all major Swiss news outlets; quoted expert commentaries in two NZZ articles: \href{https://www.nzz.ch/wirtschaft/kof-studie-ki-veraendert-den-schweizer-arbeitsmarkt-dramatisch-ld.1905520}{``KOF-Studie: KI ver\"andert den Schweizer Arbeitsmarkt dramatisch''} and \href{https://www.nzz.ch/zuerich/hochgebildet-kadermann-und-ploetzlich-arbeitslos-ein-gefallener-ki-manager-erzaehlt-ld.1910405}{``Hochgebildet, Kadermann --- und pl\"otzlich arbeitslos''}; \href{https://kof.ethz.ch/en/publications/kof-insights/articles/2025/12/i-expect-ai-to-make-us-all-richer.html}{KOF Magazine interview}.
+  \end{itemize}
+\item ``Effects of Different Types of Unemployment Benefit Sanctions,'' with P.~Arni, B.~Kaiser (BSS), R.~Lalive, and M.~Wolf, Jun 2025.
+  \begin{itemize}[label=--]
+  \item Commissioned by the Swiss State Secretariat for Economic Affairs (SECO).
+  \item I contribute by using administrative data and job-platform click data to measure the effect of sanctions on search effort.
+  \item \href{https://www.seco.admin.ch/seco/en/home/Publikationen_Dienstleistungen/Publikationen_und_Formulare/Arbeit/Arbeitsmarkt/Informationen_Arbeitsmarktforschung/wirkung_unterschiedlicher_sanktionen_arbeitslosenversicherung.html}{Report}; media: \href{https://dievolkswirtschaft.ch/de/2025/06/was-bewirken-sanktionen-in-der-arbeitslosenversicherung/}{summary article in Die Volkswirtschaft (DE/FR)}.
+  \end{itemize}
+\item Swiss Job Tracker, with M.~Bannert, D.~Kopp, M.~Siegenthaler, S.~Thoeni, and J.~Winkelmann, launched Dec 2022.
+  \begin{itemize}[label=--]
+  \item A real-time index of open vacancy postings in Switzerland aggregating scraped data from 70 job portals and 50K company webpages.
+  \item \href{http://swissjobtracker.ch}{Dashboard}; \href{https://github.com/swissjobtracker/chjobtracker}{GitHub page with open-source R code}; media: \href{https://www.swissinfo.ch/fre/toute-l-actu-en-bref/repli-du-nombre-d-offres-d-emplois-en-d\%C3\%A9cembre--\%C3\%A9tude-/48136458}{launch covered on Swissinfo (SRG SSR)}.
+  \end{itemize}
+\item \href{http://hdl.handle.net/20.500.11850/458349}{``Die Schweizer Selbst\"andigerwerbenden im Covid19-Lockdown''}, with M.~Br\"ulhart, R.~Lalive, and M.~Siegenthaler, two waves, Apr \& Oct 2020.
+  \begin{itemize}[label=--]
+  \item Data source: survey among the self-employed. Media coverage in NZZaS (\href{https://magazin.nzz.ch/wirtschaft/zweite-welle-viele-selbstaendige-fuerchten-um-ihre-existenz-ld.1589295?reduced=true}{link}).
+  \end{itemize}
+\item ``Demographics and Household Savings over the Life-Cycle,'' with M.~Koomen, 2018.
+\end{itemize}
+
+% =========================== TEACHING ===========================
+\section{Teaching Experience}
+\begin{itemize}
+\item Teaching Assistant at HEC, University of Lausanne
+  \begin{itemize}[label=--]
+  \item Econometrics (M.Sc.\ level, course by Martin Huber), 2020 -- 2024.
+  \item Public Finance (B.Sc.\ level, course by Pascal St-Amour), 2019 -- 2020.
+  \end{itemize}
+\end{itemize}
+
+% =========================== GRANTS ===========================
+\section{Grants, Fellowships, and Awards}
+\begin{itemize}
+\item Co-author in SNSF Project Grant ``Labor market inequality in modern labor markets'' (PI: Michael Siegenthaler; I contributed one of four work packages, paper outlines), CHF 519,706 ($\approx$ EUR 557,000).
+\item SNSF PostDoc Mobility Grant (fully funded 24-month stay at UPF Barcelona), CHF 110,600 ($\approx$ EUR 118,000).
+\item SNSF Mobility Grant (6-month stay at LSE), CHF 20,000 ($\approx$ EUR 21,000).
+\item Nomination for the 2026 Distinguished CESifo Affiliate Award in Labor Economics.
+\item Winning team of the 2022 Econometric Game (team captain for Team Lausanne).
+\end{itemize}
+
+% =========================== INVITED TALKS ===========================
+\section{Invited Talks (Policy and Industry)}
+\begin{itemize}
+\item Workshop on AI, Syndicom (the Swiss ICT trade union), Sep 2026.\\
+  \textit{Invited alongside speakers from the executive board of Microsoft and the two largest Swiss telecom providers.}
+\item Campus Seminar, Swiss Financial Analysts Association, Apr 2026.
+\item Albedis Networking Breakfast, Mar 2026.\\\textit{Largest Swiss staffing company}
+\item Swiss Federation of the Liberal Professions, Feb 2026.
+\item Steering Committee, Swiss Unemployment Insurance Fund, Sep 2025.
+\end{itemize}
+
+% =========================== PRESENTATIONS ===========================
+\section{Conference and Seminar Presentations (incl.\ scheduled)}
+\begin{yearlist}
+\item[2026] EEA Annual Congress (Dublin); RES Annual Conference (Newcastle); CREST--IFAU Workshop (Paris); Institute of Economics and Econometrics Seminar, University of Geneva; Internal Seminar, Vrije Universiteit Amsterdam.
+\item[2025] Workshop on Job Search and Micro Data (Copenhagen); IZA Workshop: Matching Workers and Jobs Online (Zurich); French Public Employment Services; CREST--IFAU Workshop (Paris); UC Berkeley Labor Lunch; ZEW Mannheim Research Seminar; PSE Applied Economics Lunch.
+\item[2024] Swiss Economists Abroad; EALE (Bergen); Ski and Labor Seminar (Parpan).\\
+  \textit{Ski and Labor participants: J.~Angrist, P.~Pathak, R.~Rathelot, R.~Winkelmann, J.~Zweim\"uller, and many others.}
+\item[2023] IZA Workshop: Matching Workers and Jobs Online; IZA Summer School in Labor Economics (course + presentation of my work; Berlin: A.~\c{S}ahin (U~Texas), P.~Kline (Berkeley), U.~Sch\"onberg (UCL), S.~J\"ager (MIT/IZA)); LSE CEP Labour Work-in-Progress Seminar.
+\item[2022] Job Search Workshop (Lucerne); Fribourg Winter School in Machine Learning and Text Analysis (M.~Huber (Fribourg), H.~Liebert (Harvard/Zurich)).
+\end{yearlist}
+
+% =========================== SERVICE ===========================
+\section{Professional Service}
+\begin{itemize}
+\item Referee for: \textit{The Economic Journal}, \textit{Labour Economics}, \textit{RFBerlin Discussion Papers}, \textit{Swiss Journal of Economics and Statistics}.
+\item Contributed a \href{https://github.com/Credible-Answers/did_multiplegt_dyn/issues/167}{patch fixing an error in the \texttt{did\_multiplegt\_dyn} R package} (de Chaisemartin \& D'Haultfoeuille, 2024).
+\end{itemize}
+
+% =========================== WORK EXPERIENCE ===========================
+\section{Other Work Experience}
+\begin{itemize}
+\item Consultant (hours-based, equivalent to 2 months full time), BSS Volkswirtschaftliche Beratung, Basel, Jul 2023 -- Jul 2024.
+  \begin{itemize}[label=--]
+  \item Work on economic studies mandated by the Swiss Government. Topics: effects of UI benefit sanctions on job-search behaviour; effects of increased caseworker support on jobseekers.
+  \end{itemize}
+\item Research Assistant (full-time), International Policy Analysis unit, Swiss National Bank, Zurich, Jun 2018 -- Jul 2019.
+  \begin{itemize}[label=--]
+  \item Econometric and economic analysis for research and policy documents. Data editing, analysis, and database management in Stata, R, Excel, and Java (Groovy). Topics include: household saving and investment behaviour, global imbalances, the IMF External Sector Report, the Swiss external balance.
+  \end{itemize}
+\item Co-founder and manager (part-time  during school and university, on average 30\%), \\jkweb ag, Basel, 2011 -- 2016.
+  \begin{itemize}[label=--]
+  \item Web design \& web applications company, co-founded at age 17. The company employs over 30 programmers, designers, and other specialists in Zurich and Basel; it recently acquired novu and now operates under the name \href{https://novu.ch/}{novu}. Strategic decisions, project management, client consulting, and web programming in PHP, JS, SQL, HTML.
+  \end{itemize}
+\item Internships in journalism (full-time), SRF Swiss Radio \& TV and Basellandschaftliche Zeitung, Basel, Sep 2012 -- Jan 2013.
+\end{itemize}
+
+% =========================== EXTRACURRICULAR ===========================
+\section{Extracurricular}
+\begin{itemize}
+\item President of Sonflora Switzerland, which raises funds for the Nicaraguan project Sonflora that helps children achieve their long-term goals by providing the education they deserve --- a safe place to do their homework as well as coaching, psychological counselling, and health support.
+\item Board member of \href{https://ceyampu.org/}{Pro Centro Educativo Yampu}, an association organising funding for a private school with a focus on indigenous culture in rural Guatemala.
+\item Voluntary work in Le\'on, Nicaragua: English teaching in public schools, tutoring in Spanish, English, and mathematics, Jan -- May 2013.
+\end{itemize}
+
+% =========================== OTHERS ===========================
+\section{Others}
+\begin{itemize}
+\item Languages: German (native), English (fluent), French (fluent), Spanish (proficient), Italian (basic).
+\end{itemize}
+
+% =========================== REFERENCES ===========================
+\section{References}
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Prof.\ Rafael Lalive}\\
+University of Lausanne\\
+Phone: +41 78 861 03 77\\
+E-mail: \href{mailto:rafael.lalive@unil.ch}{rafael.lalive@unil.ch}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Prof.\ Michael Siegenthaler}\\
+KOF Institute, ETH Zurich\\
+Phone: +41 44 633 93 67\\
+E-mail: \href{mailto:siegenthaler@kof.ethz.ch}{siegenthaler@kof.ethz.ch}
+\end{minipage}
+
+\vspace{6mm}
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Prof.\ Alan Manning}\\
+London School of Economics and Political Science\\
+Phone: +44 20 7955 6078\\
+E-mail: \href{mailto:a.manning@lse.ac.uk}{a.manning@lse.ac.uk}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Prof.\ Roland Rathelot}\\
+Institut Polytechnique de Paris\\[\baselineskip]
+E-mail: \href{mailto:roland.rathelot@ensae.fr}{roland.rathelot@ensae.fr}
+\end{minipage}
+
+% =========================== ABSTRACTS ===========================
+\clearpage
+
+\hypertarget{abs:jmp}{}%
+\begin{center}
+{\Large\bfseries When to Broaden, When to Focus:\\ Job Search and Market Tightness}\\[1mm]
+{\itshape (Job Market Paper)}
+\end{center}
+
+This paper investigates whether directing job search toward tight labor markets improves re-employment. Such targeting is theoretically attractive as it reduces aggregate congestion. I link Swiss unemployment records to clickstream search data to measure which markets jobseekers target. To address selection, I exploit quasi-random assignment to caseworkers differing in their tendency to redirect clients toward tight markets. Moving from the 10th to the 90th percentile raises six-month job-finding by 2.7\%. The channels are heterogeneous: jobseekers who become unemployed in slack markets gain from mobility, consistent with prior findings from policies that encourage broader search. The new insight is that jobseekers who become unemployed in tight markets benefit from a narrower focus on this initial market. Effects are orthogonal to other caseworker behaviors and do not come at the expense of job quality. My findings suggest that market tightness offers a simple basis for targeted search advice.
+
+\vspace{8mm}
+\hypertarget{abs:occmob}{}%
+\begin{center}
+{\Large\bfseries Adapting to Scarcity:\\ The Role of Firms in Occupational Transitions}\\[1mm]
+{\itshape (with Daniel Kopp, Rafael Lalive, and Michael Siegenthaler)}
+\end{center}
+
+This paper examines the circumstances under which firms facilitate occupational transitions, complementing prior work that focuses on workers' decisions. We link unemployment insurance records with application diaries and clickstream data from a recruitment platform to causally assess how candidates' occupational histories shape recruiters' hiring decisions. We find that the average candidate from a different occupation faces a 7\% lower contact rate than equally qualified candidates who last worked in a recruiter's searched occupation. Using a new measure of skill overlap, we show that 60\% of this penalty reflects that movers meet fewer skill requirements than incumbents. Occupational experience and qualifications further reduce the mover penalty, such that certain candidates returning to a prior occupation face no penalty at all. Finally, recruiters adapt to scarcity and contact more movers in tight occupations. Changes in firm behavior account for one-third of the increase in movers' application success in tight versus slack labor markets.
+
+\vspace{8mm}
+\hypertarget{abs:power}{}%
+\begin{center}
+{\Large\bfseries Job Search and Employer Market Power}\\[1mm]
+{\itshape (with Ihsaan Bassier and Alan Manning)}
+\end{center}
+
+This paper provides a framework for thinking about how the job search of workers affects the market power of employers. We use data from the French public employment service on the search behaviour of the unemployed to follow job-seekers through each step of this process: a search query returns a long list of vacancies presented with very limited information; a `click' on a vacancy in this list reveals more information, notably the wage; and a clicked vacancy may then receive an application. Job-seekers appear to search sequentially, applying straight after a click rather than first assembling a portfolio of possible jobs; few of the job offers they generate are ever refused; and applications rise less than proportionally with the number of vacancies in a market, suggestive of increasing marginal application costs. Guided by these findings, we model the decision to apply for a job as based on whether its expected utility exceeds the marginal cost of an application, and estimate the model working backwards: the decision to apply given a click, then the decision to click given the long list. We show how this model can be used to compute measures of the extent of employer market power. Because the wage is only revealed by a click, a higher wage raises the probability of filling a vacancy primarily by attracting more applications, and the implied markdown formula combines the wage elasticity of applications with a modified version of popularly used measures of concentration ratios based on the `consideration set' of clicked vacancies.
+
+\vspace{8mm}
+\hypertarget{abs:genai}{}%
+\begin{center}
+{\Large\bfseries Generative AI and Unemployment}\\[1mm]
+{\itshape (with David Dorn, Giulian Etingin-Frati, Andreas I. Mueller, and Michael Siegenthaler)}
+\end{center}
+
+We study the impact of generative artificial intelligence on unemployment using detailed register data from the Swiss unemployment insurance system including information on occupation, industry, education, and past wages. We combine established occupation-level AI exposure measures from the literature with new measures of firm AI usage from a survey at the industry-time level. We argue conceptually that unemployment, rather than shifts in employment, is the relevant margin for measuring the welfare costs of AI-driven labor market disruptions. In a difference-in-differences design around the release of ChatGPT, unemployment in highly exposed occupations increases by approximately 20 percent relative to less exposed occupations. The results are robust to controlling for industry-specific shocks. We decompose the rise in unemployment into changes in the separation rate and the job-finding rate.
+
+\vspace{8mm}
+\hypertarget{abs:matchft}{}%
+\begin{center}
+{\Large\bfseries Can Technology Free Time? Experimental Evidence from an AI Chatbot Helping Caseworkers Solve Employers' Hiring Difficulties}\\[1mm]
+{\itshape (with Joseph Barreau, Manon Bouju, and Roland Rathelot)}
+\end{center}
+
+In late 2024, the French public employment service introduced a new AI tool to support caseworkers dedicated to assisting client recruiters in their hiring decisions. Caseworkers support employers through two channels: screening applications from job seekers who apply on their own, and sourcing candidates who have not applied. The tool was designed to help caseworkers when sourcing candidates, and save them time for other tasks. We leverage the randomised implementation of this intervention to measure its impact on job-filling probabilities. We find that the intervention successfully increased the probability of filling posted jobs by between 10 and 15 per cent. While the intervention was intended solely to facilitate the sourcing of job seekers who had not initially applied for the job, we find that the increase in hires comes from both job seekers who were sourced and job seekers who had applied on their own and were screened by the caseworker. Our interpretation is that the AI tool freed up caseworkers' time, allowing them to devote more time to screening applications (and other tasks).
+
+\end{document}
