@@ -25,6 +25,8 @@ French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025)
   offers a simple basis for targeted search advice.
 </div>
 
+<p class="media-links"><strong>Media:</strong> summary article in Die Volkswirtschaft / La Vie &eacute;conomique (forthcoming)</p>
+
 <h4>Adapting to Scarcity: The Role of Firms in Occupational Transitions</h4>
 <p class="paper-meta">with D. Kopp, R. Lalive, M. Siegenthaler<br>
 <span class="presentation-info"><em>Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in
@@ -45,6 +47,8 @@ Labor Economics (June 2023)</em></span></p>
   recruiters adapt to scarcity and contact more movers in tight occupations. Changes in firm behavior account
   for one-third of the increase in movers' application success in tight versus slack labor markets.
 </div>
+
+<p class="media-links"><strong>Media:</strong> <a href="https://www.rfberlin.com/research-insights/why-firms-hesitate-to-hire-occupation-switchers/" target="_blank">RFBerlin Research Insights: Why Firms Hesitate to Hire Occupation Switchers</a></p>
 
 <h4>Job Search and Employer Market Power</h4>
 <p class="paper-meta">with I. Bassier, A. Manning<br>
