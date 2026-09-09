@@ -111,7 +111,7 @@ hiring difficulties</h4>
 <!-- ============================= -->
 <h3 class="subsection">Work in progress</h3>
 
-<h4>Incidence of corporate taxation</h4>
+<h4>Corporate Tax Cuts and Immigration: Evidence from Switzerland</h4>
 <p class="paper-meta">with E. Baselgia, M. Br&uuml;lhart, G. Rais, M. Siegenthaler</p>
 
 <h4>Which Job Openings Lead to Employment? The Role of the Consideration Scope in Job Search</h4>
