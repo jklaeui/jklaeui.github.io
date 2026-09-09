@@ -115,7 +115,7 @@ body {
   padding: 40px var(--page-pad);
   box-sizing: border-box;
   display: flex;
-  align-items: flex-start;
+  align-items: center;   /* text block centred against the photo */
   gap: var(--hero-gap);
 }
 
@@ -144,8 +144,6 @@ body {
   min-width: 0;
   text-align: justify;   /* last line of each <p> stays ragged (default
                             text-align-last), so paragraphs can end mid-line */
-  margin-top: -5px;   /* cancels the first line's half-leading so the top of
-                         "I'm a post doc..." sits on the photo's top edge */
 }
 
 .hero-text p { margin: 0 0 16px; }
@@ -386,7 +384,7 @@ hr {
   .navbar { height: auto; }
 
   .hero { margin-top: 80px; }
-  .hero-inner { flex-direction: column; }
+  .hero-inner { flex-direction: column; align-items: stretch; }
   .hero-photo { flex-basis: auto; max-width: 100%; width: 100%; }
 
   .hero-below { flex-direction: column; }
