@@ -27,7 +27,7 @@ French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025)
 
 <p class="media-links"><strong>Media:</strong> Die Volkswirtschaft / La Vie &eacute;conomique (forthcoming)</p>
 
-<h4>Adapting to Scarcity: The Role of Firms in Occupational Transitions</h4>
+<h4>The Role of Firms in Occupational Transitions</h4>
 <p class="paper-meta">with D. Kopp, R. Lalive, M. Siegenthaler<br>
 <span class="presentation-info"><em>Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in
 Labor Economics (June 2023)</em></span></p>
