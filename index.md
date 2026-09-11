@@ -1,4 +1,4 @@
-<h2 id="research">Research</h2>
+<div id="research"></div>  <!-- anchor for the nav bar; the h2 itself is not shown -->
 
 <!-- ============================= -->
 <h3 class="subsection">Working papers and advanced projects</h3>
