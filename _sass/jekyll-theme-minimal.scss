@@ -279,8 +279,10 @@ h3.subsection {
   border-top: 1px solid #ececec;
 }
 
-/* first subsection after a section heading needs neither */
-h2 + h3.subsection {
+/* first subsection after a section heading (or the invisible #research
+   anchor that replaced it) needs neither */
+h2 + h3.subsection,
+#research + h3.subsection {
   margin-top: 25px;
   padding-top: 0;
   border-top: none;
