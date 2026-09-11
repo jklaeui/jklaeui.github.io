@@ -27,7 +27,7 @@ French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025)
 
 <p class="media-links"><strong>Media:</strong> Die Volkswirtschaft / La Vie &eacute;conomique (forthcoming)</p>
 
-<h4>The Role of Firms in Occupational Transitions</h4>
+<h4>The Role of Firms in Occupational Mobility</h4>
 <p class="paper-meta">with D. Kopp, R. Lalive, M. Siegenthaler<br>
 <span class="presentation-info"><em>Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in
 Labor Economics (June 2023)</em></span></p>
@@ -192,7 +192,7 @@ portals in real-time to obtain a clean index.</p>
 <h2 id="other">Other</h2>
 <ul>
   <li>Contributed a <a href="https://github.com/Credible-Answers/did_multiplegt_dyn/issues/167">patch to fix an error in the did_multiplegt_dyn R package</a> (de Chaisemartin &amp; D'Haultfoeuille 2024)</li>
-  <li>Together with Pascal Josephy, I founded the web design and web development agency jkweb in 2011 (at the age of 17). The company by now employs over 30 programmers, designers and other specialists in Zurich and Basel. jkweb has recently acquired novu and is now called <a href="https://novu.ch/">novu</a>.</li>
+  <li>Together with Pascal Josephy, I founded the web design and web development agency jkweb in 2011 (at the age of 17). jkweb has acquired novu and is now called <a href="https://novu.ch/">novu</a>; the company has recently been sold to a larger group.</li>
 </ul>
 
 
