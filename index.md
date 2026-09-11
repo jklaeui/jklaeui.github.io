@@ -5,7 +5,7 @@
 
 <h4>When to Broaden, When to Focus: Job Search and Market Tightness</h4>
 <p class="paper-meta">Job market paper; solo-authored<br>
-<span class="presentation-info"><em>Nominated for the CESifo Young Affiliate Award. Presented at VU Amsterdam
+<span class="presentation-info"><em>Nominated for the CESifo Young Affiliate Award. Presented at European Economic Association (Aug 2026), Royal Economic Society (Jul 2026), VU Amsterdam
 Internal Seminar (May 2026), University of Geneva, Institute of Economics and Econometrics Seminar (2026),
 French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch
 (Feb 2025)</em></span></p>
