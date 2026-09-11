@@ -26,7 +26,7 @@ bundle exec jekyll build
   - toggleAbstract() function shows/hides research paper abstracts
   - Google Analytics tracking for abstract views (gtag events)
 - `download/`: Research papers as PDFs
-- Static assets: CV (cv_klaeui.pdf), photos, logos
+- Static assets: CV (cv/cv_klaeui_2026.pdf), photos, logos
 
 ### Theme and Styling
 - Base theme: jekyll-theme-minimal (configured in _config.yml)
