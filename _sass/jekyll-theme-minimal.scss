@@ -119,11 +119,14 @@ body {
 .hero-text {
   flex: 1;
   min-width: 0;
+  color: var(--accent);  /* same blue as the show-buttons */
   text-align: justify;   /* last line of each <p> stays ragged (default
                             text-align-last), so paragraphs can end mid-line */
 }
 
 .hero-text p { margin: 0 0 16px; }
+
+.hero-text a { color: inherit; }  /* links blend in, keeps the block homogenous */
 
 .hero-text .job-market {
   /* same grey as the paragraphs above it */
