@@ -1,3 +1,19 @@
+# Jekyll
+_site
+.jekyll
+.jekyll-metadata
+.jekyll-cache
+.sass-cache
+.bundle
+Gemfile.lock
+node_modules
+package.json
+*.gem
+*.gemspec
+
+# macOS
+.DS_Store
+
 # LaTeX build artifacts
 *.aux
 *.bbl
@@ -7,6 +23,3 @@
 *.log
 *.out
 *.synctex.gz
-
-# Jekyll
-_site/
