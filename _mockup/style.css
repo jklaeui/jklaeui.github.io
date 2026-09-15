@@ -219,6 +219,33 @@ body {
   margin-top: 10px;
 }
 
+/* Variant: e-mail + CV rendered as buttons in the show-button style (add
+   class "contact-buttons" to .contact-links) */
+.hero-contact .contact-buttons {
+  flex-direction: row;      /* the two buttons sit side by side... */
+  flex-wrap: wrap;          /* ...and drop onto two lines when narrow */
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.hero-contact .contact-buttons a {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: normal;      /* same box as a <button class="show-button"> */
+  text-decoration: none;
+}
+
+.hero-contact .contact-buttons a:hover,
+.hero-contact .contact-buttons a:focus {
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Contact strip: one line between the header and the sections */
 .contact-bar {
   border-top: 1px solid #e5e5e5;
