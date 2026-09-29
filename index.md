@@ -39,16 +39,17 @@ Labor Economics (June 2023)</em></span></p>
 <a href="/download/klaeui_kopp_lalive_siegenthaler_adapting_to_scarcity.pdf" target="_blank"><button class="show-button">Latest draft</button></a>
 <a href="https://cepr.org/publications/dp21027" target="_blank"><button class="show-button">CEPR Discussion Paper</button></a></p>
 <div id="abstract_click_occ_mob" class="abstract">
-  This paper examines the circumstances under which firms facilitate occupational transitions, complementing
-  prior work that focuses on workers' decisions. We link unemployment insurance records with application diaries
-  and clickstream data from a recruitment platform to causally assess how candidates' occupational histories
-  shape recruiters' hiring decisions. We find that the average candidate from a different occupation faces a
-  7&percnt; lower contact rate than equally qualified candidates who last worked in a recruiter's searched
-  occupation. Using a new measure of skill overlap, we show that 60&percnt; of this penalty reflects that movers
-  meet fewer skill requirements than incumbents. Occupational experience and qualifications further reduce the
-  mover penalty, such that certain candidates returning to a prior occupation face no penalty at all. Finally,
-  recruiters adapt to scarcity and contact more movers in tight occupations. Changes in firm behavior account
-  for one-third of the increase in movers' application success in tight versus slack labor markets.
+  We analyze whether, why, and when firms are reluctant to hire occupational movers using application diaries
+  and clickstream data from a recruitment platform, which we link to unemployment insurance records. Compared to
+  incumbents, occupational movers are contacted 21&percnt; and hired 26&percnt; less likely. Part of this gap
+  reflects negative selection: relative to otherwise equally qualified incumbents, movers face a 7&percnt; lower
+  contact rate. A framework of employer screening under uncertainty attributes this gap to movers' lower
+  expected overlap with the job's requirements&mdash;a prediction we test using a new measure of occupational
+  similarity based on overlap in job requirements across vacancies. Occupational similarity explains four-fifths
+  of the mover gap. Also, the mover gap is 3.3 times larger in vacancy occupations with homogeneous
+  requirements. Firms value occupational experience and credentials, but contact more movers when labor markets
+  are tight. Firms' behavior accounts for about 30&percnt; of the relative shift in contacts and hires from
+  incumbents to movers as occupations tighten.
 </div>
 
 <p class="media-links"><strong>Media:</strong> <a href="https://www.rfberlin.com/research-insights/why-firms-hesitate-to-hire-occupation-switchers/" target="_blank">RFBerlin Research Insights</a></p>
