@@ -26,7 +26,9 @@ French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025)
   offers a simple basis for targeted search advice.
 </div>
 
-<p class="media-links"><strong>Media:</strong> Die Volkswirtschaft / La Vie &eacute;conomique (forthcoming)</p>
+<p class="media-links"><strong>Media:</strong>
+<a href="https://dievolkswirtschaft.ch/de/2026/09/wann-lohnt-sich-eine-breitere-stellensuche/" target="_blank">Die Volkswirtschaft: Wann lohnt sich eine breitere Stellensuche?</a>;
+<a href="https://dievolkswirtschaft.ch/fr/2026/09/quand-faut-il-elargir-sa-recherche-demploi/" target="_blank">La Vie &eacute;conomique: Quand faut-il &eacute;largir sa recherche d'emploi&nbsp;?</a></p>
 
 <h4>The Role of Firms in Occupational Mobility</h4>
 <p class="paper-meta">with D. Kopp, R. Lalive, M. Siegenthaler<br>
