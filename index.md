@@ -36,7 +36,7 @@ French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025)
 Labor Economics (June 2023)</em></span></p>
 
 <p><button class="show-button" onclick="toggleAbstract('abstract_click_occ_mob')">Show abstract</button>
-<a href="/download/klaeui_kopp_lalive_siegenthaler_adapting_to_scarcity.pdf" target="_blank"><button class="show-button">Latest draft</button></a>
+<a href="/download/klaeui_kopp_lalive_siegenthaler_role_of_firms_occ_mobility.pdf" target="_blank"><button class="show-button">Latest draft</button></a>
 <a href="https://cepr.org/publications/dp21027" target="_blank"><button class="show-button">CEPR Discussion Paper</button></a></p>
 <div id="abstract_click_occ_mob" class="abstract">
   We analyze whether, why, and when firms are reluctant to hire occupational movers using application diaries
