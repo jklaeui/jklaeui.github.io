@@ -5,7 +5,7 @@
 <h3 class="subsection">Working papers and advanced projects</h3>
 
 <h4>When to Broaden, When to Focus: Job Search and Market Tightness</h4>
-<p class="paper-meta">Job market paper; solo-authored<br>
+<p class="paper-meta">Job market paper; solo-authored; <strong>Submitted</strong><br>
 <span class="presentation-info"><em>Nominated for the CESifo Young Affiliate Award. Presented at European Economic Association (Aug 2026), Royal Economic Society (Jul 2026), VU Amsterdam
 Internal Seminar (May 2026), University of Geneva, Institute of Economics and Econometrics Seminar (2026),
 French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025), PSE Applied Economics Lunch
@@ -31,13 +31,14 @@ French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025)
 <a href="https://dievolkswirtschaft.ch/fr/2026/09/quand-faut-il-elargir-sa-recherche-demploi/" target="_blank">La Vie &eacute;conomique: Quand faut-il &eacute;largir sa recherche d'emploi&nbsp;?</a></p>
 
 <h4>The Role of Firms in Occupational Mobility</h4>
-<p class="paper-meta">with D. Kopp, R. Lalive, M. Siegenthaler<br>
+<p class="paper-meta">with D. Kopp, R. Lalive, M. Siegenthaler; <strong>Submitted</strong><br>
 <span class="presentation-info"><em>Presented at ZEW Mannheim Research Seminar (Mar 2025), IZA Summer School in
 Labor Economics (June 2023)</em></span></p>
 
 <p><button class="show-button" onclick="toggleAbstract('abstract_click_occ_mob')">Show abstract</button>
-<a href="/download/klaeui_kopp_lalive_siegenthaler_role_of_firms_occ_mobility.pdf" target="_blank"><button class="show-button">Latest draft</button></a>
-<a href="https://cepr.org/publications/dp21027" target="_blank"><button class="show-button">CEPR Discussion Paper</button></a></p>
+<a href="/download/klaeui_kopp_lalive_siegenthaler_role_of_firms_occ_mobility.pdf" target="_blank"><button class="show-button">PDF (latest version)</button></a>
+<a href="https://cepr.org/publications/dp21027" target="_blank"><button class="show-button">CEPR Discussion Paper (latest version)</button></a>
+<a href="https://www.rfberlin.com/wp-content/uploads/2026/01/26020.pdf" target="_blank"><button class="show-button">RFBerlin Discussion Paper (previous version)</button></a></p>
 <div id="abstract_click_occ_mob" class="abstract">
   We analyze whether, why, and when firms are reluctant to hire occupational movers using application diaries
   and clickstream data from a recruitment platform, which we link to unemployment insurance records. Compared to
