@@ -364,6 +364,15 @@ a:hover, a:focus { color: var(--accent); text-decoration: underline; }
 }
 .show-button:hover { background-color: #111; }
 
+/* Rows of buttons under a paper: left-aligned with a fixed gap. As plain
+   inline content in a justified <p>, a row that wraps (e.g. four buttons)
+   gets its first line stretched across the column. */
+p:has(> .show-button, > a > .show-button) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 /* Other elements */
 img { max-width: 100%; }
 strong { color: #222; font-weight: 700; }

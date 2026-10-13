@@ -326,8 +326,10 @@ h3.subsection {
   border-top: 1px solid #ececec;
 }
 
-/* first subsection after a section heading needs neither */
-h2 + h3.subsection {
+/* first subsection after a section heading (or the invisible #research
+   anchor that replaced it) needs neither */
+h2 + h3.subsection,
+#research + h3.subsection {
   margin-top: 25px;
   padding-top: 0;
   border-top: none;
@@ -381,6 +383,15 @@ a:hover, a:focus { color: var(--accent); text-decoration: underline; }
   font-family: inherit;
 }
 .show-button:hover { background-color: #111; }
+
+/* Rows of buttons under a paper: left-aligned with a fixed gap. As plain
+   inline content in a justified <p>, a row that wraps (e.g. four buttons)
+   gets its first line stretched across the column. */
+p:has(> .show-button, > a > .show-button) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
 
 /* Other elements */
 img { max-width: 100%; }
