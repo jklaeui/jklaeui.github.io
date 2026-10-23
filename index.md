@@ -12,18 +12,20 @@ French Public Employment Services (Jul 2025), UC Berkeley Labor Lunch (Apr 2025)
 (Feb 2025)</em></span></p>
 
 <p><button class="show-button" onclick="toggleAbstract('abstract_click_search_scopes')">Show abstract</button>
-<a href="https://www.ifo.de/DocDL/cesifo1_wp12744.pdf" target="_blank"><button class="show-button">CESifo Working Paper</button></a></p>
+<a href="/download/jmp_klaeui.pdf" target="_blank"><button class="show-button">PDF (latest version)</button></a>
+<a href="https://www.ifo.de/DocDL/cesifo1_wp12744.pdf" target="_blank"><button class="show-button">CESifo Working Paper (previous version)</button></a></p>
 <div id="abstract_click_search_scopes" class="abstract">
-  This paper investigates whether directing job search toward tight labor markets improves re-employment. Such
-  targeting is theoretically attractive as it reduces aggregate congestion. I link Swiss unemployment records to
-  clickstream search data to measure which markets jobseekers target. To address selection, I exploit
-  quasi-random assignment to caseworkers differing in their tendency to redirect clients toward tight markets.
-  Moving from the 10th to the 90th percentile raises six-month job-finding by 2.7&percnt;. The channels are
-  heterogeneous: jobseekers who become unemployed in slack markets gain from mobility, consistent with prior
-  findings from policies that encourage broader search. The new insight is that jobseekers who become unemployed
-  in tight markets benefit from a narrower focus on this initial market. Effects are orthogonal to other
-  caseworker behaviors and do not come at the expense of job quality. My findings suggest that market tightness
-  offers a simple basis for targeted search advice.
+  Navigating the labor market is hard and many public employment services advise jobseekers. Yet little is known
+  about how this advice changes where they search and their chances of finding a job. This paper investigates
+  whether advice directing their search toward tight markets improves re-employment. I link Swiss unemployment
+  records to clickstream data from the public job portal, which show where jobseekers search before they find a
+  job. I exploit quasi-random assignment to caseworkers differing in their tendency to give such advice. The
+  tendency is unrelated to other caseworker behaviors. Moving from a 10th to a 90th percentile caseworker raises
+  six-month job finding by 2.8&percnt;, without lowering job quality. Jobseekers from slack markets gain from
+  mobility to tighter markets, while those from tight markets gain from focusing on their market, suggesting
+  that not only advice that broadens search but also advice that focuses it can be beneficial. A
+  back-of-the-envelope calculation indicates that the advice would still direct search toward tighter markets if
+  all caseworkers gave it, suggesting scope for wider use.
 </div>
 
 <p class="media-links"><strong>Media:</strong>
