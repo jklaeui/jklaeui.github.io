@@ -11,6 +11,7 @@
   --bg: #fbfaf7; --surface: #ffffff; --text: #1d1d1b; --muted: #6b6a66; --line: #e6e3dc;
   --accent: #2f5d8a; --accent-soft: #e8eef5; --mark: #fff0b3; --chip: #f1efe9;
   --shadow: 0 1px 2px rgba(0,0,0,.04), 0 2px 8px rgba(0,0,0,.04);
+  --note-bg: #fbf3dc; --note-line: #d9b44a;
   /* author colours: Paul Tol muted + Okabe-Ito, colour-blind safe */
   --c0: #0072B2; --c1: #E69F00; --c2: #117733; --c3: #CC6677; --c4: #332288; --c5: #44AA99; --c6: #D55E00; --c7: #AA4499; --c8: #999933; --c9: #4FA3D1; --c10: #882255; --c11: #C9B458;
 }
@@ -18,13 +19,13 @@
   :root:not([data-theme="light"]) {
     --bg: #161615; --surface: #1f1f1d; --text: #ecebe7; --muted: #a09e97; --line: #33322f;
     --accent: #8db6e0; --accent-soft: #24303c; --mark: #5a4b12; --chip: #2a2a27;
-    --shadow: none;
+    --shadow: none; --note-bg: #2f2a1c; --note-line: #9c8236;
     --c0: #56B4E9; --c1: #E6A532; --c2: #5BBF6A; --c3: #E08A99; --c4: #968EE6; --c5: #5CC4B3; --c6: #F07A3A; --c7: #CC77BB; --c8: #BDBD55; --c9: #88CCEE; --c10: #D07AA3; --c11: #DDCC77;
   }
 }
 :root[data-theme="dark"] {
   --bg: #161615; --surface: #1f1f1d; --text: #ecebe7; --muted: #a09e97; --line: #33322f;
-  --accent: #8db6e0; --accent-soft: #24303c; --mark: #5a4b12; --chip: #2a2a27; --shadow: none;
+  --accent: #8db6e0; --accent-soft: #24303c; --mark: #5a4b12; --chip: #2a2a27; --shadow: none; --note-bg: #2f2a1c; --note-line: #9c8236;
   --c0: #56B4E9; --c1: #E6A532; --c2: #5BBF6A; --c3: #E08A99; --c4: #968EE6; --c5: #5CC4B3; --c6: #F07A3A; --c7: #CC77BB; --c8: #BDBD55; --c9: #88CCEE; --c10: #D07AA3; --c11: #DDCC77;
 }
 * { box-sizing: border-box; }
@@ -86,7 +87,7 @@ a.pdf { display: inline-flex; align-items: center; gap: 4px; text-decoration: no
 .authors button { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: underline dotted var(--muted); text-underline-offset: 3px; }
 .venue { color: var(--muted); font-size: 14px; margin-top: 2px; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 9px; }
-.pdf, .abs-toggle {
+.pdf, .abs-toggle, .notes-toggle {
   font: inherit; font-size: 14px; border-radius: 8px; padding: 7px 12px; cursor: pointer; min-height: 36px;
   border: 1px solid var(--line); background: var(--surface); color: var(--text);
 }
@@ -98,6 +99,9 @@ a.pdf { display: inline-flex; align-items: center; gap: 4px; text-decoration: no
 .topics { font-size: 13px; color: var(--muted); margin-top: 4px; }
 .topics button { background: var(--chip); border: 0; border-radius: 999px; padding: 2px 9px; margin: 3px 4px 0 0; font: inherit; font-size: 12.5px; color: var(--text); cursor: pointer; text-align: left; }
 .abstract { font-size: 14px; color: var(--text); margin-top: 10px; line-height: 1.5; }
+.note { font-size: 14px; margin-top: 10px; line-height: 1.5; white-space: pre-wrap; padding: 8px 12px; border-radius: 8px;
+  background: var(--note-bg); border-left: 3px solid var(--note-line); }
+.notes-toggle { border-color: var(--note-line) !important; }
 mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
 .empty, .notice { color: var(--muted); padding: 18px 0; }
 .login { text-align: center; padding: 18vh 0 0; }
@@ -235,6 +239,7 @@ function prepare(ix) {
   for (const p of papers) {
     p._search = fold(p.title);
     p._abs = fold(p.abstract);
+    p._notes = fold(p.notes);
     p._auth = fold((p.authors || []).map(a => a.given + ' ' + a.family).join(' '));
     const keys = new Set();
     p._akeys = [];
@@ -331,7 +336,8 @@ function paperHtml(p, opts = {}) {
   const versions = p.files.filter(f => !isExtra(f)), extra = p.files.filter(isExtra);
   const files = versions.map((f, i) => `<a class="pdf${i ? ' alt' : ''}" href="${esc(viewerUrl(f.path))}" target="_blank" rel="noopener">${i ? esc(f.label || 'Version ' + (i + 1)) : 'PDF' + (versions.length > 1 && f.label ? ` <small>${esc(f.label)}</small>` : '')}</a>`).join('')
     + extra.map(f => `<a class="pdf alt" href="${esc(viewerUrl(f.path))}" target="_blank" rel="noopener">${esc(f.label)}</a>`).join('');
-  const abs = p.abstract ? `<button class="abs-toggle" aria-expanded="${opts.openAbs ? 'true' : 'false'}">Abstract</button>` : '';
+  const abs = (p.abstract ? `<button class="abs-toggle" aria-expanded="${opts.openAbs ? 'true' : 'false'}">Abstract</button>` : '')
+    + (p.notes ? `<button class="notes-toggle" aria-expanded="false">My notes</button>` : '');
   return `<div class="paper" data-id="${esc(p.id)}">
     <div class="title">${hl(p.title)}</div>
     ${authors ? `<div class="authors">${authors}</div>` : ''}
@@ -339,6 +345,7 @@ function paperHtml(p, opts = {}) {
     ${(p.jel || []).length ? `<div class="topics">${p.jel.filter(c => BYT.has(c)).map(c => `<button data-topic="${esc(c)}" title="${esc(c + ': ' + BYT.get(c).official)}">${esc(BYT.get(c).name)}</button>`).join('')}</div>` : ''}
     <div class="actions">${files}${abs}</div>
     ${p.abstract ? `<div class="abstract" ${opts.openAbs ? '' : 'hidden'}>${hl(p.abstract)}</div>` : ''}
+    ${p.notes ? `<div class="note" ${terms.some(t => p._notes.includes(t)) ? '' : 'hidden'}>${hl(p.notes)}</div>` : ''}
   </div>`;
 }
 
@@ -421,7 +428,7 @@ function showGroup(kind, key) {
 const PAGE = 40;
 function renderSearch(q) {
   terms = fold(q).split(/\s+/).filter(Boolean);
-  const all = p => terms.every(t => p._search.includes(t) || p._abs.includes(t) || p._auth.includes(t));
+  const all = p => terms.every(t => p._search.includes(t) || p._abs.includes(t) || p._auth.includes(t) || p._notes.includes(t));
   const hits = LIB.papers.filter(all);
   // titles first, then authors, then abstract-only; newest first within each tier
   const tier = p => terms.every(t => p._search.includes(t)) ? 0 : terms.every(t => p._search.includes(t) || p._auth.includes(t)) ? 1 : 2;
@@ -448,6 +455,11 @@ function alertBox(msg) {
 }
 
 main.addEventListener('click', ev => {
+  const nt = ev.target.closest('.notes-toggle');
+  if (nt) {
+    const box = nt.closest('.paper').querySelector('.note');
+    box.hidden = !box.hidden; nt.setAttribute('aria-expanded', String(!box.hidden)); return;
+  }
   const abs = ev.target.closest('.abs-toggle');
   if (abs) {
     const box = abs.closest('.paper').querySelector('.abstract');
