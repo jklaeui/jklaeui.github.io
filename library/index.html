@@ -127,7 +127,9 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 const APP_KEY = '13d7ztuogqot8nl';
 const INDEX_PATH = '/Uni Dropbox/assistant/literature/index.json';
 const REDIRECT = location.origin + location.pathname;
-const TOP = {authors: 4, journals: 5, topics: 10};   // this many papers or more: first group of the list
+const TOP = {authors: 4, journals: 5, topics: 5};
+const TOPIC_TIERS = [30, 10, 5];   // Topics tab: 30+, 10+, 5+, then the rest
+const tierOf = n => TOPIC_TIERS.findIndex(t => n >= t);   // this many papers or more: first group of the list
 
 const $ = s => document.querySelector(s);
 const main = $('#main');
@@ -272,10 +274,12 @@ function prepare(ix) {
   for (const e of TOPICS) e.papers.sort((a, b) => (b.year || 0) - (a.year || 0));
   BYT = tmap;
   // colours in turn along each list shown on the page, so neighbours differ
-  for (const [list, n] of [[AUTHORS, TOP.authors], [JOURNALS.filter(e => !e.wp), TOP.journals], [JOURNALS.filter(e => e.wp), TOP.journals], [TOPICS, TOP.topics]]) {
+  for (const [list, n] of [[AUTHORS, TOP.authors], [JOURNALS.filter(e => !e.wp), TOP.journals], [JOURNALS.filter(e => e.wp), TOP.journals]]) {
     let top = 0, rest = 0;
     for (const e of list) e.ci = (e.papers.length >= n ? top++ : rest++) % NCOL;
   }
+  const tierCount = {};
+  for (const e of TOPICS) { const t = tierOf(e.papers.length); tierCount[t] = (tierCount[t] || 0) + 1; e.ci = (tierCount[t] - 1) % NCOL; }
   LIB = ix;
   $('#stats').textContent = `${papers.length} papers · ${AUTHORS.length} authors`;
 }
@@ -367,9 +371,10 @@ function renderHome() {
     const [top, rest] = split(AUTHORS);
     main.innerHTML = section(`${n}+ papers`, top) + section('Other authors', rest);
   } else if (tab === 'topics') {
-    const [top, rest] = split(TOPICS);
+    const tiers = TOPIC_TIERS.map((t, i) => section(i ? `${t}–${TOPIC_TIERS[i - 1] - 1} papers` : `${t}+ papers`,
+      TOPICS.filter(e => tierOf(e.papers.length) === i))).join('');
     const none = LIB.papers.filter(p => !(p.jel || []).length).length;
-    main.innerHTML = section(`${n}+ papers`, top) + section('Other topics', rest)
+    main.innerHTML = tiers + section('Other topics', TOPICS.filter(e => tierOf(e.papers.length) === -1))
       + `<p class="notice">Topics are JEL codes, as printed in the paper or assigned from title and abstract.${none ? ` ${none} papers have none yet.` : ''}</p>`;
   } else {
     const [jt, jr] = split(JOURNALS.filter(e => !e.wp)), [wt, wr] = split(JOURNALS.filter(e => e.wp));
