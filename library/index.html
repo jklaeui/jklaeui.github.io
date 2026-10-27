@@ -53,9 +53,11 @@ h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: v
 .list { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
 .author + .author, .paper + .paper { border-top: 1px solid var(--line); }
 .tabs { display: flex; gap: 6px; margin-top: 10px; }
-.tabs button { flex: 1; font: inherit; font-size: 15px; padding: 8px 10px; min-height: 40px; border-radius: 9px; cursor: pointer;
+.tabs button { flex: 1; font: inherit; font-size: 15px; padding: 8px 6px; min-height: 40px; border-radius: 9px; cursor: pointer;
   border: 1px solid var(--line); background: var(--surface); color: var(--muted); }
 .tabs button[aria-selected="true"] { background: var(--accent-soft); color: var(--text); border-color: var(--accent); font-weight: 600; }
+.day { font-size: 13px; font-weight: 600; color: var(--muted); padding: 10px 14px 4px; background: var(--bg); border-top: 1px solid var(--line); }
+.day:first-child { border-top: 0; }
 .venue button { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: underline dotted var(--muted); text-underline-offset: 3px; text-align: left; }
 .author > button {
   width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
@@ -118,7 +120,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
       <div><span class="meta" id="stats"></span> <button class="linkbtn" id="logout">Log out</button></div>
     </div>
     <input type="search" id="q" placeholder="Search titles, abstracts, authors, journals, topics" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search">
-    <nav class="tabs" role="tablist"><button role="tab" data-tab="authors">Authors</button><button role="tab" data-tab="journals">Journals</button><button role="tab" data-tab="topics">Topics</button></nav>
+    <nav class="tabs" role="tablist"><button role="tab" data-tab="authors">Authors</button><button role="tab" data-tab="journals">Journals</button><button role="tab" data-tab="topics">Topics</button><button role="tab" data-tab="recent">Recent</button></nav>
   </div>
 </header>
 <main class="wrap" id="main"></main>
@@ -200,7 +202,7 @@ async function logout() {
 
 let LIB = null, AUTHORS = [], BYKEY = new Map(), JOURNALS = [], BYJ = new Map();
 let TOPICS = [], BYT = new Map();
-let tab = ['journals', 'topics'].includes(store.get('lib-tab')) ? store.get('lib-tab') : 'authors';
+let tab = ['journals', 'topics', 'recent'].includes(store.get('lib-tab')) ? store.get('lib-tab') : 'authors';
 
 // working-paper series and spelling variants collapse into one entry per journal or series
 const SERIES = [[/\bNBER\b|National Bureau of Economic Research/i, 'NBER Working Papers'],
@@ -367,6 +369,7 @@ function renderHome() {
   const last = e => e.key === 'no venue' || e.key === 'failed download';   // always at the end
   const split = list => [list.filter(e => e.papers.length >= n && !last(e)), list.filter(e => e.papers.length < n && !last(e)).concat(list.filter(last))];
   const section = (title, list) => list.length ? `<h2>${title}</h2><div class="list">${list.map(html).join('')}</div>` : '';
+  if (tab === 'recent') return renderRecent();
   if (tab === 'authors') {
     const [top, rest] = split(AUTHORS);
     main.innerHTML = section(`${n}+ papers`, top) + section('Other authors', rest);
@@ -381,6 +384,30 @@ function renderHome() {
     main.innerHTML = section(`Peer-reviewed · ${n}+ papers`, jt) + section(`Working papers &amp; other · ${n}+ papers`, wt)
       + section('Other peer-reviewed journals', jr) + section('Other working papers, reports &amp; books', wr);
   }
+}
+
+// Recent: newest first (a paper also moves up when it gets a new version or appendix)
+const dayLabel = d => {
+  const days = Math.round((new Date(new Date().toDateString()) - new Date(d + 'T00:00:00')) / 864e5);
+  return days === 0 ? 'Today' : days === 1 ? 'Yesterday'
+    : new Date(d + 'T00:00:00').toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'});
+};
+function recentHtml(list) {
+  let html = '', last = main._lastDay;
+  for (const p of list) {
+    if (p.last_added !== last) { html += `<div class="day">${esc(dayLabel(p.last_added || ''))}</div>`; last = p.last_added; }
+    html += paperHtml(p);
+  }
+  main._lastDay = last;
+  return html;
+}
+function renderRecent() {
+  const noAuthor = p => (p.authors || []).length ? 0 : 1;   // failed downloads etc. at the end of each day
+  const list = [...LIB.papers].sort((a, b) => (b.last_added || '').localeCompare(a.last_added || '')
+    || noAuthor(a) - noAuthor(b) || fold(a.authors?.[0]?.family).localeCompare(fold(b.authors?.[0]?.family)));
+  main._lastDay = null;
+  main.innerHTML = `<h2>Recently added</h2><div class="list">${recentHtml(list.slice(0, PAGE))}${list.length > PAGE ? '<button class="more" data-more="recent">Show more</button>' : ''}</div>`;
+  main._hits = list; main._shown = PAGE;
 }
 
 function showGroup(kind, key) {
@@ -441,7 +468,7 @@ main.addEventListener('click', ev => {
   if (more) {
     const next = main._hits.slice(main._shown, main._shown + PAGE);
     main._shown += PAGE;
-    more.insertAdjacentHTML('beforebegin', next.map(p => paperHtml(p)).join(''));
+    more.insertAdjacentHTML('beforebegin', more.dataset.more === 'recent' ? recentHtml(next) : next.map(p => paperHtml(p)).join(''));
     if (main._shown >= main._hits.length) more.remove();
     return;
   }
