@@ -133,7 +133,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
       <h1>Library</h1>
       <div class="tools"><span class="meta" id="stats"></span>
         <button class="iconbtn" id="todl" title="To download" aria-label="To-download list"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="todlN"></span></button>
-        <button class="iconbtn" id="up" title="Upload PDFs to the inbox" aria-label="Upload PDFs"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="iconbtn" id="up" title="Upload PDFs to the inbox" aria-label="Upload PDFs"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="upN"></span></button>
         <input type="file" id="upfile" accept="application/pdf,.pdf" multiple hidden>
         <button class="linkbtn" id="logout">Log out</button></div>
     </div>
@@ -219,6 +219,7 @@ async function logout() {
 
 // ---------- data ----------
 
+let INBOXFILES = [];   // uploaded but not yet indexed
 let LIB = null, AUTHORS = [], BYKEY = new Map(), JOURNALS = [], BYJ = new Map();
 let TOPICS = [], BYT = new Map();
 let tab = ['journals', 'topics', 'recent'].includes(store.get('lib-tab')) ? store.get('lib-tab') : 'authors';
@@ -436,7 +437,7 @@ function renderRecent() {
   const list = [...LIB.papers].sort((a, b) => (b.last_added || '').localeCompare(a.last_added || '')
     || noAuthor(a) - noAuthor(b) || fold(a.authors?.[0]?.family).localeCompare(fold(b.authors?.[0]?.family)));
   main._lastDay = null;
-  main.innerHTML = `<h2>Recently added</h2><div class="list">${recentHtml(list.slice(0, PAGE))}${list.length > PAGE ? '<button class="more" data-more="recent">Show more</button>' : ''}</div>`;
+  main.innerHTML = uploadsHtml() + `<h2>Recently added</h2><div class="list">${recentHtml(list.slice(0, PAGE))}${list.length > PAGE ? '<button class="more" data-more="recent">Show more</button>' : ''}</div>`;
   main._hits = list; main._shown = PAGE;
 }
 
@@ -460,6 +461,25 @@ function renderWanted() {
   window.scrollTo(0, 0);
 }
 
+// files waiting in literature/_inbox (Claude indexes them on request)
+async function loadInbox() {
+  try {
+    const r = await api('https://api.dropboxapi.com/2/files/list_folder', {method: 'POST',
+      headers: {'Content-Type': 'application/json'}, body: JSON.stringify({path: INBOX})});
+    INBOXFILES = (await r.json()).entries.filter(e => e['.tag'] === 'file' && /\.pdf$/i.test(e.name))
+      .sort((a, b) => b.server_modified.localeCompare(a.server_modified));
+  } catch (e) { INBOXFILES = []; }
+  $('#upN').textContent = INBOXFILES.length || '';
+}
+function uploadsHtml() {
+  if (!INBOXFILES.length) return '';
+  return `<h2>Uploads · not yet indexed</h2><div class="list">${INBOXFILES.map(f => `<div class="paper">
+    <div class="title">${esc(f.name)}</div>
+    <div class="byline"><span class="venue">uploaded ${esc((d => /^\d/.test(d) ? 'on ' + d : d.toLowerCase())(dayLabel(f.server_modified.slice(0, 10))))}</span></div>
+    <div class="actions"><a class="pdf" href="${esc(viewerUrl('_inbox/' + f.name))}" target="_blank" rel="noopener">PDF</a></div>
+  </div>`).join('')}</div><p class="notice">Run “Update Library” on the Mac to add these to the library.</p>`;
+}
+
 async function upload(files) {
   const pdfs = [...files].filter(f => /\.pdf$/i.test(f.name));
   if (!pdfs.length) return;
@@ -478,7 +498,9 @@ async function upload(files) {
       return;
     }
   }
-  box.textContent = `${ok} PDF${ok > 1 ? 's' : ''} uploaded to the inbox. Tell Claude: “update the library”.`;
+  await loadInbox();
+  if (tab === 'recent' && !$('#q').value.trim()) return renderRecent();
+  box.textContent = `${ok} PDF${ok > 1 ? 's' : ''} uploaded. They are listed under Recent → Uploads until you run “Update Library”.`;
 }
 
 function showGroup(kind, key) {
@@ -590,6 +612,7 @@ function showLogin(msg) {
   const cached = store.get('lib-index');
   if (cached) { try { prepare(JSON.parse(cached)); renderHome(); } catch (e) {} }
   else main.innerHTML = '<div class="notice">Loading…</div>';
+  loadInbox().then(() => { if (tab === 'recent' && LIB && !$('#q').value.trim()) renderRecent(); });
   try {
     const ix = await loadIndex();
     const q = $('#q').value.trim();
