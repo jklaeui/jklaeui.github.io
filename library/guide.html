@@ -65,12 +65,12 @@ button.btn { border: 0; font: inherit; font-weight: 600; cursor: pointer; }
     <button class="btn" id="copy" type="button">Copy the message</button>
     <pre id="prompt">Please install the &quot;lit&quot; library skill from https://jklaeui.github.io/library/ and build the index of my PDF library.
 
-1. Create ~/.claude/skills/lit/ and download these files into it with curl, saving SKILL.txt as SKILL.md:
-   https://jklaeui.github.io/library/skill/SKILL.txt
-   https://jklaeui.github.io/library/skill/lit.py
-   https://jklaeui.github.io/library/skill/library.py
-   https://jklaeui.github.io/library/skill/jel.json
-   https://jklaeui.github.io/library/skill/jel_short.json
+1. Create ~/.claude/skills/lit/ and download these files into it with curl, keeping their names:
+   https://raw.githubusercontent.com/jklaeui/jklaeui.github.io/main/library/skill/SKILL.md
+   https://raw.githubusercontent.com/jklaeui/jklaeui.github.io/main/library/skill/lit.py
+   https://raw.githubusercontent.com/jklaeui/jklaeui.github.io/main/library/skill/library.py
+   https://raw.githubusercontent.com/jklaeui/jklaeui.github.io/main/library/skill/jel.json
+   https://raw.githubusercontent.com/jklaeui/jklaeui.github.io/main/library/skill/jel_short.json
    Skim the two Python scripts and tell me in two sentences what they do before running anything.
 2. Check that pdftotext works (otherwise: brew install poppler) and that Python has requests, beautifulsoup4 and lxml (otherwise: python3 -m pip install --user requests beautifulsoup4 lxml).
 3. Find my Dropbox folder on this computer (~/.dropbox/info.json, ~/Library/CloudStorage/Dropbox*, ~/Dropbox) and ask me which folder in it holds my PDFs. Then run:
@@ -83,7 +83,7 @@ button.btn { border: 0; font: inherit; font-weight: 600; cursor: pointer; }
   <details class="muted">
     <summary>Prefer to do it by hand?</summary>
     <ol>
-      <li>Download the five files from <code>https://jklaeui.github.io/library/skill/</code> (<code>SKILL.txt</code>, <code>lit.py</code>, <code>library.py</code>, <code>jel.json</code>, <code>jel_short.json</code>) into <code>~/.claude/skills/lit/</code> and rename <code>SKILL.txt</code> to <code>SKILL.md</code>.</li>
+      <li>Download the five files <code>SKILL.md</code>, <code>lit.py</code>, <code>library.py</code>, <code>jel.json</code>, <code>jel_short.json</code> from <code>https://raw.githubusercontent.com/jklaeui/jklaeui.github.io/main/library/skill/</code> into <code>~/.claude/skills/lit/</code>.</li>
       <li><code>brew install poppler</code> and <code>python3 -m pip install --user requests beautifulsoup4 lxml</code></li>
       <li>Optional free OpenAlex key from openalex.org/settings/api, saved in <code>~/.config/openalex/api_key</code>.</li>
       <li><code>python3 ~/.claude/skills/lit/library.py setup --folder "&lt;your PDF folder inside Dropbox&gt;"</code></li>
