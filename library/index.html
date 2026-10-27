@@ -301,13 +301,8 @@ function prepare(ix) {
   TOPICS = [...tmap.values()].sort((a, b) => a.key.localeCompare(b.key));
   for (const e of TOPICS) e.papers.sort((a, b) => (b.year || 0) - (a.year || 0));
   BYT = tmap;
-  // colours in turn along each list shown on the page, so neighbours differ
-  for (const [list, n] of [[AUTHORS, TOP.authors], [JOURNALS.filter(e => !e.wp), TOP.journals], [JOURNALS.filter(e => e.wp), TOP.journals]]) {
-    let top = 0, rest = 0;
-    for (const e of list) e.ci = (e.papers.length >= n ? top++ : rest++) % NCOL;
-  }
-  const tierCount = {};
-  for (const e of TOPICS) { const t = tierOf(e.papers.length); tierCount[t] = (tierCount[t] || 0) + 1; e.ci = (tierCount[t] - 1) % NCOL; }
+  // colour from the name itself, so it stays the same when papers are added
+  for (const e of [...AUTHORS, ...JOURNALS, ...TOPICS]) e.ci = colourOf(e.key);
   LIB = ix;
   $('#stats').textContent = `${papers.length} papers · ${AUTHORS.length} authors`;
   $('#todlN').textContent = (ix.wanted || []).length || '';
@@ -348,8 +343,13 @@ async function fileListIndex() {
 
 // ---------- rendering ----------
 
-// colours are handed out in turn along each alphabetical list, so neighbours always differ
+// colour = hash of the author/journal/topic key (FNV-1a), stable across devices and new papers
 const NCOL = 12;
+function colourOf(key) {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < key.length; i++) h = Math.imul(h ^ key.charCodeAt(i), 0x01000193);
+  return (h >>> 0) % NCOL;
+}
 const colour = e => `var(--c${e?.ci ?? 0})`;
 const dot = e => `<span class="dot" style="--c:${colour(e)}" aria-hidden="true"></span>`;
 const MAPS = {authors: () => BYKEY, journals: () => BYJ, topics: () => BYT};
