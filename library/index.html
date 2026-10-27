@@ -176,6 +176,7 @@ async function login() {
   const verifier = b64url(crypto.getRandomValues(new Uint8Array(48)));
   const challenge = b64url(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(verifier)));
   store.set('lib-verifier', verifier);
+  store.set('lib-route', location.hash);   // back to the same view after the Dropbox login
   const p = new URLSearchParams({client_id: APP_KEY, response_type: 'code', code_challenge: challenge,
     code_challenge_method: 'S256', token_access_type: 'offline', redirect_uri: REDIRECT});
   location.href = 'https://www.dropbox.com/oauth2/authorize?' + p;
@@ -192,7 +193,8 @@ async function tokenRequest(params) {
 async function handleRedirect() {
   const q = new URLSearchParams(location.search);
   if (!q.get('code')) return;
-  history.replaceState(null, '', REDIRECT);
+  history.replaceState(null, '', REDIRECT + (store.get('lib-route') || ''));
+  store.del('lib-route');
   await tokenRequest({grant_type: 'authorization_code', code: q.get('code'), code_verifier: store.get('lib-verifier') || '', redirect_uri: REDIRECT});
   store.del('lib-verifier');
 }
@@ -587,6 +589,7 @@ async function useFolder(path) {
   try { prepare(await loadIndex()); } catch (e) { main.innerHTML = `<div class="notice">Could not load the library (${esc(e.message)}).</div>`; return; }
   await loadInbox();
   tab = LIB.simple ? 'recent' : tab;
+  nav(tab);
   renderHome();
 }
 
@@ -597,6 +600,43 @@ function showGroup(kind, key) {
   const el = [...main.querySelectorAll('.author')].find(x => x.dataset.key === key);
   if (el) { toggleAuthor(el, true); el.scrollIntoView({block: 'start'}); window.scrollBy(0, -$('#hdr').offsetHeight - 8); }
 }
+
+// the URL hash holds the current view, so Back/Forward and reload work:
+// #authors, #topics/J64, #search/monopsony+wages, #todo, #uploads, #folder/<path>
+const TABS = ['authors', 'journals', 'topics', 'recent'];
+history.scrollRestoration = 'manual';
+function parseRoute() {
+  const h = location.hash.slice(1), i = h.indexOf('/');
+  const dec = s => { try { return decodeURIComponent(s.replace(/\+/g, ' ')); } catch (e) { return s; } };
+  return i < 0 ? {view: h || tab, arg: ''} : {view: h.slice(0, i), arg: dec(h.slice(i + 1))};
+}
+function nav(view, arg = '', replace = false) {
+  const hash = '#' + view + (arg ? '/' + encodeURIComponent(arg).replace(/%20/g, '+').replace(/%7C/g, '|') : '');
+  if (hash === location.hash) return;
+  if (replace) return history.replaceState(history.state, '', hash);
+  history.replaceState({...history.state, y: scrollY}, '');   // where to return to on Back
+  history.pushState(null, '', hash);
+}
+function applyRoute(scroll = true) {
+  const {view, arg} = parseRoute();
+  $('#q').value = view === 'search' ? arg : '';
+  if (view === 'search' && arg.trim()) renderSearch(arg.trim());
+  else if (view === 'todo') renderWanted();
+  else if (view === 'uploads') renderUploads();
+  else if (view === 'folder') return renderFolders(arg);
+  else {
+    if (TABS.includes(view)) { tab = view; store.set('lib-tab', tab); }
+    if (arg && view !== 'recent') showGroup(tab, arg);   // scrolls to the open dropdown
+    else renderHome();
+  }
+  if (!scroll) return;
+  const y = history.state?.y;
+  if (y != null) window.scrollTo(0, y);
+  else if (!(arg && TABS.includes(view))) window.scrollTo(0, 0);
+}
+window.addEventListener('popstate', () => { if (LIB) applyRoute(); });
+let scrollTimer;
+window.addEventListener('scroll', () => { clearTimeout(scrollTimer); scrollTimer = setTimeout(() => history.replaceState({...history.state, y: scrollY}, ''), 300); });
 
 const PAGE = 40;
 function renderSearch(q) {
@@ -640,17 +680,18 @@ main.addEventListener('click', ev => {
     box.hidden = !box.hidden; tg.setAttribute('aria-expanded', String(!box.hidden)); return;
   }
   const fo = ev.target.closest('[data-open]');
-  if (fo) return renderFolders(fo.dataset.open);
+  if (fo) { nav('folder', fo.dataset.open); return renderFolders(fo.dataset.open); }
   const fu = ev.target.closest('[data-use]');
   if (fu) return useFolder(fu.dataset.use);
   const jb = ev.target.closest('[data-journal]');
-  if (jb) return showGroup('journals', jb.dataset.journal);
+  if (jb) { nav('journals', jb.dataset.journal); return showGroup('journals', jb.dataset.journal); }
   const tb = ev.target.closest('[data-topic]');
-  if (tb) return showGroup('topics', tb.dataset.topic);
+  if (tb) { nav('topics', tb.dataset.topic); return showGroup('topics', tb.dataset.topic); }
   const ab = ev.target.closest('[data-author]');
   if (ab && ab.dataset.author) {
     const e = BYKEY.get(ab.dataset.author);
     $('#q').value = (e.given ? e.given + ' ' : '') + e.family;
+    nav('search', $('#q').value);
     renderSearch($('#q').value);
     window.scrollTo(0, 0); return;
   }
@@ -663,22 +704,33 @@ main.addEventListener('click', ev => {
     return;
   }
   const a = ev.target.closest('.author > button');
-  if (a) toggleAuthor(a.parentElement);
+  if (a) {
+    const el = a.parentElement;
+    toggleAuthor(el);
+    // an open dropdown on a tab goes into the URL (replaced, so Back still leaves the tab)
+    if (TABS.includes(parseRoute().view) && el.dataset.kind === tab)
+      nav(tab, el.getAttribute('aria-expanded') === 'true' ? el.dataset.key : '', true);
+  }
 });
 
 let timer;
 $('#q').addEventListener('input', ev => {
   clearTimeout(timer);
-  timer = setTimeout(() => { const q = ev.target.value.trim(); q ? renderSearch(q) : renderHome(); }, 120);
+  timer = setTimeout(() => {
+    const q = ev.target.value.trim(), searching = parseRoute().view === 'search';
+    if (q) { nav('search', q, searching); renderSearch(q); }
+    else { nav(tab, '', true); renderHome(); }
+  }, 120);
 });
 $('#logout').addEventListener('click', logout);
-$('#fold').addEventListener('click', () => { $('#q').value = ''; renderFolders(ROOTPATH); });
-$('#todl').addEventListener('click', () => { $('#q').value = ''; renderWanted(); });
-$('#up').addEventListener('click', () => { $('#q').value = ''; renderUploads(); loadInbox().then(() => { if ($('#up').getAttribute('aria-pressed') === 'true') renderUploads(); }); });
+$('#fold').addEventListener('click', () => { nav('folder', ROOTPATH); $('#q').value = ''; renderFolders(ROOTPATH); });
+$('#todl').addEventListener('click', () => { nav('todo'); $('#q').value = ''; renderWanted(); });
+$('#up').addEventListener('click', () => { nav('uploads'); $('#q').value = ''; renderUploads(); loadInbox().then(() => { if ($('#up').getAttribute('aria-pressed') === 'true') renderUploads(); }); });
 $('#upfile').addEventListener('change', ev => { upload(ev.target.files); ev.target.value = ''; });
 document.querySelector('.tabs').addEventListener('click', ev => {
   const b = ev.target.closest('[data-tab]');
   if (!b) return;
+  nav(b.dataset.tab);
   tab = b.dataset.tab; store.set('lib-tab', tab);
   $('#q').value = '';
   renderHome();
@@ -699,7 +751,7 @@ function showLogin(msg) {
     $('#hdr').hidden = false;
     ROOTPATH = ROOTPATH || DEFAULT_ROOT;
     prepare(await (await fetch('index.json', {cache: 'no-store'})).json());
-    return renderHome();
+    return applyRoute();
   }
   try { await handleRedirect(); } catch (e) { return showLogin('Login failed (' + e.message + '). Try again.'); }
   if (!(await token().catch(() => null))) return showLogin();
@@ -708,20 +760,21 @@ function showLogin(msg) {
     // first visit: use the default folder if this Dropbox has it, otherwise let the viewer choose
     const meta = await dbx('files/get_metadata', {path: DEFAULT_ROOT}).catch(() => null);
     if (meta && meta['.tag'] === 'folder') { ROOTPATH = DEFAULT_ROOT; store.set('lib-root', ROOTPATH); }
-    else return renderFolders('');
+    else { nav('folder', '', true); return renderFolders(''); }
   }
   let cached = null;
   try { const c = JSON.parse(store.get('lib-index') || 'null'); if (c && c.root === ROOTPATH) cached = c.ix; } catch (e) {}
-  if (cached) { try { prepare(cached); renderHome(); } catch (e) { cached = null; } }
+  if (cached) { try { prepare(cached); applyRoute(); } catch (e) { cached = null; } }
   else main.innerHTML = '<div class="notice">Loading…</div>';
-  loadInbox().then(() => { if (tab === 'recent' && LIB && !$('#q').value.trim()) renderRecent(); });
+  loadInbox().then(() => { const r = parseRoute(); if (LIB && (r.view === 'recent' || r.view === 'uploads')) applyRoute(false); });
   try {
     const ix = await loadIndex();
-    const q = $('#q').value.trim();
     if (!cached || ix.updated !== LIB?.updated || ix.simple) {
       prepare(ix);
-      if (ix.simple && tab !== 'recent') tab = 'recent';
-      q ? renderSearch(q) : renderHome();
+      if (ix.simple && tab !== 'recent') { tab = 'recent'; if (TABS.includes(parseRoute().view)) nav('recent', '', true); }
+      const q = $('#q').value.trim();
+      if (q && parseRoute().view !== 'search') renderSearch(q);   // typed while loading
+      else applyRoute(!cached);
     }
   } catch (e) {
     if (e.message === 'login') return showLogin();
