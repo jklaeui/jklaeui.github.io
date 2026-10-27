@@ -133,6 +133,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
     <div class="top">
       <h1>Library</h1>
       <div class="tools"><span class="meta" id="stats"></span>
+        <button class="iconbtn" id="fold" title="Library folder" aria-label="Choose library folder"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
         <button class="iconbtn" id="todl" title="To download" aria-label="To-download list"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="todlN"></span></button>
         <button class="iconbtn" id="up" title="Uploads" aria-label="Uploads"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="upN"></span></button>
         <input type="file" id="upfile" accept="application/pdf,.pdf" multiple hidden>
@@ -146,8 +147,11 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 
 <script>
 const APP_KEY = '13d7ztuogqot8nl';
-const INDEX_PATH = '/Uni Dropbox/assistant/literature/index.json';
-const INBOX = '/Uni Dropbox/assistant/literature/_inbox';   // uploads; Claude indexes them on request
+// the library is any folder in the viewer's Dropbox, chosen on the page (folder icon) and remembered
+const DEFAULT_ROOT = '/Uni Dropbox/assistant/literature';
+let ROOTPATH = '';   // set in start() from localStorage
+const indexPath = () => ROOTPATH + '/index.json';
+const inboxPath = () => ROOTPATH + '/_inbox';   // uploads; Claude indexes them on request
 const REDIRECT = location.origin + location.pathname;
 const TOP = {authors: 4, journals: 5, topics: 5};
 const TOPIC_TIERS = [30, 10, 5];   // Topics tab: 30+, 10+, 5+, then the rest
@@ -214,7 +218,7 @@ async function api(url, opts, retry = true) {
 const dbxArg = o => JSON.stringify(o).replace(/[\u007f-￿]/g, c => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
 async function logout() {
   try { await api('https://api.dropboxapi.com/2/auth/token/revoke', {method: 'POST'}); } catch (e) {}
-  ['lib-access', 'lib-expires', 'lib-refresh', 'lib-index'].forEach(store.del);
+  ['lib-access', 'lib-expires', 'lib-refresh', 'lib-index', 'lib-root'].forEach(store.del);
   location.reload();
 }
 
@@ -309,11 +313,37 @@ function prepare(ix) {
   $('#todlN').textContent = (ix.wanted || []).length || '';
 }
 
+async function dbx(endpoint, body) {
+  const r = await api('https://api.dropboxapi.com/2/' + endpoint, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)});
+  return r.json();
+}
+
 async function loadIndex() {
-  const r = await api('https://content.dropboxapi.com/2/files/download', {method: 'POST', headers: {'Dropbox-API-Arg': dbxArg({path: INDEX_PATH})}});
-  const text = await r.text();
-  store.set('lib-index', text);
-  return JSON.parse(text);
+  let ix;
+  try {
+    const r = await api('https://content.dropboxapi.com/2/files/download', {method: 'POST', headers: {'Dropbox-API-Arg': dbxArg({path: indexPath()})}});
+    ix = JSON.parse(await r.text());
+  } catch (e) {
+    if (!/not_found/.test(e.message)) throw e;
+    ix = await fileListIndex();   // no index.json in this folder (yet)
+  }
+  store.set('lib-index', JSON.stringify({root: ROOTPATH, ix}));
+  return ix;
+}
+
+// without an index: every PDF in the folder by file name, newest first
+async function fileListIndex() {
+  let res = await dbx('files/list_folder', {path: ROOTPATH, recursive: true, limit: 2000});
+  const entries = [...res.entries];
+  while (res.has_more) { res = await dbx('files/list_folder/continue', {cursor: res.cursor}); entries.push(...res.entries); }
+  const base = ROOTPATH.toLowerCase() + '/';
+  const papers = entries.filter(e => e['.tag'] === 'file' && /\.pdf$/i.test(e.name) && !/\/_inbox\//i.test(e.path_lower))
+    .map(e => {
+      const rel = e.path_display.slice(base.length), day = e.server_modified.slice(0, 10);
+      return {id: e.id, title: e.name.replace(/\.pdf$/i, ''), authors: [], year: null, venue: '', abstract: '',
+              files: [{path: rel, label: ''}], added: day, last_added: day};
+    });
+  return {version: 1, simple: true, updated: 'files', papers, wanted: []};
 }
 
 // ---------- rendering ----------
@@ -326,7 +356,7 @@ const MAPS = {authors: () => BYKEY, journals: () => BYJ, topics: () => BYT};
 
 // Dropbox web viewer (works when logged in to dropbox.com; opens the Dropbox app on phones)
 function viewerUrl(path) {
-  const full = (LIB.dropbox_root || '') + '/' + path;
+  const full = ROOTPATH + '/' + path;
   const i = full.lastIndexOf('/');
   const dir = full.slice(0, i).split('/').map(encodeURIComponent).join('/');
   return 'https://www.dropbox.com/home' + dir + '?preview=' + encodeURIComponent(full.slice(i + 1));
@@ -403,6 +433,11 @@ function renderHome() {
   $('#todl').setAttribute('aria-pressed', 'false');
   $('#up').setAttribute('aria-pressed', 'false');
   if (tab === 'recent') return renderRecent();
+  if (LIB.simple) {
+    main.innerHTML = `<p class="notice">This folder has no index yet, so the page only knows file names (see Recent, or search).
+      Authors, journals and topics come with an index built by Claude: <a href="guide.html">how to set it up</a>.</p>`;
+    return;
+  }
   if (tab === 'authors') {
     const [top, rest] = split(AUTHORS);
     main.innerHTML = section(`${n}+ papers`, top) + section('Other authors', rest);
@@ -439,7 +474,8 @@ function renderRecent() {
   const list = [...LIB.papers].sort((a, b) => (b.last_added || '').localeCompare(a.last_added || '')
     || noAuthor(a) - noAuthor(b) || fold(a.authors?.[0]?.family).localeCompare(fold(b.authors?.[0]?.family)));
   main._lastDay = null;
-  main.innerHTML = uploadsHtml() + `<h2>Recently added</h2><div class="list">${recentHtml(list.slice(0, PAGE))}${list.length > PAGE ? '<button class="more" data-more="recent">Show more</button>' : ''}</div>`;
+  const simpleNote = LIB.simple ? `<p class="notice">No index in this folder yet: files are listed by name and date. <a href="guide.html">Set up an index</a>.</p>` : '';
+  main.innerHTML = simpleNote + uploadsHtml() + `<h2>Recently added</h2><div class="list">${recentHtml(list.slice(0, PAGE))}${list.length > PAGE ? '<button class="more" data-more="recent">Show more</button>' : ''}</div>`;
   main._hits = list; main._shown = PAGE;
 }
 
@@ -468,7 +504,7 @@ function renderWanted() {
 async function loadInbox() {
   try {
     const r = await api('https://api.dropboxapi.com/2/files/list_folder', {method: 'POST',
-      headers: {'Content-Type': 'application/json'}, body: JSON.stringify({path: INBOX})});
+      headers: {'Content-Type': 'application/json'}, body: JSON.stringify({path: inboxPath()})});
     INBOXFILES = (await r.json()).entries.filter(e => e['.tag'] === 'file' && /\.pdf$/i.test(e.name))
       .sort((a, b) => b.server_modified.localeCompare(a.server_modified));
   } catch (e) { INBOXFILES = []; }
@@ -508,7 +544,7 @@ async function upload(files) {
     box.textContent = `Uploading ${ok + 1} of ${pdfs.length}: ${f.name}…`;
     try {
       await api('https://content.dropboxapi.com/2/files/upload', {method: 'POST', body: f, headers: {
-        'Content-Type': 'application/octet-stream', 'Dropbox-API-Arg': dbxArg({path: INBOX + '/' + f.name, mode: 'add', autorename: true})}});
+        'Content-Type': 'application/octet-stream', 'Dropbox-API-Arg': dbxArg({path: inboxPath() + '/' + f.name, mode: 'add', autorename: true})}});
       ok++;
     } catch (e) {
       box.textContent = `Upload failed for ${f.name}: ${e.message}`;
@@ -519,6 +555,39 @@ async function upload(files) {
   renderUploads();
   $('#upstatus').hidden = false;
   $('#upstatus').textContent = `${ok} PDF${ok > 1 ? 's' : ''} uploaded.`;
+}
+
+// folder browser (folder icon): pick the library folder inside your Dropbox
+async function renderFolders(path) {
+  terms = [];
+  document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', 'false'));
+  main.innerHTML = '<div class="notice">Loading folders…</div>';
+  let folders = [];
+  try {
+    let res = await dbx('files/list_folder', {path, limit: 2000});
+    folders = res.entries.filter(e => e['.tag'] === 'folder');
+    while (res.has_more) { res = await dbx('files/list_folder/continue', {cursor: res.cursor}); folders.push(...res.entries.filter(e => e['.tag'] === 'folder')); }
+  } catch (e) { main.innerHTML = `<div class="notice">Could not list ${esc(path || 'your Dropbox')} (${esc(e.message)}).</div>`; return; }
+  folders.sort((a, b) => a.name.localeCompare(b.name));
+  const up = path ? path.slice(0, path.lastIndexOf('/')) : null;
+  main.innerHTML = `<h2>Library folder</h2>
+    <p class="notice">Current: <b>${esc(ROOTPATH || 'none chosen')}</b>. Open the folder that holds your PDFs and press “Use this folder”.</p>
+    <p><button class="primary" data-use="${esc(path)}">Use this folder: ${esc(path || 'Dropbox (top level)')}</button></p>
+    <div class="list">
+      ${up !== null ? `<div class="author"><button data-open="${esc(up)}"><span class="name">↑ Up to ${esc(up || 'Dropbox')}</span></button></div>` : ''}
+      ${folders.map(f => `<div class="author"><button data-open="${esc(f.path_display)}"><span class="name">📁 ${esc(f.name)}</span><span class="chev" style="transform:rotate(-45deg)"></span></button></div>`).join('') || '<div class="paper">No subfolders.</div>'}
+    </div>`;
+  window.scrollTo(0, 0);
+}
+async function useFolder(path) {
+  ROOTPATH = path;
+  store.set('lib-root', path);
+  store.del('lib-index');
+  main.innerHTML = '<div class="notice">Loading the library…</div>';
+  try { prepare(await loadIndex()); } catch (e) { main.innerHTML = `<div class="notice">Could not load the library (${esc(e.message)}).</div>`; return; }
+  await loadInbox();
+  tab = LIB.simple ? 'recent' : tab;
+  renderHome();
 }
 
 function showGroup(kind, key) {
@@ -570,6 +639,10 @@ main.addEventListener('click', ev => {
     const box = tg.closest('.paper').querySelector('.' + tg.dataset.toggle);
     box.hidden = !box.hidden; tg.setAttribute('aria-expanded', String(!box.hidden)); return;
   }
+  const fo = ev.target.closest('[data-open]');
+  if (fo) return renderFolders(fo.dataset.open);
+  const fu = ev.target.closest('[data-use]');
+  if (fu) return useFolder(fu.dataset.use);
   const jb = ev.target.closest('[data-journal]');
   if (jb) return showGroup('journals', jb.dataset.journal);
   const tb = ev.target.closest('[data-topic]');
@@ -599,6 +672,7 @@ $('#q').addEventListener('input', ev => {
   timer = setTimeout(() => { const q = ev.target.value.trim(); q ? renderSearch(q) : renderHome(); }, 120);
 });
 $('#logout').addEventListener('click', logout);
+$('#fold').addEventListener('click', () => { $('#q').value = ''; renderFolders(ROOTPATH); });
 $('#todl').addEventListener('click', () => { $('#q').value = ''; renderWanted(); });
 $('#up').addEventListener('click', () => { $('#q').value = ''; renderUploads(); loadInbox().then(() => { if ($('#up').getAttribute('aria-pressed') === 'true') renderUploads(); }); });
 $('#upfile').addEventListener('change', ev => { upload(ev.target.files); ev.target.value = ''; });
@@ -613,28 +687,42 @@ document.querySelector('.tabs').addEventListener('click', ev => {
 
 function showLogin(msg) {
   $('#hdr').hidden = true;
-  main.innerHTML = `<div class="login"><p>${esc(msg || 'Private library.')}</p><button class="primary" id="go">Connect Dropbox</button></div>`;
+  main.innerHTML = `<div class="login"><p>${esc(msg || 'A private library for the PDFs in your Dropbox.')}</p><button class="primary" id="go">Connect Dropbox</button>
+    <p><a href="guide.html">How it works and how to set it up</a></p></div>`;
   $('#go').addEventListener('click', login);
 }
 
 (async function start() {
+  ROOTPATH = store.get('lib-root') || '';
   // local layout test: http://localhost:8000/library/?local reads a copy of the index next to the page
   if (location.hostname === 'localhost' && new URLSearchParams(location.search).has('local')) {
     $('#hdr').hidden = false;
+    ROOTPATH = ROOTPATH || DEFAULT_ROOT;
     prepare(await (await fetch('index.json', {cache: 'no-store'})).json());
     return renderHome();
   }
   try { await handleRedirect(); } catch (e) { return showLogin('Login failed (' + e.message + '). Try again.'); }
   if (!(await token().catch(() => null))) return showLogin();
   $('#hdr').hidden = false;
-  const cached = store.get('lib-index');
-  if (cached) { try { prepare(JSON.parse(cached)); renderHome(); } catch (e) {} }
+  if (!ROOTPATH) {
+    // first visit: use the default folder if this Dropbox has it, otherwise let the viewer choose
+    const meta = await dbx('files/get_metadata', {path: DEFAULT_ROOT}).catch(() => null);
+    if (meta && meta['.tag'] === 'folder') { ROOTPATH = DEFAULT_ROOT; store.set('lib-root', ROOTPATH); }
+    else return renderFolders('');
+  }
+  let cached = null;
+  try { const c = JSON.parse(store.get('lib-index') || 'null'); if (c && c.root === ROOTPATH) cached = c.ix; } catch (e) {}
+  if (cached) { try { prepare(cached); renderHome(); } catch (e) { cached = null; } }
   else main.innerHTML = '<div class="notice">Loading…</div>';
   loadInbox().then(() => { if (tab === 'recent' && LIB && !$('#q').value.trim()) renderRecent(); });
   try {
     const ix = await loadIndex();
     const q = $('#q').value.trim();
-    if (!cached || ix.updated !== LIB?.updated) { prepare(ix); q ? renderSearch(q) : renderHome(); }
+    if (!cached || ix.updated !== LIB?.updated || ix.simple) {
+      prepare(ix);
+      if (ix.simple && tab !== 'recent') tab = 'recent';
+      q ? renderSearch(q) : renderHome();
+    }
   } catch (e) {
     if (e.message === 'login') return showLogin();
     if (!cached) main.innerHTML = `<div class="notice">Could not load the index (${esc(e.message)}).</div>`;

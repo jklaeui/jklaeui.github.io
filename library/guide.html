@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Library guide</title>
+<style>
+:root { --bg: #fbfaf7; --surface: #fff; --text: #1d1d1b; --muted: #6b6a66; --line: #e6e3dc; --accent: #2f5d8a; --accent-soft: #e8eef5; --code: #f1efe9; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #161615; --surface: #1f1f1d; --text: #ecebe7; --muted: #a09e97; --line: #33322f; --accent: #8db6e0; --accent-soft: #24303c; --code: #2a2a27; }
+}
+:root[data-theme="dark"] { --bg: #161615; --surface: #1f1f1d; --text: #ecebe7; --muted: #a09e97; --line: #33322f; --accent: #8db6e0; --accent-soft: #24303c; --code: #2a2a27; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 28px 16px 60px; }
+h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -.01em; }
+.lead { color: var(--muted); margin: 0 0 26px; }
+h2 { font-size: 19px; margin: 34px 0 10px; }
+h3 { font-size: 16px; margin: 22px 0 6px; }
+a { color: var(--accent); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; margin: 12px 0; }
+ol, ul { padding-left: 22px; }
+li { margin: 6px 0; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13.5px; background: var(--code); border-radius: 6px; }
+code { padding: 1px 5px; }
+pre { padding: 12px 14px; overflow-x: auto; white-space: pre-wrap; word-break: break-word; }
+.btn { display: inline-block; background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 600; padding: 10px 18px; border-radius: 10px; margin: 6px 8px 6px 0; }
+.btn.alt { background: var(--accent-soft); color: var(--text); }
+.muted { color: var(--muted); font-size: 14.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Your PDF library in the browser</h1>
+  <p class="lead">A private page for the papers in a Dropbox folder: browse by author, journal and topic, search titles and abstracts, open PDFs in the Dropbox viewer, keep notes, and upload new papers from your phone.</p>
+  <a class="btn" href="./">Open the library</a> <a class="btn alt" href="lit-skill.zip">Download the Claude skill (lit-skill.zip)</a>
+
+  <h2>How it works</h2>
+  <ul>
+    <li>The page runs entirely in your browser. You log in with your own Dropbox; nothing about your library is stored on this website.</li>
+    <li>You choose one Dropbox folder as your library (folder icon in the header, changeable any time).</li>
+    <li>Without anything else, the page lists the PDFs in that folder by file name and date, with search, the Dropbox viewer, and uploads.</li>
+    <li>With an <b>index</b> (a file <code>index.json</code> in the same folder, built by Claude Code with the <code>lit</code> skill), you also get authors, journals, topics (JEL codes), abstracts, versions and appendices, your notes, and a to-download list.</li>
+  </ul>
+
+  <h2>Step 1: use the page (2 minutes, no installation)</h2>
+  <ol>
+    <li>Open <a href="./">the library page</a> and press <b>Connect Dropbox</b>. Dropbox asks you to allow access; confirm.</li>
+    <li>Pick the folder with your PDFs and press <b>Use this folder</b>.</li>
+    <li>That's it. Bookmark the page or add it to your phone's home screen.</li>
+  </ol>
+  <div class="card muted">
+    <b>If Dropbox refuses the login</b> (“app not available” or similar): the Dropbox app behind the page is still in development mode and needs to be opened for more users. Tell Jeremias.
+  </div>
+
+  <h2>Step 2: the full version with Claude Code (once, about 15 minutes)</h2>
+  <p>For authors, journals, topics and abstracts, Claude reads your PDFs once and writes the index. You need a Mac (or Linux) with the Dropbox desktop app syncing your library folder, and <a href="https://claude.com/claude-code">Claude Code</a>.</p>
+
+  <h3>2.1 Install the skill</h3>
+  <ol>
+    <li>Download <a href="lit-skill.zip">lit-skill.zip</a> and unzip it into <code>~/.claude/skills/</code>, so that you get <code>~/.claude/skills/lit/SKILL.md</code>.</li>
+    <li>Install the tools it uses, in Terminal:
+<pre>brew install poppler
+python3 -m pip install requests beautifulsoup4 lxml</pre></li>
+    <li>Optional but recommended: get a free OpenAlex key at <a href="https://openalex.org/settings/api">openalex.org/settings/api</a> (raises the daily limit from about 100 to about 1,000 lookups) and save it:
+<pre>mkdir -p ~/.config/openalex
+echo "YOUR_KEY" > ~/.config/openalex/api_key</pre></li>
+  </ol>
+
+  <h3>2.2 Point it at your folder</h3>
+<pre>python3 ~/.claude/skills/lit/library.py setup --folder "~/Dropbox/Papers"</pre>
+  <p class="muted">Use the path of your library folder on your Mac (in Finder: right-click the folder, hold Option, “Copy … as Pathname”). The command prints the folder as the web page sees it; it must match the folder you picked there.</p>
+
+  <h3>2.3 Build the index</h3>
+  <p>Start Claude Code in any folder and type:</p>
+<pre>/lit build the index of my library</pre>
+  <p>Claude reads every PDF (DOI, title, authors, abstract, JEL codes), looks papers up on OpenAlex, groups versions of the same paper, and asks or fixes what it cannot identify. For a few hundred PDFs this takes a while; you can watch it work. Then reload the library page.</p>
+
+  <h2>Adding papers later</h2>
+  <ol>
+    <li>On the page, press the <b>upload</b> icon and pick PDFs (works on the phone). They appear under <b>Uploads</b> by file name.</li>
+    <li>Back at the Mac, in Claude Code: <code>/lit update the library</code>. The papers move into the library with full details.</li>
+  </ol>
+  <p class="muted">Shortcut: save this as <code>Update Library.command</code> on your Desktop, make it executable (<code>chmod +x</code>), and double-click it:</p>
+<pre>#!/bin/zsh
+cd ~ && claude "/lit Update the library: run library.py inbox, then sync, verify, assign JEL codes to new papers, and handle anything flagged."</pre>
+  <p class="muted">The download icon shows a to-download list (papers you want but have no PDF for). Ask Claude to add entries, e.g. <code>/lit put "Title" by Author on my to-download list</code>.</p>
+
+  <h2>Privacy</h2>
+  <ul>
+    <li>Your Dropbox login stays in your browser. <b>Log out</b> on the page removes it; you can also disconnect the app in Dropbox under Settings → Connected apps.</li>
+    <li>Dropbox only offers this kind of app access to the whole Dropbox, not to a single folder. The page reads only the folder you choose and writes only uploads into its <code>_inbox</code> subfolder.</li>
+    <li>Do not log in on shared computers.</li>
+  </ul>
+</div>
+</body>
+</html>
