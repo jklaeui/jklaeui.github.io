@@ -42,6 +42,13 @@ header {
 .top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
 h1 { font-size: 20px; margin: 0; letter-spacing: -.01em; }
 .meta { color: var(--muted); font-size: 13px; }
+.tools { display: flex; align-items: center; gap: 6px; }
+.iconbtn { display: inline-flex; align-items: center; gap: 3px; min-height: 34px; min-width: 34px; justify-content: center; padding: 4px 8px;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; font-size: 13px; cursor: pointer; }
+.iconbtn:hover, .iconbtn[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+@media (max-width: 420px) { #stats { display: none; } }
+.wantmeta { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.copied { color: var(--accent) !important; border-color: var(--accent) !important; }
 .linkbtn { background: none; border: 0; color: var(--muted); font: inherit; font-size: 13px; cursor: pointer; padding: 4px; text-decoration: underline; }
 input[type=search] {
   width: 100%; font: inherit; font-size: 17px; padding: 11px 14px; border-radius: 10px;
@@ -121,7 +128,11 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
   <div class="wrap">
     <div class="top">
       <h1>Library</h1>
-      <div><span class="meta" id="stats"></span> <button class="linkbtn" id="logout">Log out</button></div>
+      <div class="tools"><span class="meta" id="stats"></span>
+        <button class="iconbtn" id="todl" title="To download" aria-label="To-download list"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="todlN"></span></button>
+        <button class="iconbtn" id="up" title="Upload PDFs to the inbox" aria-label="Upload PDFs"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <input type="file" id="upfile" accept="application/pdf,.pdf" multiple hidden>
+        <button class="linkbtn" id="logout">Log out</button></div>
     </div>
     <input type="search" id="q" placeholder="Search titles, abstracts, authors, journals, topics" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search">
     <nav class="tabs" role="tablist"><button role="tab" data-tab="authors">Authors</button><button role="tab" data-tab="journals">Journals</button><button role="tab" data-tab="topics">Topics</button><button role="tab" data-tab="recent">Recent</button></nav>
@@ -132,6 +143,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 <script>
 const APP_KEY = '13d7ztuogqot8nl';
 const INDEX_PATH = '/Uni Dropbox/assistant/literature/index.json';
+const INBOX = '/Uni Dropbox/assistant/literature/_inbox';   // uploads; Claude indexes them on request
 const REDIRECT = location.origin + location.pathname;
 const TOP = {authors: 4, journals: 5, topics: 5};
 const TOPIC_TIERS = [30, 10, 5];   // Topics tab: 30+, 10+, 5+, then the rest
@@ -289,6 +301,7 @@ function prepare(ix) {
   for (const e of TOPICS) { const t = tierOf(e.papers.length); tierCount[t] = (tierCount[t] || 0) + 1; e.ci = (tierCount[t] - 1) % NCOL; }
   LIB = ix;
   $('#stats').textContent = `${papers.length} papers · ${AUTHORS.length} authors`;
+  $('#todlN').textContent = (ix.wanted || []).length || '';
 }
 
 async function loadIndex() {
@@ -376,6 +389,7 @@ function renderHome() {
   const last = e => e.key === 'no venue' || e.key === 'failed download';   // always at the end
   const split = list => [list.filter(e => e.papers.length >= n && !last(e)), list.filter(e => e.papers.length < n && !last(e)).concat(list.filter(last))];
   const section = (title, list) => list.length ? `<h2>${title}</h2><div class="list">${list.map(html).join('')}</div>` : '';
+  $('#todl').setAttribute('aria-pressed', 'false');
   if (tab === 'recent') return renderRecent();
   if (tab === 'authors') {
     const [top, rest] = split(AUTHORS);
@@ -417,6 +431,47 @@ function renderRecent() {
   main._hits = list; main._shown = PAGE;
 }
 
+// to-download list: a search string per paper for Google, plus notes kept until the PDF arrives
+function renderWanted() {
+  terms = [];
+  document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', 'false'));
+  $('#todl').setAttribute('aria-pressed', 'true');
+  const list = LIB.wanted || [];
+  const q = w => `"${w.title}" ${w.venue || ''}`.trim();
+  main.innerHTML = `<h2>To download · ${list.length}</h2>
+    <p class="notice">Download the PDF, upload it with the arrow button above, then tell Claude to update the library.</p>
+    <div class="list">${list.map((w, i) => `<div class="paper">
+      <div class="title">${esc(w.title)}</div>
+      <div class="wantmeta">${esc([w.authors, w.year, w.venue].filter(Boolean).join(' · '))}</div>
+      <div class="actions"><button class="pdf copy" data-copy="${esc(q(w))}">Copy</button>
+        <a class="pdf alt" href="https://www.google.com/search?q=${encodeURIComponent(q(w))}" target="_blank" rel="noopener">Google</a>
+        ${w.notes ? '<button class="notes-toggle" aria-expanded="false">My notes</button>' : ''}</div>
+      ${w.notes ? `<div class="note" hidden>${esc(w.notes)}</div>` : ''}
+    </div>`).join('')}</div>`;
+  window.scrollTo(0, 0);
+}
+
+async function upload(files) {
+  const pdfs = [...files].filter(f => /\.pdf$/i.test(f.name));
+  if (!pdfs.length) return;
+  const box = document.createElement('div');
+  box.className = 'notice';
+  main.prepend(box);
+  let ok = 0;
+  for (const f of pdfs) {
+    box.textContent = `Uploading ${ok + 1} of ${pdfs.length}: ${f.name}…`;
+    try {
+      await api('https://content.dropboxapi.com/2/files/upload', {method: 'POST', body: f, headers: {
+        'Content-Type': 'application/octet-stream', 'Dropbox-API-Arg': dbxArg({path: INBOX + '/' + f.name, mode: 'add', autorename: true})}});
+      ok++;
+    } catch (e) {
+      box.textContent = `Upload failed for ${f.name}: ${e.message}`;
+      return;
+    }
+  }
+  box.textContent = `${ok} PDF${ok > 1 ? 's' : ''} uploaded to the inbox. Tell Claude: “update the library”.`;
+}
+
 function showGroup(kind, key) {
   $('#q').value = '';
   tab = kind; store.set('lib-tab', tab);
@@ -455,6 +510,12 @@ function alertBox(msg) {
 }
 
 main.addEventListener('click', ev => {
+  const cp = ev.target.closest('[data-copy]');
+  if (cp) {
+    const done = () => { cp.textContent = 'Copied'; cp.classList.add('copied'); setTimeout(() => { cp.textContent = 'Copy'; cp.classList.remove('copied'); }, 1500); };
+    navigator.clipboard?.writeText(cp.dataset.copy).then(done, () => window.prompt('Copy:', cp.dataset.copy));
+    return;
+  }
   const nt = ev.target.closest('.notes-toggle');
   if (nt) {
     const box = nt.closest('.paper').querySelector('.note');
@@ -494,6 +555,9 @@ $('#q').addEventListener('input', ev => {
   timer = setTimeout(() => { const q = ev.target.value.trim(); q ? renderSearch(q) : renderHome(); }, 120);
 });
 $('#logout').addEventListener('click', logout);
+$('#todl').addEventListener('click', () => { $('#q').value = ''; renderWanted(); });
+$('#up').addEventListener('click', () => $('#upfile').click());
+$('#upfile').addEventListener('change', ev => { upload(ev.target.files); ev.target.value = ''; });
 document.querySelector('.tabs').addEventListener('click', ev => {
   const b = ev.target.closest('[data-tab]');
   if (!b) return;
