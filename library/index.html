@@ -133,7 +133,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
       <h1>Library</h1>
       <div class="tools"><span class="meta" id="stats"></span>
         <button class="iconbtn" id="todl" title="To download" aria-label="To-download list"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="todlN"></span></button>
-        <button class="iconbtn" id="up" title="Upload PDFs to the inbox" aria-label="Upload PDFs"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="upN"></span></button>
+        <button class="iconbtn" id="up" title="Uploads" aria-label="Uploads"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="upN"></span></button>
         <input type="file" id="upfile" accept="application/pdf,.pdf" multiple hidden>
         <button class="linkbtn" id="logout">Log out</button></div>
     </div>
@@ -400,6 +400,7 @@ function renderHome() {
   const split = list => [list.filter(e => e.papers.length >= n && !last(e)), list.filter(e => e.papers.length < n && !last(e)).concat(list.filter(last))];
   const section = (title, list) => list.length ? `<h2>${title}</h2><div class="list">${list.map(html).join('')}</div>` : '';
   $('#todl').setAttribute('aria-pressed', 'false');
+  $('#up').setAttribute('aria-pressed', 'false');
   if (tab === 'recent') return renderRecent();
   if (tab === 'authors') {
     const [top, rest] = split(AUTHORS);
@@ -446,6 +447,7 @@ function renderWanted() {
   terms = [];
   document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', 'false'));
   $('#todl').setAttribute('aria-pressed', 'true');
+  $('#up').setAttribute('aria-pressed', 'false');
   const list = LIB.wanted || [];
   const q = w => `"${w.title}" ${w.venue || ''}`.trim();
   main.innerHTML = `<h2>To download · ${list.length}</h2>
@@ -471,9 +473,23 @@ async function loadInbox() {
   } catch (e) { INBOXFILES = []; }
   $('#upN').textContent = INBOXFILES.length || '';
 }
-function uploadsHtml() {
+// Uploads view (upload icon): add PDFs, and see the ones waiting to be indexed
+function renderUploads() {
+  terms = [];
+  document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', 'false'));
+  $('#todl').setAttribute('aria-pressed', 'false');
+  $('#up').setAttribute('aria-pressed', 'true');
+  main.innerHTML = `<h2>Uploads</h2>
+    <p><button class="primary" id="pick">Upload PDFs</button></p>
+    <div id="upstatus" class="notice" hidden></div>
+    ${INBOXFILES.length ? uploadsHtml(`Not yet indexed · ${INBOXFILES.length}`) : '<p class="notice">No uploads waiting. Uploaded PDFs are listed here by file name until you run “Update Library” on the Mac.</p>'}`;
+  $('#pick').addEventListener('click', () => $('#upfile').click());
+  window.scrollTo(0, 0);
+}
+
+function uploadsHtml(heading = 'Uploads · not yet indexed') {
   if (!INBOXFILES.length) return '';
-  return `<h2>Uploads · not yet indexed</h2><div class="list">${INBOXFILES.map(f => `<div class="paper">
+  return `<h2>${heading}</h2><div class="list">${INBOXFILES.map(f => `<div class="paper">
     <div class="title">${esc(f.name)}</div>
     <div class="byline"><span class="venue">uploaded ${esc((d => /^\d/.test(d) ? 'on ' + d : d.toLowerCase())(dayLabel(f.server_modified.slice(0, 10))))}</span></div>
     <div class="actions"><a class="pdf" href="${esc(viewerUrl('_inbox/' + f.name))}" target="_blank" rel="noopener">PDF</a></div>
@@ -483,9 +499,9 @@ function uploadsHtml() {
 async function upload(files) {
   const pdfs = [...files].filter(f => /\.pdf$/i.test(f.name));
   if (!pdfs.length) return;
-  const box = document.createElement('div');
-  box.className = 'notice';
-  main.prepend(box);
+  if (!$('#upstatus')) renderUploads();
+  const box = $('#upstatus');
+  box.hidden = false;
   let ok = 0;
   for (const f of pdfs) {
     box.textContent = `Uploading ${ok + 1} of ${pdfs.length}: ${f.name}…`;
@@ -499,8 +515,9 @@ async function upload(files) {
     }
   }
   await loadInbox();
-  if (tab === 'recent' && !$('#q').value.trim()) return renderRecent();
-  box.textContent = `${ok} PDF${ok > 1 ? 's' : ''} uploaded. They are listed under Recent → Uploads until you run “Update Library”.`;
+  renderUploads();
+  $('#upstatus').hidden = false;
+  $('#upstatus').textContent = `${ok} PDF${ok > 1 ? 's' : ''} uploaded.`;
 }
 
 function showGroup(kind, key) {
@@ -582,7 +599,7 @@ $('#q').addEventListener('input', ev => {
 });
 $('#logout').addEventListener('click', logout);
 $('#todl').addEventListener('click', () => { $('#q').value = ''; renderWanted(); });
-$('#up').addEventListener('click', () => $('#upfile').click());
+$('#up').addEventListener('click', () => { $('#q').value = ''; renderUploads(); loadInbox().then(() => { if ($('#up').getAttribute('aria-pressed') === 'true') renderUploads(); }); });
 $('#upfile').addEventListener('change', ev => { upload(ev.target.files); ev.target.value = ''; });
 document.querySelector('.tabs').addEventListener('click', ev => {
   const b = ev.target.closest('[data-tab]');
