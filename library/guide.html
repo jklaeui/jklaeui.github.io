@@ -28,13 +28,15 @@ pre { padding: 12px 14px; overflow-x: auto; white-space: pre-wrap; word-break: b
 .btn { display: inline-block; background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 600; padding: 10px 18px; border-radius: 10px; margin: 6px 8px 6px 0; }
 .btn.alt { background: var(--accent-soft); color: var(--text); }
 .muted { color: var(--muted); font-size: 14.5px; }
+details { margin: 14px 0; } summary { cursor: pointer; color: var(--accent); }
+button.btn { border: 0; font: inherit; font-weight: 600; cursor: pointer; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Your PDF library in the browser</h1>
   <p class="lead">A private page for the papers in a Dropbox folder: browse by author, journal and topic, search titles and abstracts, open PDFs in the Dropbox viewer, keep notes, and upload new papers from your phone.</p>
-  <a class="btn" href="./">Open the library</a> <a class="btn alt" href="lit-skill.zip">Download the Claude skill (lit-skill.zip)</a>
+  <a class="btn" href="./">Open the library</a> <a class="btn alt" href="#full">Set up the full version</a>
 
   <h2>How it works</h2>
   <ul>
@@ -54,28 +56,40 @@ pre { padding: 12px 14px; overflow-x: auto; white-space: pre-wrap; word-break: b
     <b>If Dropbox refuses the login</b> (“app not available” or similar): the Dropbox app behind the page is still in development mode and needs to be opened for more users. Tell Jeremias.
   </div>
 
-  <h2>Step 2: the full version with Claude Code (once, about 15 minutes)</h2>
+  <h2 id="full">Step 2: the full version with Claude Code (once)</h2>
   <p>For authors, journals, topics and abstracts, Claude reads your PDFs once and writes the index. You need a Mac (or Linux) with the Dropbox desktop app syncing your library folder, and <a href="https://claude.com/claude-code">Claude Code</a>.</p>
 
-  <h3>2.1 Install the skill</h3>
-  <ol>
-    <li>Download <a href="lit-skill.zip">lit-skill.zip</a> and unzip it into <code>~/.claude/skills/</code>, so that you get <code>~/.claude/skills/lit/SKILL.md</code>.</li>
-    <li>Install the tools it uses, in Terminal:
-<pre>brew install poppler
-python3 -m pip install requests beautifulsoup4 lxml</pre></li>
-    <li>Optional but recommended: get a free OpenAlex key at <a href="https://openalex.org/settings/api">openalex.org/settings/api</a> (raises the daily limit from about 100 to about 1,000 lookups) and save it:
-<pre>mkdir -p ~/.config/openalex
-echo "YOUR_KEY" > ~/.config/openalex/api_key</pre></li>
-  </ol>
+  <h3>Paste this into Claude Code</h3>
+  <p>Open Terminal, type <code>claude</code>, and paste the message below. Claude downloads the skill from this site, installs what it needs, asks you for your library folder, and builds the index. Claude asks before running commands; for a few hundred PDFs the index takes a while.</p>
+  <div class="card">
+    <button class="btn" id="copy" type="button">Copy the message</button>
+    <pre id="prompt">Please install the &quot;lit&quot; library skill from https://jklaeui.github.io/library/ and build the index of my PDF library.
 
-  <h3>2.2 Point it at your folder</h3>
-<pre>python3 ~/.claude/skills/lit/library.py setup --folder "~/Dropbox/Papers"</pre>
-  <p class="muted">Use the path of your library folder on your Mac (in Finder: right-click the folder, hold Option, “Copy … as Pathname”). The command prints the folder as the web page sees it; it must match the folder you picked there.</p>
-
-  <h3>2.3 Build the index</h3>
-  <p>Start Claude Code in any folder and type:</p>
-<pre>/lit build the index of my library</pre>
-  <p>Claude reads every PDF (DOI, title, authors, abstract, JEL codes), looks papers up on OpenAlex, groups versions of the same paper, and asks or fixes what it cannot identify. For a few hundred PDFs this takes a while; you can watch it work. Then reload the library page.</p>
+1. Create ~/.claude/skills/lit/ and download these files into it with curl, saving SKILL.txt as SKILL.md:
+   https://jklaeui.github.io/library/skill/SKILL.txt
+   https://jklaeui.github.io/library/skill/lit.py
+   https://jklaeui.github.io/library/skill/library.py
+   https://jklaeui.github.io/library/skill/jel.json
+   https://jklaeui.github.io/library/skill/jel_short.json
+   Skim the two Python scripts and tell me in two sentences what they do before running anything.
+2. Check that pdftotext works (otherwise: brew install poppler) and that Python has requests, beautifulsoup4 and lxml (otherwise: python3 -m pip install --user requests beautifulsoup4 lxml).
+3. Find my Dropbox folder on this computer (~/.dropbox/info.json, ~/Library/CloudStorage/Dropbox*, ~/Dropbox) and ask me which folder in it holds my PDFs. Then run:
+   python3 ~/.claude/skills/lit/library.py setup --folder &quot;&lt;that folder&gt;&quot;
+4. Ask me whether I have a free OpenAlex API key (openalex.org/settings/api). If yes, save it to ~/.config/openalex/api_key.
+5. Build the index as described in ~/.claude/skills/lit/SKILL.md under &quot;First time&quot;: sync, verify, review flagged papers, JEL codes. Keep me posted while it runs.
+6. When done, tell me how many papers are in the index and which folder to pick on https://jklaeui.github.io/library/ (folder icon).</pre>
+  </div>
+  <p>Afterwards, reload the library page. If you picked a different folder there before, choose the one Claude names (folder icon).</p>
+  <details class="muted">
+    <summary>Prefer to do it by hand?</summary>
+    <ol>
+      <li>Download the five files from <code>https://jklaeui.github.io/library/skill/</code> (<code>SKILL.txt</code>, <code>lit.py</code>, <code>library.py</code>, <code>jel.json</code>, <code>jel_short.json</code>) into <code>~/.claude/skills/lit/</code> and rename <code>SKILL.txt</code> to <code>SKILL.md</code>.</li>
+      <li><code>brew install poppler</code> and <code>python3 -m pip install --user requests beautifulsoup4 lxml</code></li>
+      <li>Optional free OpenAlex key from openalex.org/settings/api, saved in <code>~/.config/openalex/api_key</code>.</li>
+      <li><code>python3 ~/.claude/skills/lit/library.py setup --folder "&lt;your PDF folder inside Dropbox&gt;"</code></li>
+      <li>In Claude Code: <code>/lit build the index of my library</code></li>
+    </ol>
+  </details>
 
   <h2>Adding papers later</h2>
   <ol>
@@ -94,5 +108,12 @@ cd ~ && claude "/lit Update the library: run library.py inbox, then sync, verify
     <li>Do not log in on shared computers.</li>
   </ul>
 </div>
+<script>
+document.getElementById('copy').addEventListener('click', ev => {
+  const text = document.getElementById('prompt').innerText;
+  navigator.clipboard?.writeText(text).then(() => { ev.target.textContent = 'Copied'; setTimeout(() => ev.target.textContent = 'Copy the message', 1500); },
+    () => window.prompt('Copy:', text));
+});
+</script>
 </body>
 </html>
