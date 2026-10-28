@@ -103,6 +103,7 @@ a.pdf { display: inline-flex; align-items: center; gap: 4px; text-decoration: no
   border: 1px solid var(--line); background: var(--surface); color: var(--text);
 }
 .tog[aria-expanded="true"] { background: var(--accent-soft); border-color: var(--accent); }
+.dl svg { display: block; }
 .pdf { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .pdf:hover { background: var(--accent-soft); }
 .pdf small { font-weight: 400; color: var(--muted); }
@@ -151,6 +152,8 @@ const APP_KEY = '13d7ztuogqot8nl';
 // the library is any folder in the viewer's Dropbox, chosen on the page (folder icon) and remembered
 const DEFAULT_ROOT = '/Uni Dropbox/assistant/literature';
 let ROOTPATH = '';   // set in start() from localStorage
+// team accounts: the API starts in the member folder, dropbox.com/home one level up (e.g. "/Jane Doe")
+let HOME = '';   // set in start() from localStorage
 const indexPath = () => ROOTPATH + '/index.json';
 const inboxPath = () => ROOTPATH + '/_inbox';   // uploads; Claude indexes them on request
 const REDIRECT = location.origin + location.pathname;
@@ -221,7 +224,7 @@ async function api(url, opts, retry = true) {
 const dbxArg = o => JSON.stringify(o).replace(/[\u007f-￿]/g, c => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
 async function logout() {
   try { await api('https://api.dropboxapi.com/2/auth/token/revoke', {method: 'POST'}); } catch (e) {}
-  ['lib-access', 'lib-expires', 'lib-refresh', 'lib-index', 'lib-root'].forEach(store.del);
+  ['lib-access', 'lib-expires', 'lib-refresh', 'lib-index', 'lib-root', 'lib-home'].forEach(store.del);
   location.reload();
 }
 
@@ -358,8 +361,17 @@ const dot = e => `<span class="dot" style="--c:${colour(e)}" aria-hidden="true">
 const MAPS = {authors: () => BYKEY, journals: () => BYJ, topics: () => BYT};
 
 // Dropbox web viewer (works when logged in to dropbox.com; opens the Dropbox app on phones)
+async function loadHome() {
+  try {
+    const ri = (await dbx('users/get_current_account', null)).root_info;
+    const h = ri['.tag'] === 'team' && ri.root_namespace_id !== ri.home_namespace_id ? ri.home_path || '' : '';
+    const changed = h !== HOME;
+    HOME = h; store.set('lib-home', h);
+    if (changed && LIB) applyRoute(false);   // redraw the PDF links
+  } catch (e) {}
+}
 function viewerUrl(path) {
-  const full = ROOTPATH + '/' + path;
+  const full = HOME + ROOTPATH + '/' + path;
   const i = full.lastIndexOf('/');
   const dir = full.slice(0, i).split('/').map(encodeURIComponent).join('/');
   return 'https://www.dropbox.com/home' + dir + '?preview=' + encodeURIComponent(full.slice(i + 1));
@@ -394,7 +406,8 @@ function paperHtml(p, opts = {}) {
     + (others.length ? tog('files', `Files (${others.length})`, false) : '')
     + (p.abstract ? tog('abstract', 'Abstract', !!opts.openAbs) : '')
     + (p.notes ? tog('note', 'My notes', noteOpen, ' notes-toggle') : '')
-    + (topics.length ? tog('topics', 'Topics', false) : '');
+    + (topics.length ? tog('topics', 'Topics', false) : '')
+    + `<button class="tog dl" data-dl="${esc(main.path)}" title="Download PDF" aria-label="Download PDF"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`;
   return `<div class="paper" data-id="${esc(p.id)}">
     <div class="title">${hl(p.title)}</div>
     ${authors || venue ? `<div class="byline">${authors}${authors && venue ? '<span class="sep"> · </span>' : ''}<span class="venue">${venue}</span></div>` : ''}
@@ -662,6 +675,20 @@ function renderSearch(q) {
   if (authors.length === 1 && !hits.some(p => terms.every(t => p._search.includes(t)))) toggleAuthor(main.querySelector('.author'), true);
 }
 
+// download through the API (the viewer link only previews); saved under the file's own name
+async function download(path, btn) {
+  btn.disabled = true;
+  try {
+    const r = await api('https://content.dropboxapi.com/2/files/download', {method: 'POST', headers: {'Dropbox-API-Arg': dbxArg({path: ROOTPATH + '/' + path})}});
+    const url = URL.createObjectURL(new Blob([await r.blob()], {type: 'application/pdf'}));
+    const a = document.createElement('a');
+    a.href = url; a.download = path.split('/').pop();
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+  } catch (e) { alertBox(`Download failed (${e.message}).`); }
+  btn.disabled = false;
+}
+
 function alertBox(msg) {
   const d = document.createElement('div');
   d.className = 'notice'; d.textContent = msg;
@@ -675,6 +702,8 @@ main.addEventListener('click', ev => {
     navigator.clipboard?.writeText(cp.dataset.copy).then(done, () => window.prompt('Copy:', cp.dataset.copy));
     return;
   }
+  const dl = ev.target.closest('[data-dl]');
+  if (dl) return download(dl.dataset.dl, dl);
   const tg = ev.target.closest('[data-toggle]');
   if (tg) {
     const box = tg.closest('.paper').querySelector('.' + tg.dataset.toggle);
@@ -755,6 +784,7 @@ function showLogin(msg) {
 
 (async function start() {
   ROOTPATH = store.get('lib-root') || '';
+  HOME = store.get('lib-home') || '';
   // local layout test: http://localhost:8000/library/?local reads a copy of the index next to the page
   if (location.hostname === 'localhost' && new URLSearchParams(location.search).has('local')) {
     $('#hdr').hidden = false;
@@ -765,6 +795,8 @@ function showLogin(msg) {
   try { await handleRedirect(); } catch (e) { return showLogin('Login failed (' + e.message + '). Try again.'); }
   if (!(await token().catch(() => null))) return showLogin();
   $('#hdr').hidden = false;
+  const home = loadHome();
+  if (store.get('lib-home') === null) await home;   // first visit: needed for the PDF links
   if (!ROOTPATH) {
     // first visit: use the default folder if this Dropbox has it, otherwise let the viewer choose
     const meta = await dbx('files/get_metadata', {path: DEFAULT_ROOT}).catch(() => null);
