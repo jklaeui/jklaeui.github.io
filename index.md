@@ -147,6 +147,14 @@ Lenzerheide (Jan 2024), IZA Workshop: Matching Workers and Jobs Online (Sep 2023
 
 <h2 id="policy-reports">Policy reports</h2>
 
+<h4>More frequent caseworker meetings and re-employment: a randomized field experiment</h4>
+<p class="paper-meta">SECO policy report (Optimierung RAV-Beratung: Teilprojekt Beratungsintensit&auml;t), 2026,
+<strong>forthcoming</strong>; with D. Liechti, P. Arni, F. Kr&auml;mer</p>
+<p>We evaluate a randomized field experiment in 17 Swiss public employment offices that raised the frequency of
+caseworker meetings to at least every three weeks during the first six months of unemployment. More frequent
+meetings speed up job finding and reduce long-term unemployment, and the savings in benefits far exceed the
+extra counselling costs.</p>
+
 <h4>Artificial intelligence and the Swiss labor market</h4>
 <p class="paper-meta">KOF study, Oct 2025; with M. Siegenthaler</p>
 <p>We analyse early impacts of large language models (LLMs) on unemployment and job postings across occupations
@@ -160,6 +168,17 @@ commentaries / interviews:
 <a href="https://www.nzz.ch/wirtschaft/kof-studie-ki-veraendert-den-schweizer-arbeitsmarkt-dramatisch-ld.1905520" target="_blank">NZZ; KOF-Studie: KI ver&auml;ndert den Schweizer Arbeitsmarkt dramatisch</a> and
 <a href="https://www.nzz.ch/zuerich/hochgebildet-kadermann-und-ploetzlich-arbeitslos-ein-gefallener-ki-manager-erzaehlt-ld.1910405" target="_blank">NZZ; Hochgebildet, Kadermann &mdash; und pl&ouml;tzlich arbeitslos</a>;
 <a href="https://kof.ethz.ch/en/publications/kof-insights/articles/2025/12/i-expect-ai-to-make-us-all-richer.html" target="_blank">KOF Magazine interview; &ldquo;I expect AI to make us all richer&rdquo;</a></p>
+
+<h4>Training caseworkers in counselling quality: a randomized field experiment</h4>
+<p class="paper-meta">SECO policy report (Optimierung RAV-Beratung: Teilprojekt Beratungsqualit&auml;t), Sep 2025;
+with D. Liechti, P. Arni, F. Kr&auml;mer, R. Lalive, M. Suri</p>
+<p>We evaluate a randomized training programme for caseworkers in 39 Swiss public employment offices, combining
+administrative records, surveys, job-portal click data and video recordings of counselling meetings.</p>
+
+<p><a href="https://www.arbeit.swiss/api/media/fileservice/sdweb-docs-prod-arbeitswiss-files/files/2026/06/02/74b27527-0d1b-40b4-a672-c843aead6f2e.pdf" target="_blank"><button class="show-button">Report (DE)</button></a>
+<a href="https://www.arbeit.swiss/api/media/fileservice/sdweb-docs-prod-arbeitswiss-files/files/2026/06/02/92a8cd06-0f21-4799-83f4-ab06258b871f.pdf" target="_blank"><button class="show-button">Report (FR)</button></a>
+<a href="https://www.arbeit.swiss/api/media/fileservice/sdweb-docs-prod-arbeitswiss-files/files/2026/06/02/db5466d4-0dd8-43f6-9b5a-ca83100b03ae.pdf" target="_blank"><button class="show-button">Summaries (DE/FR/IT)</button></a>
+<a href="https://www.arbeit.swiss/en/information-centre/project-optimising-caseworker-meetings-in-pes" target="_blank"><button class="show-button">Project page</button></a></p>
 
 <h4>The effect of unemployment benefit sanctions on search effort and re-employment outcomes</h4>
 <p class="paper-meta">SECO policy report, Jun 2025; with P. Arni, B. Kaiser, R. Lalive, M. Wolf</p>
