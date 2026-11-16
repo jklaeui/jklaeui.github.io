@@ -96,6 +96,9 @@ Labor Economics (June 2023)</em></span></p>
   in the separation rate and the job-finding rate.
 </div>
 
+<p class="media-links"><strong>Media:</strong>
+<a href="https://www.srf.ch/news/srf-news-chats/q-a-zu-ki-ki-im-arbeitsalltag-antworten-auf-ihre-fragen" target="_blank">SRF News Q&amp;A: KI im Arbeitsalltag &ndash; Antworten auf Ihre Fragen</a></p>
+
 <h4>Can technology free time? Experimental evidence from an AI chatbot helping caseworkers solve employers'
 hiring difficulties</h4>
 <p class="paper-meta">with J. Barreau, M. Bouju, R. Rathelot</p>
